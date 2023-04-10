@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
+
+// This class stands for a game table
 @Entity
 public class Square {
 
@@ -13,6 +15,7 @@ public class Square {
 
     private String password;
 
+    // dont delete this method
     private Square(){};
 
     public Square(String name){
