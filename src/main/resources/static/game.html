@@ -17,7 +17,7 @@
 
     <!-- create player modal -->
     <!-- Button trigger modal -->
-    <button id="create-player-button" type="button" class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    <button id="create-player-modal-button" type="button" class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         Launch static backdrop modal
     </button>
 
@@ -28,15 +28,15 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="staticBackdropLabel">Tạo thông tin người chơi</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <!-- <button type="button" class="btn-close d-none"  data-bs-dismiss="modal" aria-label="Close"></button> -->
                 </div>
                 <div class="modal-body">
                     <div class="row gy-2">
                         <label class="col-4" for="player-name">Nhập tên: </label>
-                        <input class="col-8" type="text" name="name" id="player-name" placeholder="Input your name">
+                        <input class="col-8" type="text" name="name" id="player-name-input" placeholder="Input your name">
 
                         <label class="col-4" for="token-color">Chọn màu: </label>
-                        <select class="col-8" name="token-color" id="token-color">
+                        <select class="col-8" name="token-color" id="token-color-input">
                             <option value="green">Xanh</option>
                             <option value="red">Đỏ</option>
                             <option value="yellow">Vàng</option>
@@ -45,8 +45,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondar d-none" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Lưu</button>
+                    <button id="close-create-player-modal-button" type="button" class="btn btn-secondar d-none" data-bs-dismiss="modal">Close</button>
+                    <button id="create-player-button" type="button" class="btn btn-primary">Lưu</button>
                 </div>
             </div>
         </div>

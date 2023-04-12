@@ -6,9 +6,36 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Player {
-    
+
     private @Id @GeneratedValue Long id;
     private String name;
+    private String tokenColor;
+    private Long currentSquareId;
+    private int position;
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
+    public Long getCurrentSquareId() {
+        return currentSquareId;
+    }
+
+    public void setCurrentSquareId(Long currentSquareId) {
+        this.currentSquareId = currentSquareId;
+    }
+
+    public String getTokenColor() {
+        return tokenColor;
+    }
+
+    public void setTokenColor(String tokenColor) {
+        this.tokenColor = tokenColor;
+    }
 
     public Long getId() {
         return id;
@@ -27,9 +54,14 @@ public class Player {
     }
 
     // do not delete this function
-    private Player(){}
+    private Player(){
+        this.position = 0;
+    }
 
-    public Player(String name){
+    public Player(String name, String tokenColor, Long squareId){
         this.name = name;
+        this.tokenColor = tokenColor;
+        this.currentSquareId = squareId;
+        this.position = 0;
     }
 }

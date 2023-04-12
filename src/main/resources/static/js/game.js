@@ -1,40 +1,84 @@
 window.onload = function (){
 
+    const openCreatePlayerModalButton = document.getElementById("create-player-modal-button");
+    const closeCreatePlayerModalButton = document.getElementById("close-create-player-modal-button");
     const createPlayerButton = document.getElementById("create-player-button");
     
     if(localStorage.getItem("player-name") == null){
-        createPlayerButton.click();
+        alert("helo");
+        openCreatePlayerModalButton.click();
     }
 
+    createPlayerButton.addEventListener('click', createPlayer);
+
+    loadLocalPlayer();
 }
 
 function createPlayer() {
 
-    localStorage.removeItem("id");
-    localStorage.removeItem("name");
+    localStorage.removeItem("player-id");
+    localStorage.removeItem("player-name");
+    localStorage.removeItem("player-tokenColor");
 
     const name = document.getElementById("player-name-input").value;
+    const tokenColor = document.getElementById("token-color-input").value;
     const toSend = {
-        name: name
+        name: name,
+        tokenColor: tokenColor,
+        currentSquareId: localStorage.getItem("table_id")
     };
 
     const jsonString = JSON.stringify(toSend);
     const ajax = new XMLHttpRequest();
 
     ajax.onload = function () {
-        const returnJson = JSON.parse(this.responseText);
-        localStorage.setItem("id", returnJson.id);
-        localStorage.setItem("name", returnJson.name);
-        alert("Name saved!");
-        save_name_button = document.getElementById("save-player-name");
-        change_name_button = document.getElementById("change-player-name");
-        save_name_button.style.display = "none";
-        change_name_button.style.display = "block";
+
+        if(this.status != 200){
+            alert(this.responseText);
+        } else {
+            const returnJson = JSON.parse(this.responseText);
+            localStorage.setItem("player-id", returnJson.id);
+            localStorage.setItem("player-name", returnJson.name);
+            localStorage.setItem("player-token-color", returnJson.tokenColor);
+            alert("Saved!");
+            const closeCreatePlayerModalButton = document.getElementById("close-create-player-modal-button");
+            closeCreatePlayerModalButton.click();
+        }
+
     }
 
-    ajax.open("POST", "/players", false);
+    ajax.open("POST", "/squares/"+localStorage.getItem("table_id")+"/add-player", false);
     ajax.setRequestHeader('Content-Type', 'application/json');
     ajax.send(jsonString);
-    console.log(localStorage.getItem("id"));
-    console.log(localStorage.getItem("name"));
+}
+
+function loadLocalPlayer() {
+
+    if(localStorage.getItem("player-name") == null) return;
+
+    const toSend = {
+        name: localStorage.getItem("player-name"),
+        tokenColor: localStorage.getItem("player-token-color"),
+        currentSquareId: localStorage.getItem("table_id")
+    };
+
+    const jsonString = JSON.stringify(toSend);
+    const ajax = new XMLHttpRequest();
+
+    ajax.onload = function () {
+
+        if(this.status != 200){
+            alert(this.responseText);
+        } else {
+            const returnJson = JSON.parse(this.responseText);
+            localStorage.setItem("player-id", returnJson.id);
+            localStorage.setItem("player-name", returnJson.name);
+            localStorage.setItem("player-token-color", returnJson.tokenColor);
+        }
+
+    }
+
+    ajax.open("POST", "/squares/"+localStorage.getItem("table_id")+"/add-player", false);
+    ajax.setRequestHeader('Content-Type', 'application/json');
+    ajax.send(jsonString);
 }
