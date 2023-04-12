@@ -2,7 +2,7 @@
 .table{
     width: 99.97vh;
     height: 99.97vh;
-    background-color: #2a125a;
+    /* background-color: #9AECDB; */
 }
 
 .row1{
@@ -10,10 +10,14 @@
     height: 15.38vh;
 }
 
+.background-color {
+    background-color: #9AECDB;
+}
+
 .square{
     border: 1px solid black;
     border-radius: 10px;
-    background-color: rgba(67, 67, 252, 0.5);
+    background-color: #25CCF7;
 }
 
 .corner-square{

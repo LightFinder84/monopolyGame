@@ -25,6 +25,7 @@ function createTable() {
             localStorage.setItem("table_name", returnTable.name);
             localStorage.setItem("table_password", returnTable.password);
             alert("Tạo bàn chơi thành công.");
+            window.location.href = "/game.html";
         } else {
             alert("Error");
         }
