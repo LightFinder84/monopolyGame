@@ -15,6 +15,15 @@ public class Player {
     private Long currentSquareId;
     private int position;
     private PlayerStatus status;
+    private int money;
+
+    public int getMoney() {
+        return money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
 
     public PlayerStatus getStatus() {
         return status;
@@ -68,6 +77,7 @@ public class Player {
     private Player(){
         this.position = 0;
         this.status = PlayerStatus.NOT_READY;
+        this.money = 2000;
     }
 
     public Player(String name, String tokenColor, Long squareId){
@@ -76,5 +86,6 @@ public class Player {
         this.currentSquareId = squareId;
         this.position = 0;
         this.status = PlayerStatus.NOT_READY;
+        this.money = 2000;
     }
 }

@@ -69,6 +69,10 @@ function loadLocalPlayer() {
 
         if(this.status != 200){
             // alert(this.responseText);
+            if (this.status == 404) {
+                alert(this.responseText);
+                window.location.href = "/";
+            }
         } else {
             const returnJson = JSON.parse(this.responseText);
             localStorage.setItem("player-id", returnJson.id);
@@ -92,7 +96,8 @@ function syncronize(){
             alert(this.responseText);
         } else {
             const returnJson = JSON.parse(this.responseText);
-            renderPlayer(returnJson);
+            // renderPlayer(returnJson);
+            console.log(returnJson);
         }
     }
 
