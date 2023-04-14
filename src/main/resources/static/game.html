@@ -17,7 +17,8 @@
 
     <!-- create player modal -->
     <!-- Button trigger modal -->
-    <button id="create-player-modal-button" type="button" class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    <button id="create-player-modal-button" type="button" class="btn btn-primary d-none" data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop">
         Launch static backdrop modal
     </button>
 
@@ -33,7 +34,8 @@
                 <div class="modal-body">
                     <div class="row gy-2">
                         <label class="col-4" for="player-name">Nhập tên: </label>
-                        <input class="col-8" type="text" name="name" id="player-name-input" placeholder="Input your name">
+                        <input class="col-8" type="text" name="name" id="player-name-input"
+                            placeholder="Input your name">
 
                         <label class="col-4" for="token-color">Chọn màu: </label>
                         <select class="col-8" name="token-color" id="token-color-input">
@@ -45,7 +47,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button id="close-create-player-modal-button" type="button" class="btn btn-secondar d-none" data-bs-dismiss="modal">Close</button>
+                    <button id="close-create-player-modal-button" type="button" class="btn btn-secondar d-none"
+                        data-bs-dismiss="modal">Close</button>
                     <button id="create-player-button" type="button" class="btn btn-primary">Lưu</button>
                 </div>
             </div>
@@ -58,148 +61,503 @@
 
         <!-- first row -->
         <div class="row1 d-flex">
-            <div class="square corner-square">
+            <div class="square corner-square d-flex flex-column justify-content-between square-0">
                 <h3 class="text-white">START</h3>
+                <div class="d-flex flex-nowrap">
+                    <div class="player red-player"></div>
+                    <div class="player yellow-player"></div>
+                    <div class="player green-player"></div>
+                    <div class="player pink-player"></div>
+                </div>
             </div>
-            <div class="square stand-square">
-
+            <div
+                class="square stand-square d-flex flex-column justify-content-between align-items-center square-1 overflow-hidden">
+                <small class="text-white m-0 p-1 fw-bold w-100 small-text text-center bg-danger rounded">NGUYỄN
+                    HUỆ</small>
+                <small class="text-dark small-text fw-bold bg-light rounded p-1">$60</small>
+                <div class="d-flex flex-wrap">
+                    <div class="player red-player"></div>
+                    <div class="player yellow-player"></div>
+                    <div class="player green-player"></div>
+                    <div class="player pink-player"></div>
+                </div>
             </div>
-            <div class="square stand-square">
-
+            <div
+                class="square stand-square d-flex flex-column justify-content-between align-items-center square-2 community-space">
+                <small class="text-white m-0 p-0 fw-bold w-100 mt-1 small-text text-center">KHÍ VẬN</small>
+                <div class="community-chest h-50 p-0 m-0 w-100"></div>
+                <div class="d-flex flex-wrap">
+                    <div class="player red-player"></div>
+                    <div class="player yellow-player"></div>
+                    <div class="player green-player"></div>
+                    <div class="player pink-player"></div>
+                </div>
             </div>
-            <div class="square stand-square">
-
+            <div
+                class="square stand-square d-flex flex-column justify-content-between align-items-center square-3 overflow-hidden">
+                <small class="text-white m-0 p-1 fw-bold w-100 small-text text-center bg-danger">LÊ LỢI</small>
+                <small class="text-dark small-text fw-bold bg-light rounded p-1">$60</small>
+                <div class="d-flex flex-wrap">
+                    <div class="player red-player"></div>
+                    <div class="player yellow-player"></div>
+                    <div class="player green-player"></div>
+                    <div class="player pink-player"></div>
+                </div>
             </div>
-            <div class="square stand-square">
-
+            <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-4">
+                <small class="text-white m-0 p-0 fw-bold w-100 mt-1 small-text text-center">NỘP THUẾ </small>
+                <small class="text-dark small-text fw-bold bg-light rounded p-1 text-center">$200 or 10%</small>
+                <div class="d-flex flex-wrap pt-0">
+                    <div class="player red-player"></div>
+                    <div class="player yellow-player"></div>
+                    <div class="player green-player"></div>
+                    <div class="player pink-player"></div>
+                </div>
             </div>
-            <div class="square stand-square">
-
+            <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-5">
+                <small class="text-white m-0 p-0 fw-bold w-100 mt-1 small-text text-center">BẾN XE CẦN GIUỘC</small>
+                <small class="text-dark small-text fw-bold bg-light rounded p-1">$200</small>
+                <div class="d-flex flex-wrap pt-0">
+                    <div class="player red-player"></div>
+                    <div class="player yellow-player"></div>
+                    <div class="player green-player"></div>
+                    <div class="player pink-player"></div>
+                </div>
             </div>
-            <div class="square stand-square">
-
+            <div
+                class="square stand-square d-flex flex-column justify-content-between align-items-center square-6 overflow-hidden">
+                <small class="text-white m-0 p-0 pt-1 fw-bold w-100 small-text text-center bg-secondary">LƯƠNG ĐỊNH
+                    CỦA</small>
+                <small class="text-dark small-text fw-bold bg-light rounded p-1">$100</small>
+                <div class="d-flex flex-wrap pt-0">
+                    <div class="player red-player"></div>
+                    <div class="player yellow-player"></div>
+                    <div class="player green-player"></div>
+                    <div class="player pink-player"></div>
+                </div>
             </div>
-            <div class="square stand-square">
-
+            <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-7 p-0">
+                <small class="text-white m-0 p-0 fw-bold w-100 mt-1 small-text text-center">CƠ HỘI</small>
+                <div class="opportunity h-50 w-100 p-0 m-0"></div>
+                <div class="d-flex flex-wrap">
+                    <div class="player red-player"></div>
+                    <div class="player yellow-player"></div>
+                    <div class="player green-player"></div>
+                    <div class="player pink-player"></div>
+                </div>
             </div>
-            <div class="square stand-square">
-
+            <div
+                class="square stand-square d-flex flex-column justify-content-between align-items-center square-8 p-0 overflow-hidden">
+                <small class="text-white m-0 p-1 fw-bold w-100  small-text text-center bg-secondary">VÕ THỊ SÁU</small>
+                <small class="text-dark small-text fw-bold bg-light rounded p-1">$100</small>
+                <div class="d-flex flex-wrap">
+                    <div class="player red-player"></div>
+                    <div class="player yellow-player"></div>
+                    <div class="player green-player"></div>
+                    <div class="player pink-player"></div>
+                </div>
             </div>
-            <div class="square stand-square">
 
+            <div
+                class="square stand-square d-flex flex-column justify-content-between align-items-center square-9 overflow-hidden">
+                <small class="text-white m-0 p-1 fw-bold w-100 small-text text-center bg-secondary">HAI BÀ TRƯNG</small>
+                <small class="text-dark small-text fw-bold bg-light rounded p-1">$120</small>
+                <div class="d-flex flex-wrap">
+                    <div class="player red-player"></div>
+                    <div class="player yellow-player"></div>
+                    <div class="player green-player"></div>
+                    <div class="player pink-player"></div>
+                </div>
             </div>
-            <div class="square corner-square">
-
+            <div class="square corner-square square-10 position-relative square-10">
+                <small class="fw-bold text-white">NHÀ TÙ</small>
+                <div class="position-absolute jail w-50 h-50 p-2 m-0">
+                    <div class="d-flex flex-wrap">
+                        <div class="player red-player"></div>
+                        <div class="player yellow-player"></div>
+                        <div class="player green-player"></div>
+                        <div class="player pink-player"></div>
+                    </div>
+                </div>
+                <div class="position-absolute visitor w-50 h-50 p-2 m-0">
+                    <div class="d-flex flex-wrap">
+                        <div class="player red-player"></div>
+                        <div class="player yellow-player"></div>
+                        <div class="player green-player"></div>
+                        <div class="player pink-player"></div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- row 2-10 -->
         <div class="rown d-flex justify-content-between">
-            <div class="square lie-square">
-
+            <div class="square lie-square square-39">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-column align-items-center justify-content-between">
+                        <small class="fw-bold text-white small-text">LÊ LỢI</small>
+                        <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$200</small>
+                    </div>
+                    <div class="d-flex flex-wrap m-0 p-0 w-50">
+                        <div class="player red-player"></div>
+                        <div class="player yellow-player"></div>
+                        <div class="player green-player"></div>
+                        <div class="player pink-player"></div>
+                    </div>
+                </div>
             </div>
-            <div class="square lie-square">
-
-            </div>
-        </div>
-        <div class="rown d-flex justify-content-between">
-            <div class="square lie-square">
-
-            </div>
-            <div class="square lie-square">
-
-            </div>
-        </div>
-        <div class="rown d-flex justify-content-between">
-            <div class="square lie-square">
-
-            </div>
-            <div class="square lie-square">
-
-            </div>
-        </div>
-        <div class="rown d-flex justify-content-between">
-            <div class="square lie-square">
-
-            </div>
-            <div class="square lie-square">
-
+            <div class="square lie-square square-11 overflow-hidden">
+                <div class="d-flex flex-column justify-content-between p-0">
+                    <small class="fw-bold text-white small-text p-1 text-center bg-success mb-1">NGUYỄN TẤT THÀNH</small>
+                    <div class="d-flex justify-content-between px-1">
+                        <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$140</small>
+                        <div class="d-flex flex-wrap m-0 p-0">
+                            <div class="player red-player"></div>
+                            <div class="player yellow-player"></div>
+                            <div class="player green-player"></div>
+                            <div class="player pink-player"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="rown d-flex justify-content-between">
-            <div class="square lie-square">
-
+            <div class="square lie-square square-38">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-column align-items-center justify-content-between">
+                        <small class="fw-bold text-white small-text">LÊ LỢI</small>
+                        <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$200</small>
+                    </div>
+                    <div class="d-flex flex-wrap m-0 p-0 w-50">
+                        <div class="player red-player"></div>
+                        <div class="player yellow-player"></div>
+                        <div class="player green-player"></div>
+                        <div class="player pink-player"></div>
+                    </div>
+                </div>
             </div>
-            <div class="square lie-square">
-
-            </div>
-        </div>
-        <div class="rown d-flex justify-content-between">
-            <div class="square lie-square">
-
-            </div>
-            <div class="square lie-square">
-
-            </div>
-        </div>
-        <div class="rown d-flex justify-content-between">
-            <div class="square lie-square">
-
-            </div>
-            <div class="square lie-square">
-
-            </div>
-        </div>
-        <div class="rown d-flex justify-content-between">
-            <div class="square lie-square">
-
-            </div>
-            <div class="square lie-square">
-
+            <div class="square lie-square square-12 p-0">
+                <div class="d-flex flex-column justify-content-between p-0">
+                    <small class="fw-bold text-dark small-text p-1 text-center mb-1">CÔNG TY ĐIỆN LỰC</small>
+                    <div class="d-flex justify-content-between px-1">
+                        <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$200</small>
+                        <div class="d-flex flex-wrap m-0 p-0">
+                            <div class="player red-player"></div>
+                            <div class="player yellow-player"></div>
+                            <div class="player green-player"></div>
+                            <div class="player pink-player"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="rown d-flex justify-content-between">
-            <div class="square lie-square">
-
+            <div class="square lie-square square-37">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-column align-items-center justify-content-between">
+                        <small class="fw-bold text-white small-text">LÊ LỢI</small>
+                        <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$200</small>
+                    </div>
+                    <div class="d-flex flex-wrap m-0 p-0 w-50">
+                        <div class="player red-player"></div>
+                        <div class="player yellow-player"></div>
+                        <div class="player green-player"></div>
+                        <div class="player pink-player"></div>
+                    </div>
+                </div>
             </div>
-            <div class="square lie-square">
-
+            <div class="square lie-square square-13 overflow-hidden">
+                <div class="d-flex flex-column justify-content-between p-0">
+                    <small class="fw-bold text-white small-text p-1 text-center bg-success mb-1">NGUYỄN TRÃI</small>
+                    <div class="d-flex justify-content-between px-1">
+                        <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$140</small>
+                        <div class="d-flex flex-wrap m-0 p-0">
+                            <div class="player red-player"></div>
+                            <div class="player yellow-player"></div>
+                            <div class="player green-player"></div>
+                            <div class="player pink-player"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rown d-flex justify-content-between">
+            <div class="square lie-square square-36">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-column align-items-center justify-content-between">
+                        <small class="fw-bold text-white small-text">LÊ LỢI</small>
+                        <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$200</small>
+                    </div>
+                    <div class="d-flex flex-wrap m-0 p-0 w-50">
+                        <div class="player red-player"></div>
+                        <div class="player yellow-player"></div>
+                        <div class="player green-player"></div>
+                        <div class="player pink-player"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="square lie-square square-14 overflow-hidden">
+                <div class="d-flex justify-content-between flex-column p-0">
+                    <small class="fw-bold text-white small-text p-1 text-center bg-success mb-1">AN DƯƠNG VƯƠNG</small>
+                    <div class="d-flex justify-content-between px-1">
+                        <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$140</small>
+                        <div class="d-flex flex-wrap m-0 p-0">
+                            <div class="player red-player"></div>
+                            <div class="player yellow-player"></div>
+                            <div class="player green-player"></div>
+                            <div class="player pink-player"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rown d-flex justify-content-between">
+            <div class="square lie-square square-35">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-column align-items-center justify-content-between">
+                        <small class="fw-bold text-white small-text">LÊ LỢI</small>
+                        <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$200</small>
+                    </div>
+                    <div class="d-flex flex-wrap m-0 p-0 w-50">
+                        <div class="player red-player"></div>
+                        <div class="player yellow-player"></div>
+                        <div class="player green-player"></div>
+                        <div class="player pink-player"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="square lie-square square-15 overflow-hidden">
+                <div class="d-flex flex-column justify-content-between p-0">
+                    <small class="fw-bold text-dark small-text p-1 text-center mb-1">BẾN XE MIỀN TÂY</small>
+                    <div class="d-flex justify-content-between px-1">
+                        <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$200</small>
+                        <div class="d-flex flex-wrap m-0 p-0">
+                            <div class="player red-player"></div>
+                            <div class="player yellow-player"></div>
+                            <div class="player green-player"></div>
+                            <div class="player pink-player"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rown d-flex justify-content-between">
+            <div class="square lie-square square-34">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-column align-items-center justify-content-between">
+                        <small class="fw-bold text-white small-text">LÊ LỢI</small>
+                        <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$200</small>
+                    </div>
+                    <div class="d-flex flex-wrap m-0 p-0 w-50">
+                        <div class="player red-player"></div>
+                        <div class="player yellow-player"></div>
+                        <div class="player green-player"></div>
+                        <div class="player pink-player"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="square lie-square square-16 overflow-hidden">
+                <div class="d-flex justify-content-between flex-column p-0">
+                    <small class="fw-bold text-white small-text p-1 text-center bg-dark mb-1">HẬU GIANG</small>
+                    <div class="d-flex justify-content-between px-1">
+                        <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$140</small>
+                        <div class="d-flex flex-wrap m-0 p-0">
+                            <div class="player red-player"></div>
+                            <div class="player yellow-player"></div>
+                            <div class="player green-player"></div>
+                            <div class="player pink-player"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rown d-flex justify-content-between">
+            <div class="square lie-square square-33">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-column align-items-center justify-content-between">
+                        <small class="fw-bold text-white small-text">LÊ LỢI</small>
+                        <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$200</small>
+                    </div>
+                    <div class="d-flex flex-wrap m-0 p-0 w-50">
+                        <div class="player red-player"></div>
+                        <div class="player yellow-player"></div>
+                        <div class="player green-player"></div>
+                        <div class="player pink-player"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="square lie-square square-17 overflow-hidden">
+                <div class="d-flex justify-content-between flex-column p-0">
+                    <small class="fw-bold text-white small-text p-1 text-center bg-dark mb-1">KHÍ VẬN</small>
+                    <div class="d-flex justify-content-between px-1">
+                        <div class="community-chest w-50 h-100"></div>
+                        <div class="d-flex flex-wrap m-0 p-0">
+                            <div class="player red-player"></div>
+                            <div class="player yellow-player"></div>
+                            <div class="player green-player"></div>
+                            <div class="player pink-player"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rown d-flex justify-content-between">
+            <div class="square lie-square square-32">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-column align-items-center justify-content-between">
+                        <small class="fw-bold text-white small-text">LÊ LỢI</small>
+                        <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$200</small>
+                    </div>
+                    <div class="d-flex flex-wrap m-0 p-0 w-50">
+                        <div class="player red-player"></div>
+                        <div class="player yellow-player"></div>
+                        <div class="player green-player"></div>
+                        <div class="player pink-player"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="square lie-square square-18">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-wrap m-0 p-0 w-50">
+                        <div class="player red-player"></div>
+                        <div class="player yellow-player"></div>
+                        <div class="player green-player"></div>
+                        <div class="player pink-player"></div>
+                    </div>
+                    <div class="d-flex flex-column align-items-center justify-content-between">
+                        <small class="fw-bold text-white small-text">LÊ LỢI</small>
+                        <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$200</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rown d-flex justify-content-between">
+            <div class="square lie-square square-31">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-column align-items-center justify-content-between">
+                        <small class="fw-bold text-white small-text">LÊ LỢI</small>
+                        <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$200</small>
+                    </div>
+                    <div class="d-flex flex-wrap m-0 p-0 w-50">
+                        <div class="player red-player"></div>
+                        <div class="player yellow-player"></div>
+                        <div class="player green-player"></div>
+                        <div class="player pink-player"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="square lie-square square-19">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-wrap m-0 p-0 w-50">
+                        <div class="player red-player"></div>
+                        <div class="player yellow-player"></div>
+                        <div class="player green-player"></div>
+                        <div class="player pink-player"></div>
+                    </div>
+                    <div class="d-flex flex-column align-items-center justify-content-between">
+                        <small class="fw-bold text-white small-text">LÊ LỢI</small>
+                        <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$200</small>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- last row -->
         <div class="row1 d-flex">
-            <div class="square corner-square">
+            <div class="square corner-square square-30">
 
             </div>
-            <div class="square stand-square">
-
+            <div class="square stand-square square-29 d-flex flex-column align-items-center justify-content-between">
+                <small class="text-white m-0 p-0 fw-bold w-100 mt-1 small-text text-center">LÊ LỢI</small>
+                <small class="text-white small-text fw-bold bg-secondary rounded p-1">$200</small>
+                <div class="d-flex flex-wrap">
+                    <div class="player red-player"></div>
+                    <div class="player yellow-player"></div>
+                    <div class="player green-player"></div>
+                    <div class="player pink-player"></div>
+                </div>
             </div>
-            <div class="square stand-square">
-
+            <div class="square stand-square square-28 d-flex flex-column align-items-center justify-content-between">
+                <small class="text-white m-0 p-0 fw-bold w-100 mt-1 small-text text-center">LÊ LỢI</small>
+                <small class="text-white small-text fw-bold bg-secondary rounded p-1">$200</small>
+                <div class="d-flex flex-wrap">
+                    <div class="player red-player"></div>
+                    <div class="player yellow-player"></div>
+                    <div class="player green-player"></div>
+                    <div class="player pink-player"></div>
+                </div>
             </div>
-            <div class="square stand-square">
-
+            <div class="square stand-square square-27 d-flex flex-column align-items-center justify-content-between">
+                <small class="text-white m-0 p-0 fw-bold w-100 mt-1 small-text text-center">LÊ LỢI</small>
+                <small class="text-white small-text fw-bold bg-secondary rounded p-1">$200</small>
+                <div class="d-flex flex-wrap">
+                    <div class="player red-player"></div>
+                    <div class="player yellow-player"></div>
+                    <div class="player green-player"></div>
+                    <div class="player pink-player"></div>
+                </div>
             </div>
-            <div class="square stand-square">
-
+            <div class="square stand-square square-26 d-flex flex-column align-items-center justify-content-between">
+                <small class="text-white m-0 p-0 fw-bold w-100 mt-1 small-text text-center">LÊ LỢI</small>
+                <small class="text-white small-text fw-bold bg-secondary rounded p-1">$200</small>
+                <div class="d-flex flex-wrap">
+                    <div class="player red-player"></div>
+                    <div class="player yellow-player"></div>
+                    <div class="player green-player"></div>
+                    <div class="player pink-player"></div>
+                </div>
             </div>
-            <div class="square stand-square">
-
+            <div class="square stand-square square-25 d-flex flex-column align-items-center justify-content-between">
+                <small class="text-white m-0 p-0 fw-bold w-100 mt-1 small-text text-center">LÊ LỢI</small>
+                <small class="text-white small-text fw-bold bg-secondary rounded p-1">$200</small>
+                <div class="d-flex flex-wrap">
+                    <div class="player red-player"></div>
+                    <div class="player yellow-player"></div>
+                    <div class="player green-player"></div>
+                    <div class="player pink-player"></div>
+                </div>
             </div>
-            <div class="square stand-square">
-
+            <div class="square stand-square square-24 d-flex flex-column align-items-center justify-content-between">
+                <small class="text-white m-0 p-0 fw-bold w-100 mt-1 small-text text-center">LÊ LỢI</small>
+                <small class="text-white small-text fw-bold bg-secondary rounded p-1">$200</small>
+                <div class="d-flex flex-wrap">
+                    <div class="player red-player"></div>
+                    <div class="player yellow-player"></div>
+                    <div class="player green-player"></div>
+                    <div class="player pink-player"></div>
+                </div>
             </div>
-            <div class="square stand-square">
-
+            <div class="square stand-square square-23 d-flex flex-column align-items-center justify-content-between">
+                <small class="text-white m-0 p-0 fw-bold w-100 mt-1 small-text text-center">LÊ LỢI</small>
+                <small class="text-white small-text fw-bold bg-secondary rounded p-1">$200</small>
+                <div class="d-flex flex-wrap">
+                    <div class="player red-player"></div>
+                    <div class="player yellow-player"></div>
+                    <div class="player green-player"></div>
+                    <div class="player pink-player"></div>
+                </div>
             </div>
-            <div class="square stand-square">
-
+            <div class="square stand-square square-22 d-flex flex-column align-items-center justify-content-between">
+                <small class="text-white m-0 p-0 fw-bold w-100 mt-1 small-text text-center">LÊ LỢI</small>
+                <small class="text-white small-text fw-bold bg-secondary rounded p-1">$200</small>
+                <div class="d-flex flex-wrap">
+                    <div class="player red-player"></div>
+                    <div class="player yellow-player"></div>
+                    <div class="player green-player"></div>
+                    <div class="player pink-player"></div>
+                </div>
             </div>
-            <div class="square stand-square">
-
+            <div class="square stand-square square-21 d-flex flex-column align-items-center justify-content-between">
+                <small class="text-white m-0 p-0 fw-bold w-100 mt-1 small-text text-center">LÊ LỢI</small>
+                <small class="text-white small-text fw-bold bg-secondary rounded p-1">$200</small>
+                <div class="d-flex flex-wrap">
+                    <div class="player red-player"></div>
+                    <div class="player yellow-player"></div>
+                    <div class="player green-player"></div>
+                    <div class="player pink-player"></div>
+                </div>
             </div>
-            <div class="square corner-square">
+            <div class="square corner-square square-20">
 
             </div>
         </div>

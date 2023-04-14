@@ -106,5 +106,4 @@ public class Square {
         this.listPlayerId = listID;
     }
 
-    // public void set
 }

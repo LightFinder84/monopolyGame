@@ -1,5 +1,7 @@
 package com.development.Monopoly.entity;
 
+import com.development.Monopoly.Utils.PlayerStatus;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -12,6 +14,15 @@ public class Player {
     private String tokenColor;
     private Long currentSquareId;
     private int position;
+    private PlayerStatus status;
+
+    public PlayerStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(PlayerStatus status) {
+        this.status = status;
+    }
 
     public int getPosition() {
         return position;
@@ -56,6 +67,7 @@ public class Player {
     // do not delete this function
     private Player(){
         this.position = 0;
+        this.status = PlayerStatus.NOT_READY;
     }
 
     public Player(String name, String tokenColor, Long squareId){
@@ -63,5 +75,6 @@ public class Player {
         this.tokenColor = tokenColor;
         this.currentSquareId = squareId;
         this.position = 0;
+        this.status = PlayerStatus.NOT_READY;
     }
 }

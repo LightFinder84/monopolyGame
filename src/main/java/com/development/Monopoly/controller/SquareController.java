@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 public class SquareController {
@@ -85,5 +86,16 @@ public class SquareController {
             repository.save(square);
             return player;
         }
+    }
+
+
+    @GetMapping("/squares/{squareId}/get-players")
+    public List<Player> getPlayersOnTable(@PathVariable Long squareId){
+        return playerRepository.findAll().stream()
+            .filter(player -> {
+                if(player.getCurrentSquareId() == squareId) return true;
+                else return false;
+            })
+            .collect(Collectors.toList());
     }
 }

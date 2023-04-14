@@ -1,6 +1,6 @@
 
 .table{
-    width: 99.97vh;
+    width: 130vh;
     height: 99.97vh;
     /* background-color: #9AECDB; */
 }
@@ -20,17 +20,75 @@
     background-color: #25CCF7;
 }
 
+.community-space{
+    background-color: yellowgreen !important;
+}
+
 .corner-square{
-    width: 15.38vh;
+    width: 20vh;
     height: 15.38vh;
 }
 
 .stand-square{
-    width: 7.69vh;
+    width: 10vh;
     height: 15.38vh;
 }
 
 .lie-square{
     height: 7.69vh;
-    width: 15.38vh;
+    width: 20vh;
+}
+
+.green-player{
+    background-color: greenyellow !important;
+}
+
+.yellow-player{
+    background-color: yellow !important;
+}
+
+.red-player{
+    background-color: red !important;
+}
+
+.pink-player{
+    background-color: pink !important;
+}
+
+.player{
+    width:15px;
+    height:15px;
+    border-radius:15px;
+}
+
+.small-text{
+    font-size: 10px;
+    line-height: 12px;
+}
+
+.jail{
+    z-index: 100;
+    left: 0px;
+    bottom: 0px;
+    background-image: url("/images/jail.png");
+    background-size: contain;
+}
+
+.visitor {
+    right: 0px;
+    bottom: 0px;
+}
+
+.community-chest{
+    background-image: url("/images/chest.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.opportunity{
+    background-image: url("/images/question-mark.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }

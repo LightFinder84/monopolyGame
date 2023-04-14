@@ -5,13 +5,13 @@ window.onload = function (){
     const createPlayerButton = document.getElementById("create-player-button");
     
     if(localStorage.getItem("player-name") == null){
-        alert("helo");
         openCreatePlayerModalButton.click();
     }
 
     createPlayerButton.addEventListener('click', createPlayer);
 
     loadLocalPlayer();
+    syncronize();
 }
 
 function createPlayer() {
@@ -68,7 +68,7 @@ function loadLocalPlayer() {
     ajax.onload = function () {
 
         if(this.status != 200){
-            alert(this.responseText);
+            // alert(this.responseText);
         } else {
             const returnJson = JSON.parse(this.responseText);
             localStorage.setItem("player-id", returnJson.id);
@@ -81,4 +81,31 @@ function loadLocalPlayer() {
     ajax.open("POST", "/squares/"+localStorage.getItem("table_id")+"/add-player", false);
     ajax.setRequestHeader('Content-Type', 'application/json');
     ajax.send(jsonString);
+}
+
+function syncronize(){
+
+    const ajax = new XMLHttpRequest();
+
+    ajax.onload = function (){
+        if (this.status != 200) {
+            alert(this.responseText);
+        } else {
+            const returnJson = JSON.parse(this.responseText);
+            renderPlayer(returnJson);
+        }
+    }
+
+    ajax.open("GET", "/squares/"+localStorage.getItem("table_id")+"/get-players", false);
+    ajax.setRequestHeader('Content-type', 'application/json');
+    ajax.send();
+}
+
+function renderPlayer(players){
+    players.forEach(player => {
+        const color = player.tokenColor;
+        const position = player.position;
+        const square = document.getElementsByClassName("square-"+position);
+        square.innerHTML += '<div class="player ' + color + '-player"></div>';
+    });
 }
