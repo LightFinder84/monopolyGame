@@ -100,3 +100,7 @@
 .bg-dark-blue {
     background-color: #0c2461 !important;
 }
+
+.square-0{
+    cursor: pointer;
+}
