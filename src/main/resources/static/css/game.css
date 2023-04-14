@@ -18,6 +18,7 @@
     border: 1px solid black;
     border-radius: 10px;
     background-color: #78e08f;
+    cursor:pointer;
 }
 
 .community-space{
@@ -99,8 +100,4 @@
 
 .bg-dark-blue {
     background-color: #0c2461 !important;
-}
-
-.square-0{
-    cursor: pointer;
 }
