@@ -24,13 +24,29 @@ import java.util.stream.Collectors;
 public class SquareController {
     private final SquareRepository repository;
     private final PlayerRepository playerRepository;
+    private int lastUserId;
     private final List<User> userList;
 
     public SquareController(SquareRepository repository, PlayerRepository playerRepository) {
         this.repository = repository;
         this.playerRepository = playerRepository;
-        this.userList = new ArrayList<User>();
+        this.userList = new ArrayList<>();
+        lastUserId = 0;
     }
+
+    @PostMapping("/add-user")
+    User addUser(@RequestBody User user){
+        lastUserId++;
+        user.setId(lastUserId);
+        userList.add(user);
+        return user;
+    }
+
+    @GetMapping("/users")
+    List<User> getAllUsers(){
+        return userList;
+    }
+    
 
     @GetMapping("/squares")
     List<Square> all(){
