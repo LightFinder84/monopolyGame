@@ -10,15 +10,11 @@ window.onload = function (){
     
     if(localStorage.getItem("player-name") == null){
         openCreatePlayerModalButton.click();
+    } else {
+        syncronize();
     }
 
     createPlayerButton.addEventListener('click', createPlayer);
-
-    console.log("sdfhslkdjfhskdjfhsk");
-
-    loadLocalPlayer();
-    // syncronize();
-
 
 
     /**
@@ -71,6 +67,7 @@ function createPlayer() {
             alert("Saved!");
             const closeCreatePlayerModalButton = document.getElementById("close-create-player-modal-button");
             closeCreatePlayerModalButton.click();
+            syncronize();
         }
 
     }
@@ -81,50 +78,14 @@ function createPlayer() {
 }
 
 // truong
-function loadLocalPlayer() {
-
-    if(localStorage.getItem("player-name") == null) return;
-
-    const toSend = {
-        id: localStorage.getItem("player-id"),
-        name: localStorage.getItem("player-name"),
-        tokenColor: localStorage.getItem("player-token-color"),
-        currentSquareId: localStorage.getItem("table_id")
-    };
-
-    const jsonString = JSON.stringify(toSend);
-    const ajax = new XMLHttpRequest();
-
-    ajax.onload = function () {
-
-        
-        if(this.status != 200){
-            // alert(this.responseText);
-            
-            if (this.status == 404) {
-                alert(this.responseText);
-                window.location.href = "/";
-            } else{
-                console.log(this.responseText);
-            }
-        } else {
-            const returnJson = JSON.parse(this.responseText);
-            localStorage.setItem("player-id", returnJson.id);
-            localStorage.setItem("player-name", returnJson.name);
-            localStorage.setItem("player-token-color", returnJson.tokenColor);
-        }
-
-    }
-
-    ajax.open("POST", "/squares/"+localStorage.getItem("table_id")+"/add-player", false);
-    ajax.setRequestHeader('Content-Type', 'application/json');
-    ajax.send(jsonString);
-    alert("helo");
+function sleep(delay){
+    return new Promise (resolve => setTimeout(resolve, delay));
 }
 
 // truong
-function syncronize(){
-
+async function syncronize(){
+    console.log("syncronizing");
+    await sleep(1000);
     const ajax = new XMLHttpRequest();
 
     ajax.onload = function (){
@@ -132,22 +93,99 @@ function syncronize(){
             alert(this.responseText);
         } else {
             const returnJson = JSON.parse(this.responseText);
-            // renderPlayer(returnJson);
-            console.log(returnJson);
+            checkStatus(returnJson);
+            renderPlayer(returnJson);
         }
     }
 
     ajax.open("GET", "/squares/"+localStorage.getItem("table_id")+"/get-players", false);
     ajax.setRequestHeader('Content-type', 'application/json');
     ajax.send();
+
+    requestAnimationFrame(syncronize);
 }
 
 // truong
 function renderPlayer(players){
+    clearScreen();
+    // console.log("rendering players");
     players.forEach(player => {
         const color = player.tokenColor;
         const position = player.position;
-        const square = document.getElementsByClassName("square-"+position);
-        square.innerHTML += '<div class="player ' + color + '-player"></div>';
+        const status = player.status;
+        const name = player.name;
+        const money = player.money;
+        const id = player.id;
+        if(status == "IN_JAIL"){
+            const player_container = document.getElementById("jail-container");
+            const player_token = '<div class="player ' + color + '-player"></div>';
+            if(!player_container.innerHTML.includes(player_token)){
+                player_container.innerHTML += player_token;
+            }
+        } else {
+            const player_container = document.getElementById("player-container-" + position);
+            const player_token = '<div class="player ' + color + '-player"></div>';
+            if(player_container.innerHTML.includes(player_token) == false){
+                console.log("rendering position " + position);
+                player_container.innerHTML += player_token;
+            } 
+        }
+        const playerList = document.getElementById('userList');
+        if (localStorage.getItem("owner")) {
+            const player_bar = '<div class="d-flex align-items-center justify-content-between m-2 p-2 border rounded border-primary"> <div class="player '+ color +'-player"></div><p class="m-0 mx-1">'+name+'</p> <p class="bg-light m-0 px-1 rounded">$'+money+'</p> <button onclick="kick('+id+')">Kick</button>  </div>';
+            playerList.innerHTML += player_bar;
+        } else {
+            const player_bar = '<div class="d-flex align-items-center justify-content-between m-2 p-2 border rounded border-primary"> <div class="player '+ color +'-player"></div><p class="m-0 mx-1">'+name+'</p> <p class="bg-light m-0 px-1 rounded">$'+money+'</p>  </div>';
+            playerList.innerHTML += player_bar;
+        }
     });
+}
+
+// truong
+function clearScreen() {
+    
+    var player_container = document.getElementsByClassName('player-container');
+    for (let i = 0; i < player_container.length; i++) {
+        const container = player_container[i];
+        container.innerHTML = "";
+    }
+    const playerList = document.getElementById('userList');
+    playerList.innerHTML = "";
+}
+
+// truong
+function checkStatus(players){
+    if(isNotKicked(players) == false){
+        alert("Bạn bị đuổi khỏi phòng.");
+        localStorage.clear();
+        window.location.href = "/";
+    }
+}
+
+// truong
+function isNotKicked(players){
+    players.forEach(player => {
+        if (player.id == localStorage.getItem("player-id")) {
+            return true;
+        }
+    });
+    return false;
+}
+
+// kick
+function kick(id) {
+    if (id == localStorage.getItem("player-id")) {
+        alert("Bạn không thể dduổi chính mình!");
+        return;
+    }
+
+    ajax = new XMLHttpRequest();
+
+    ajax.onload = function(){
+
+    }
+
+    ajax.open("GET", "/squares/"+localStorage.getItem("table_id")+"/kick/"+id, false);
+    ajax.setRequestHeader('Content-Type', 'application/json');
+    ajax.send();
 }

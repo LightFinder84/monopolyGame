@@ -2,6 +2,7 @@ package com.development.Monopoly.entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import com.development.Monopoly.exception.DuplicateColorException;
 import com.development.Monopoly.exception.DuplicateNameException;
@@ -104,6 +105,15 @@ public class Square {
 
     public void setListPlayerId(List<Long> listID){
         this.listPlayerId = listID;
+    }
+
+    public Player kickPlayer(Long playerId, PlayerRepository playerRepository) {
+        Player player = playerRepository.findById(playerId).get();
+        if (listPlayerId.contains(playerId)) {
+            listPlayerId.remove(playerId);
+            playerRepository.deleteById(playerId);
+        }
+        return player;
     }
 
 }

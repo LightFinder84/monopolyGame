@@ -5,6 +5,11 @@
     /* background-color: #9AECDB; */
 }
 
+.right-table{
+    width: 100%;
+    height: 100vh;
+}
+
 .row1{
     width: 100%;
     height: 15.38vh;
@@ -54,6 +59,10 @@
 
 .pink-player{
     background-color: pink !important;
+}
+
+.blue-player{
+    background-color: #0652DD;
 }
 
 .player{
