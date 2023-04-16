@@ -2,6 +2,7 @@ package com.development.Monopoly.controller;
 
 import com.development.Monopoly.Utils.GameState;
 import com.development.Monopoly.Utils.PlayerStatus;
+import com.development.Monopoly.entity.Dice;
 import com.development.Monopoly.entity.Player;
 import com.development.Monopoly.entity.Table;
 import com.development.Monopoly.exception.GameFullException;
@@ -152,5 +153,11 @@ public class TableController {
     public static void startGame(@PathVariable int tableId){
         Table table = findTableById(tableId);
         table.startGame();
+    }
+
+    @GetMapping("/tables/{tableId}/{playerId}/roll-dice")
+    public static Dice rollDice(@PathVariable int tableId, @PathVariable int playerId){
+        Table table = findTableById(tableId);
+        return table.rollDice(playerId);
     }
 }
