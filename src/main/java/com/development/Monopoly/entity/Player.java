@@ -11,6 +11,7 @@ public class Player {
     private int position;
     private PlayerStatus status;
     private int money;
+    private boolean host;
 
     // constructor
     public Player(int id, String name, String tokenColor, Long squareId){
@@ -21,6 +22,7 @@ public class Player {
         this.position = 0;
         this.status = PlayerStatus.NOT_READY;
         this.money = 2000;
+        this.host = false;
     }
 
     public int getMoney() {
@@ -77,6 +79,14 @@ public class Player {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public boolean isHost() {
+        return host;
+    }
+
+    public void setHost(boolean host) {
+        this.host = host;
     }
 
     public Player quit(Table table) {

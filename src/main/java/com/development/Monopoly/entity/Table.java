@@ -3,6 +3,9 @@ package com.development.Monopoly.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.development.Monopoly.Utils.GameState;
+import com.development.Monopoly.Utils.PlayerStatus;
+import com.development.Monopoly.controller.TableController;
 import com.development.Monopoly.exception.DuplicateColorException;
 import com.development.Monopoly.exception.DuplicateNameException;
 import com.development.Monopoly.exception.GameFullException;
@@ -19,7 +22,13 @@ public class Table {
 
     private String password;
 
+    private int hostId;
+
+    private GameState state;
+
     private List<Player> playerList;
+
+    private String lastEventMessage;
 
     // constructor
     private Table(int id, String name, String password){
@@ -27,6 +36,9 @@ public class Table {
         playerList = new ArrayList<>();
         this.name = name;
         this.password = password;
+        hostId = 0;
+        state = GameState.NOT_STARTED;
+        lastEventMessage = "Sẵn sàng và chờ chủ phòng bắt đầu.";
     };
 
     public Player findPlayerById(int id){
@@ -70,6 +82,31 @@ public class Table {
         this.id = id;
     }
 
+    public int gethostId() {
+        return hostId;
+    }
+
+    public void sethostId(int hostId) {
+        this.hostId = hostId;
+    }
+
+
+    public GameState getState() {
+        return state;
+    }
+
+    public void setState(GameState state) {
+        this.state = state;
+    }
+
+    public String getLastEventMessage() {
+        return lastEventMessage;
+    }
+
+    public void setLastEventMessage(String lastEventMessage) {
+        this.lastEventMessage = lastEventMessage;
+    }
+
     public Player addPlayer(Player newPlayer){
         if(playerList.size() == 4){
             throw new GameFullException();
@@ -82,6 +119,15 @@ public class Table {
             if(player.getTokenColor().equals(newPlayer.getTokenColor())){
                 throw new DuplicateColorException();
             }
+        }
+
+        if(this.state == GameState.STARTED){
+            throw new UnExpectedErrorException("Trò chơi đang diễn ra.");
+        }
+
+        if(playerList.size() == 0){
+            hostId = newPlayer.getId();
+            newPlayer.setHost(true);
         }
 
         playerList.add(newPlayer);
@@ -100,7 +146,24 @@ public class Table {
             throw new UnExpectedErrorException(2);
         }
 
+        if(playerList.size() == 0){
+            TableController.deleteTable(this.id);
+        } else {
+            Player newHost = playerList.get(0);
+            newHost.setHost(true);
+        }
+
         return player;
+    }
+
+    public void startGame() {
+        for (Player player : playerList) {
+            if(player.getStatus() != PlayerStatus.READY){
+                throw new UnExpectedErrorException("Người chơi chưa sẵn sàng.");
+            }
+        }
+        this.state = GameState.STARTED;
+        lastEventMessage = "Trò chơi đã được bắt đầu."; 
     }
 
 }

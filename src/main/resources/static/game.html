@@ -63,8 +63,12 @@
         <div class="table position-relative">
 
             <div class="table-center position-absolute p-2 rounded">
-                <div class="game-state">
-
+                <div class="game-state w-100 h-100">
+                    <div class="">
+                        <p id="last-event-message">
+                            
+                        </p>
+                    </div>
                 </div>
             </div>
 
@@ -484,28 +488,31 @@
         </div>
 
         <div class="right-table d-flex flex-column justify-content-start">
+            <div class="p-3 border border-primary rounded m-2">
+                <div class="row row-cols-2">
+                    <div class="col-3">Tên bàn:</div>
+                    <div class="col-9" id="table-name"></div>
+                    <div class="col-3">Số bàn:</div>
+                    <div class="col-9" id="table-id"></div>
+                    <div class="col-3">Mật khẩu:</div>
+                    <div class="col-9" id="table-password"></div>
+                </div>
+            </div>
             <div id="playerList">
-                <div class="d-flex align-items-center m-2 p-2 border rounded border-primary">
+                <!-- <div class="d-flex align-items-center m-2 p-2 border rounded border-primary">
                     <div class="player blue-player"></div>
                     <p class="m-0 mx-1">username</p>
                     <p class="bg-light m-0 px-1 rounded">$2000</p>
-                </div>
-                <div class="d-flex align-items-center m-2 p-2 border rounded border-primary">
-                    <div class="player blue-player"></div>
-                    <p class="m-0 mx-1">username</p>
-                    <p class="bg-light m-0 px-1 rounded">$2000</p>
-                </div>
-                <div class="d-flex align-items-center m-2 p-2 border rounded border-primary">
-                    <div class="player blue-player"></div>
-                    <p class="m-0 mx-1">username</p>
-                    <p class="bg-light m-0 px-1 rounded">$2000</p>
-                </div>
+                </div> -->
                 <button class="btn btn-warning" onclick="kick(1)">Kick</button>
             </div>
             <div id="content"></div>
-            <div class="d-flex justify-content-between m-2">
-                <button class="w-50 btn-primary" id="ready-button">Ready</button>
-                <button class="w-50 btn btn-warning" id="quit-button">Quit</button>
+            <div id="btn-group" class="d-flex justify-content-between flex-wrap m-2">
+                
+            </div>
+            <div class="d-flex justify-content-between flex-wrap m-2">
+                <button class="w-50 btn-primary" id="ready-button">Sẵn sàng</button>
+                <button class="w-50 btn-danger" id="quit-button">Thoát game</button>
             </div>
         </div>
 

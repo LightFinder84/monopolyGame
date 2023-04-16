@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class UnExpectedErrorAdvice {
     @ResponseBody
     @ExceptionHandler(UnExpectedErrorException.class)
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    @ResponseStatus(HttpStatus.EXPECTATION_FAILED)
     String UnExpectedErrorHandler(UnExpectedErrorException exception){
         return exception.getMessage();
     }

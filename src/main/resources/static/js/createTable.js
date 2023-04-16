@@ -1,4 +1,4 @@
-window.onload = function(){
+    window.onload = function(){
     var createButton = document.getElementById("create-button");
     createButton.addEventListener("click", createTable);
 }
