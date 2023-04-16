@@ -31,7 +31,7 @@ function createTable() {
             alert("Error");
         }
     }
-    ajax.open("POST", "/squares", false);
+    ajax.open("POST", "/create-table", false);
     ajax.setRequestHeader('Content-Type', 'application/json');
     const toSend = {
         name: name,

@@ -7,7 +7,9 @@ window.onload = function (){
     const openCreatePlayerModalButton = document.getElementById("create-player-modal-button");
     const closeCreatePlayerModalButton = document.getElementById("close-create-player-modal-button");
     const createPlayerButton = document.getElementById("create-player-button");
-    
+    const ready_button = document.getElementById("ready-button");
+    const quit_button = document.getElementById("quit-button");
+
     if(localStorage.getItem("player-name") == null){
         openCreatePlayerModalButton.click();
     } else {
@@ -15,7 +17,8 @@ window.onload = function (){
     }
 
     createPlayerButton.addEventListener('click', createPlayer);
-
+    ready_button.addEventListener('click', ready)
+    quit_button.addEventListener('click',quit);
 
     /**
      * Khoa
@@ -47,9 +50,13 @@ function createPlayer() {
     const name = document.getElementById("player-name-input").value;
     const tokenColor = document.getElementById("token-color-input").value;
     const toSend = {
+        id: 0,
         name: name,
         tokenColor: tokenColor,
-        currentSquareId: localStorage.getItem("table_id")
+        currentSquareId: localStorage.getItem("table_id"),
+        position: 0,
+        status: "NOT_READY",
+        money: 2000
     };
 
     const jsonString = JSON.stringify(toSend);
@@ -64,6 +71,9 @@ function createPlayer() {
             localStorage.setItem("player-id", returnJson.id);
             localStorage.setItem("player-name", returnJson.name);
             localStorage.setItem("player-token-color", returnJson.tokenColor);
+            localStorage.setItem("player-position", returnJson.position);
+            localStorage.setItem("player-status", returnJson.status);
+            localStorage.setItem("player-money", returnJson.money);
             alert("Saved!");
             const closeCreatePlayerModalButton = document.getElementById("close-create-player-modal-button");
             closeCreatePlayerModalButton.click();
@@ -72,7 +82,7 @@ function createPlayer() {
 
     }
 
-    ajax.open("POST", "/squares/"+localStorage.getItem("table_id")+"/add-player", false);
+    ajax.open("POST", "/tables/"+localStorage.getItem("table_id")+"/add-player", false);
     ajax.setRequestHeader('Content-Type', 'application/json');
     ajax.send(jsonString);
 }
@@ -90,7 +100,9 @@ async function syncronize(){
 
     ajax.onload = function (){
         if (this.status != 200) {
+            localStorage.clear();
             alert(this.responseText);
+            window.location.href = "/";
         } else {
             const returnJson = JSON.parse(this.responseText);
             checkStatus(returnJson);
@@ -98,7 +110,7 @@ async function syncronize(){
         }
     }
 
-    ajax.open("GET", "/squares/"+localStorage.getItem("table_id")+"/get-players", false);
+    ajax.open("GET", "/tables/"+localStorage.getItem("table_id")+"/get-players", false);
     ajax.setRequestHeader('Content-type', 'application/json');
     ajax.send();
 
@@ -126,16 +138,15 @@ function renderPlayer(players){
             const player_container = document.getElementById("player-container-" + position);
             const player_token = '<div class="player ' + color + '-player"></div>';
             if(player_container.innerHTML.includes(player_token) == false){
-                console.log("rendering position " + position);
                 player_container.innerHTML += player_token;
             } 
         }
-        const playerList = document.getElementById('userList');
+        const playerList = document.getElementById('playerList');
         if (localStorage.getItem("owner")) {
-            const player_bar = '<div class="d-flex align-items-center justify-content-between m-2 p-2 border rounded border-primary"> <div class="player '+ color +'-player"></div><p class="m-0 mx-1">'+name+'</p> <p class="bg-light m-0 px-1 rounded">$'+money+'</p> <button onclick="kick('+id+')">Kick</button>  </div>';
+            const player_bar = '<div class="d-flex align-items-center justify-content-between m-2 p-2 border rounded border-primary"> <div class="player '+ color +'-player"></div><p class="m-0 mx-1">'+name+'</p> <p class="bg-light m-0 px-1 rounded">$'+money+'</p> <small class="small-text bg-light m-0 p-2 rounded">'+status+'</small> <button onclick="kick('+id+')">Kick</button>  </div>';
             playerList.innerHTML += player_bar;
         } else {
-            const player_bar = '<div class="d-flex align-items-center justify-content-between m-2 p-2 border rounded border-primary"> <div class="player '+ color +'-player"></div><p class="m-0 mx-1">'+name+'</p> <p class="bg-light m-0 px-1 rounded">$'+money+'</p>  </div>';
+            const player_bar = '<div class="d-flex align-items-center justify-content-between m-2 p-2 border rounded border-primary"> <div class="player '+ color +'-player"></div><p class="m-0 mx-1">'+name+'</p> <p class="bg-light m-0 px-1 rounded">$'+money+'</p> <small class="small-text bg-light m-0 p-2 rounded">'+status+'</small>  </div>';
             playerList.innerHTML += player_bar;
         }
     });
@@ -149,27 +160,28 @@ function clearScreen() {
         const container = player_container[i];
         container.innerHTML = "";
     }
-    const playerList = document.getElementById('userList');
+    const playerList = document.getElementById('playerList');
     playerList.innerHTML = "";
 }
 
 // truong
 function checkStatus(players){
     if(isNotKicked(players) == false){
-        alert("Bạn bị đuổi khỏi phòng.");
         localStorage.clear();
+        alert("Bạn bị đuổi khỏi phòng.");
         window.location.href = "/";
     }
 }
 
 // truong
 function isNotKicked(players){
+    var result = false;
     players.forEach(player => {
-        if (player.id == localStorage.getItem("player-id")) {
-            return true;
+        if (player.id === parseInt(localStorage.getItem("player-id"))) {
+            result = true;
         }
     });
-    return false;
+    return result;
 }
 
 // kick
@@ -182,10 +194,49 @@ function kick(id) {
     ajax = new XMLHttpRequest();
 
     ajax.onload = function(){
-
+        
     }
 
-    ajax.open("GET", "/squares/"+localStorage.getItem("table_id")+"/kick/"+id, false);
+    ajax.open("DELETE", "/tables/"+localStorage.getItem("table_id")+"/kick/"+id, false);
     ajax.setRequestHeader('Content-Type', 'application/json');
+    ajax.send();
+}
+
+function ready(){
+    const ajax = new XMLHttpRequest();
+    ajax.onload = function(){
+        if(this.status != 200){
+            localStorage.clear();
+            alert(this.responseText);
+            window.location.href = "/";
+        }
+    }
+
+    const table_id = localStorage.getItem("table_id");
+    const player_id = localStorage.getItem("player-id");
+    const uri = "/tables/" + table_id + "/" + player_id + "/ready";
+    ajax.open("GET", uri, false);
+    ajax.setRequestHeader('Content-type', 'application/json');
+    ajax.send();
+}
+
+function quit(){
+    const ajax = new XMLHttpRequest();
+    ajax.onload = function(){
+        if(this.status != 200){
+            localStorage.clear();
+            alert(this.responseText);
+            window.location.href = "/";
+        } else{
+            localStorage.clear();
+            window.location.href = "/";
+        }
+    }
+
+    const table_id = localStorage.getItem("table_id");
+    const player_id = localStorage.getItem("player-id");
+    const uri = "/tables/" + table_id + "/" + player_id + "/quit";
+    ajax.open("GET", uri, false);
+    ajax.setRequestHeader('Content-type', 'application/json');
     ajax.send();
 }

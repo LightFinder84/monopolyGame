@@ -2,20 +2,26 @@ package com.development.Monopoly.entity;
 
 import com.development.Monopoly.Utils.PlayerStatus;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-
-@Entity
 public class Player {
 
-    private @Id @GeneratedValue  Long id;
+    private int id;
     private String name;
     private String tokenColor;
     private Long currentSquareId;
     private int position;
     private PlayerStatus status;
     private int money;
+
+    // constructor
+    public Player(int id, String name, String tokenColor, Long squareId){
+        this.id = id;
+        this.name = name;
+        this.tokenColor = tokenColor;
+        this.currentSquareId = squareId;
+        this.position = 0;
+        this.status = PlayerStatus.NOT_READY;
+        this.money = 2000;
+    }
 
     public int getMoney() {
         return money;
@@ -57,11 +63,11 @@ public class Player {
         this.tokenColor = tokenColor;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -73,13 +79,8 @@ public class Player {
         this.name = name;
     }
 
-    public Player(Long id, String name, String tokenColor, Long squareId){
-        this.id = id;
-        this.name = name;
-        this.tokenColor = tokenColor;
-        this.currentSquareId = squareId;
-        this.position = 0;
-        this.status = PlayerStatus.NOT_READY;
-        this.money = 2000;
+    public Player quit(Table table) {
+        return table.kickPlayer(this.id);
     }
+
 }
