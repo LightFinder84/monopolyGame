@@ -30,6 +30,7 @@ window.onload = function (){
     /**
      * Khoa
      */
+    
     //const estateid = [1,3,6,8,9,11,13,14,16,18,19,21,23,24,26,27,29,31,32,34,37,39];
     const estateid_row1 = [1,3,6,8,9];
     const estateid_row2 = [11,13,14,16,18,19];
