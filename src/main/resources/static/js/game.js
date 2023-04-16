@@ -240,7 +240,7 @@ function isNotKicked(players, state){
 // kick
 function kick(id) {
     if (id == localStorage.getItem("player-id")) {
-        alert("Bạn không thể dduổi chính mình!");
+        alert("Bạn không thể đuổi chính mình!");
         return;
     }
 

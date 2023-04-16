@@ -6,6 +6,7 @@ import java.util.List;
 import com.development.Monopoly.Utils.GameState;
 import com.development.Monopoly.Utils.PlayerStatus;
 import com.development.Monopoly.controller.TableController;
+import com.development.Monopoly.entity.space.*;
 import com.development.Monopoly.exception.DuplicateColorException;
 import com.development.Monopoly.exception.DuplicateNameException;
 import com.development.Monopoly.exception.GameFullException;
@@ -30,6 +31,8 @@ public class Table {
 
     private String lastEventMessage;
 
+    private List<Space> spaces;
+
     // constructor
     private Table(int id, String name, String password){
         this.id = id;
@@ -39,6 +42,17 @@ public class Table {
         hostId = 0;
         state = GameState.NOT_STARTED;
         lastEventMessage = "Sẵn sàng và chờ chủ phòng bắt đầu.";
+
+        spaces = new ArrayList<>();
+        
+        spaces.add(new Start(0, "Start"));
+        spaces.add(new Estate(1, "Nguyễn Huệ", 0, 60, 50 ));
+        spaces.add(new CommunityChest(2, "Khí vận"));
+        spaces.add(new Estate(3, "Lê Lợi", 0, 60, 50));
+        spaces.add(new Tax(4, "Nộp thuế"));
+        spaces.add(new BusStation(5, "Bến xe Cần Giuộc"));
+        spaces.add(new Estate(6, "Lương Định Của", 0, 100, 50));
+
     };
 
     public Player findPlayerById(int id){
