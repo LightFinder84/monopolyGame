@@ -28,7 +28,11 @@ public class Table {
 
     private List<Player> playerList;
 
-    private String lastEventMessage;
+    private int playerInTurn;
+
+    private Event event;
+
+    private Dice dice;
 
     // constructor
     private Table(int id, String name, String password){
@@ -38,7 +42,10 @@ public class Table {
         this.password = password;
         hostId = 0;
         state = GameState.NOT_STARTED;
-        lastEventMessage = "Sẵn sàng và chờ chủ phòng bắt đầu.";
+        playerInTurn = 0;
+        this.event = new Event();
+        event.setGamePlayMessage("Sẵn sàng và chờ chủ phòng bắt đầu.");
+        this.dice = new Dice();
     };
 
     public Player findPlayerById(int id){
@@ -99,12 +106,20 @@ public class Table {
         this.state = state;
     }
 
-    public String getLastEventMessage() {
-        return lastEventMessage;
+    public Event getEvent() {
+        return event;
     }
 
-    public void setLastEventMessage(String lastEventMessage) {
-        this.lastEventMessage = lastEventMessage;
+    public void setEvent(Event event) {
+        this.event = event;
+    }
+
+    public Dice getDice() {
+        return dice;
+    }
+
+    public void setDice(Dice dice) {
+        this.dice = dice;
     }
 
     public Player addPlayer(Player newPlayer){
@@ -163,7 +178,23 @@ public class Table {
             }
         }
         this.state = GameState.STARTED;
-        lastEventMessage = "Trò chơi đã được bắt đầu."; 
+        event.setGamePlayMessage("Trò chơi đã được bắt đầu.");
+        Player player = playerList.get(0);
+        String message = "Đã đến lượt chơi của ---> " + player.getName() + " <--- mời lắc xúc xắc!";
+        event.setPlayerInTurnMessage(message); 
     }
+
+    public Dice rollDice(int playerId) {
+        Player player = playerList.get(playerInTurn);
+
+        if(playerId != player.getId()){
+            throw new UnExpectedErrorException("Chưa tới lượt của bạn");
+        }
+
+        dice.roll();
+        return dice;
+    }
+
+
 
 }

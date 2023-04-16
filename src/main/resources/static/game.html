@@ -59,15 +59,19 @@
 
     <!-- screen -->
     <div class="screen d-flex justify-content-between">
-   
+
         <div class="table position-relative">
 
             <div class="table-center position-absolute p-2 rounded">
                 <div class="game-state w-100 h-100">
                     <div class="">
-                        <p id="last-event-message">
-                            
+                        <p id="game-play-message">
+
                         </p>
+                        <div id="event-message">
+                            <div></div>
+                            
+                        </div>
                     </div>
                 </div>
             </div>
@@ -77,94 +81,96 @@
                 <div class="square corner-square d-flex flex-column justify-content-between square-0" id="start-space">
                     <h3 class="text-dark">START</h3>
                     <div class="d-flex flex-wrap player-container" id="player-container-0">
-                        
+
                     </div>
                 </div>
-                <div
-                    class="square stand-square d-flex flex-column justify-content-between align-items-center square-1 overflow-hidden" id="nguyen-hue-space">
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-1 overflow-hidden"
+                    id="nguyen-hue-space">
                     <small class="text-white m-0 p-1 fw-bold w-100 small-text text-center bg-danger rounded">NGUYỄN
                         HUỆ</small>
                     <small class="text-dark small-text fw-bold bg-light rounded p-1">$60</small>
                     <div class="d-flex flex-wrap player-container px-3" id="player-container-1">
-                        
+
                     </div>
                 </div>
-                <div
-                    class="square stand-square d-flex flex-column justify-content-between align-items-center square-2 community-space" id="community-chest-space-1">
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-2 community-space"
+                    id="community-chest-space-1">
                     <small class="text-white m-0 p-0 fw-bold w-100 mt-1 small-text text-center">KHÍ VẬN</small>
                     <div class="community-chest h-50 p-0 m-0 w-100"></div>
                     <div class="d-flex flex-wrap player-container px-3" id="player-container-2">
-                        
+
                     </div>
                 </div>
-                <div
-                    class="square stand-square d-flex flex-column justify-content-between align-items-center square-3 overflow-hidden" id="le-loi-space">
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-3 overflow-hidden"
+                    id="le-loi-space">
                     <small class="text-white m-0 p-1 fw-bold w-100 small-text text-center bg-danger">LÊ LỢI</small>
                     <small class="text-dark small-text fw-bold bg-light rounded p-1">$60</small>
                     <div class="d-flex flex-wrap player-container px-3" id="player-container-3">
-                        
+
                     </div>
                 </div>
-                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-4" id = "tax-space">
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-4"
+                    id="tax-space">
                     <small class="text-dark m-0 p-0 fw-bold w-100 mt-1 small-text text-center">NỘP THUẾ </small>
                     <small class="text-dark small-text fw-bold bg-light rounded p-1 text-center">$200 or 10%</small>
                     <div class="d-flex flex-wrap player-container pt-0 px-3" id="player-container-4">
-                        
+
                     </div>
                 </div>
-                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-5" id = "can-giuoc-bus-station">
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-5"
+                    id="can-giuoc-bus-station">
                     <small class="text-dark m-0 p-0 fw-bold w-100 mt-1 small-text text-center">BẾN XE CẦN GIUỘC</small>
                     <small class="text-dark small-text fw-bold bg-light rounded p-1">$200</small>
                     <div class="d-flex flex-wrap player-container pt-0 px-3" id="player-container-5">
-                        
+
                     </div>
                 </div>
-                <div
-                    class="square stand-square d-flex flex-column justify-content-between align-items-center square-6 overflow-hidden" id="luong-dinh-cua-space">
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-6 overflow-hidden"
+                    id="luong-dinh-cua-space">
                     <small class="text-white m-0 p-0 pt-1 fw-bold w-100 small-text text-center bg-secondary">LƯƠNG ĐỊNH
                         CỦA</small>
                     <small class="text-dark small-text fw-bold bg-light rounded p-1">$100</small>
                     <div class="d-flex flex-wrap player-container pt-0 px-3" id="player-container-6">
-                        
+
                     </div>
                 </div>
-                <div
-                    class="square stand-square d-flex flex-column justify-content-between align-items-center square-7 p-0" id="chance-1-space">
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-7 p-0"
+                    id="chance-1-space">
                     <small class="text-dark m-0 p-0 fw-bold w-100 mt-1 small-text text-center">CƠ HỘI</small>
                     <div class="opportunity h-50 w-100 p-0 m-0"></div>
                     <div class="d-flex flex-wrap player-container px-3" id="player-container-7">
-                        
+
                     </div>
                 </div>
-                <div
-                    class="square stand-square d-flex flex-column justify-content-between align-items-center square-8 p-0 overflow-hidden" id="vo-thi-sau-space">
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-8 p-0 overflow-hidden"
+                    id="vo-thi-sau-space">
                     <small class="text-white m-0 p-1 fw-bold w-100  small-text text-center bg-secondary">VÕ THỊ
                         SÁU</small>
                     <small class="text-dark small-text fw-bold bg-light rounded p-1">$100</small>
                     <div class="d-flex flex-wrap player-container px-3" id="player-container-8">
-                        
+
                     </div>
                 </div>
 
-                <div
-                    class="square stand-square d-flex flex-column justify-content-between align-items-center square-9 overflow-hidden" id="hai-ba-trung-space">
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-9 overflow-hidden"
+                    id="hai-ba-trung-space">
                     <small class="text-white m-0 p-1 fw-bold w-100 small-text text-center bg-secondary">HAI BÀ
                         TRƯNG</small>
                     <small class="text-dark small-text fw-bold bg-light rounded p-1">$120</small>
                     <div class="d-flex flex-wrap player-container px-3" id="player-container-9">
-                        
+
                     </div>
                 </div>
                 <div class="square corner-square square-10 position-relative square-10" id="jail-space">
                     <small class="fw-bold text-dark">NHÀ TÙ</small>
                     <div class="position-absolute jail w-50 h-50 p-2 m-0">
                         <div class="d-flex flex-wrap player-container px-1" id="jail-container">
-                          
+
                         </div>
                     </div>
                     <div class="position-absolute visitor w-50 h-50 p-2 m-0">
                         <div class="d-flex flex-wrap player-container px-1" id="player-container-10">
-                          
+
                         </div>
                     </div>
                 </div>
@@ -179,7 +185,7 @@
                         <div class="d-flex justify-content-between px-1">
                             <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$350</small>
                             <div class="d-flex flex-wrap player-container m-0 p-0" id="player-container-39">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -191,7 +197,7 @@
                         <div class="d-flex justify-content-between px-1">
                             <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$140</small>
                             <div class="d-flex flex-wrap player-container m-0 p-0" id="player-container-11">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -204,7 +210,7 @@
                         <div class="d-flex justify-content-between px-1">
                             <small class="fw-bold text-white small-text bg-secondary p-1 rounded">Trả $100</small>
                             <div class="d-flex flex-wrap player-container m-0 p-0" id="player-container-38">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -215,7 +221,7 @@
                         <div class="d-flex justify-content-between px-1">
                             <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$200</small>
                             <div class="d-flex flex-wrap player-container m-0 p-0" id="player-container-12">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -229,7 +235,7 @@
                         <div class="d-flex justify-content-between px-1">
                             <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$350</small>
                             <div class="d-flex flex-wrap player-container m-0 p-0" id="player-container-37">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -240,7 +246,7 @@
                         <div class="d-flex justify-content-between px-1">
                             <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$140</small>
                             <div class="d-flex flex-wrap player-container m-0 p-0" id="player-container-13">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -253,7 +259,7 @@
                         <div class="d-flex justify-content-between px-3 align-items-center">
                             <div class="opportunity h-100 w-25 p-0 m-0">.</div>
                             <div class="d-flex flex-wrap player-container m-0 p-0" id="player-container-36">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -265,7 +271,7 @@
                         <div class="d-flex justify-content-between px-1">
                             <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$140</small>
                             <div class="d-flex flex-wrap player-container m-0 p-0" id="player-container-14">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -278,7 +284,7 @@
                         <div class="d-flex justify-content-between px-1">
                             <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$200</small>
                             <div class="d-flex flex-wrap player-container m-0 p-0" id="player-container-35">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -289,7 +295,7 @@
                         <div class="d-flex justify-content-between px-1">
                             <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$200</small>
                             <div class="d-flex flex-wrap player-container m-0 p-0" id="player-container-15">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -303,7 +309,7 @@
                         <div class="d-flex justify-content-between px-1">
                             <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$320</small>
                             <div class="d-flex flex-wrap player-container m-0 p-0" id="player-container-34">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -314,7 +320,7 @@
                         <div class="d-flex justify-content-between px-1">
                             <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$160</small>
                             <div class="d-flex flex-wrap player-container m-0 p-0" id="player-container-16">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -327,7 +333,7 @@
                         <div class="d-flex justify-content-between px-1">
                             <div class="community-chest w-25 h-100 d-block">.</div>
                             <div class="d-flex flex-wrap player-container m-0 p-0" id="player-container-33">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -338,7 +344,7 @@
                         <div class="d-flex justify-content-between px-1">
                             <div class="community-chest w-25 h-100 d-block">.</div>
                             <div class="d-flex flex-wrap player-container m-0 p-0" id="player-container-17">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -352,7 +358,7 @@
                         <div class="d-flex justify-content-between px-1">
                             <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$300</small>
                             <div class="d-flex flex-wrap player-container m-0 p-0" id="player-container-32">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -363,7 +369,7 @@
                         <div class="d-flex justify-content-between px-1">
                             <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$180</small>
                             <div class="d-flex flex-wrap player-container m-0 p-0" id="player-container-18">
-                                
+
                             </div>
                         </div>
                     </div>
@@ -376,7 +382,7 @@
                         <div class="d-flex justify-content-between px-1">
                             <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$300</small>
                             <div class="d-flex flex-wrap player-container m-0 p-0" id="player-container-31">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -387,7 +393,7 @@
                         <div class="d-flex justify-content-between px-1">
                             <small class="fw-bold text-white small-text bg-secondary p-1 rounded">$200</small>
                             <div class="d-flex flex-wrap player-container m-0 p-0" id="player-container-19">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -399,89 +405,89 @@
                 <div class="square corner-square square-30" id="go-to-jail-space">
                     <h4>VÀO TÙ</h4>
                     <div class="d-flex flex-wrap player-container px-3" id="player-container-30">
-                        
+
                     </div>
                 </div>
-                <div
-                    class="square stand-square d-flex flex-column justify-content-between align-items-center square-29 overflow-hidden" id="hoang-van-thu-space">
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-29 overflow-hidden"
+                    id="hoang-van-thu-space">
                     <small class="text-dark m-0 p-1 fw-bold w-100 small-text text-center bg-violet">HOÀNG VĂN
                         THỤ</small>
                     <small class="text-dark small-text fw-bold bg-light rounded p-1">$280</small>
                     <div class="d-flex flex-wrap player-container px-3" id="player-container-29">
-                        
+
                     </div>
                 </div>
-                <div
-                    class="square stand-square d-flex flex-column justify-content-between align-items-center square-28 overflow-hidden" id="water-supply-company">
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-28 overflow-hidden"
+                    id="water-supply-company">
                     <small class="text-dark m-0 p-1 fw-bold w-100 small-text text-center">CTY CẤP NƯỚC</small>
                     <small class="text-dark small-text fw-bold bg-light rounded p-1">$200</small>
                     <div class="d-flex flex-wrap player-container px-3" id="player-container-28">
-                        
+
                     </div>
                 </div>
-                <div
-                    class="square stand-square d-flex flex-column justify-content-between align-items-center square-27 overflow-hidden" id="truong-chinh-space">
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-27 overflow-hidden"
+                    id="truong-chinh-space">
                     <small class="text-dark m-0 p-1 fw-bold w-100 small-text text-center bg-violet">TRƯỜNG CHINH</small>
                     <small class="text-dark small-text fw-bold bg-light rounded p-1">$280</small>
                     <div class="d-flex flex-wrap player-container px-3" id="player-container-27">
-                        
+
                     </div>
                 </div>
-                <div
-                    class="square stand-square d-flex flex-column justify-content-between align-items-center square-26 overflow-hidden" id="le-dai-hanh-space">
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-26 overflow-hidden"
+                    id="le-dai-hanh-space">
                     <small class="text-dark m-0 p-1 fw-bold w-100 small-text text-center bg-violet">LÊ ĐẠI HÀNH</small>
                     <small class="text-dark small-text fw-bold bg-light rounded p-1">$280</small>
                     <div class="d-flex flex-wrap player-container px-3" id="player-container-26">
-                        
+
                     </div>
                 </div>
-                <div
-                    class="square stand-square d-flex flex-column justify-content-between align-items-center square-25 overflow-hidden" id="cho-lon-bus-station-space">
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-25 overflow-hidden"
+                    id="cho-lon-bus-station-space">
                     <small class="text-dark m-0 p-1 fw-bold w-100 small-text text-center">BẾN XE CHỢ LỚN</small>
                     <small class="text-dark small-text fw-bold bg-light rounded p-1">$220</small>
                     <div class="d-flex flex-wrap player-container px-3" id="player-container-25">
-                        
+
                     </div>
                 </div>
-                <div
-                    class="square stand-square d-flex flex-column justify-content-between align-items-center square-24 overflow-hidden" id="nguyen-t-phuong-space">
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-24 overflow-hidden"
+                    id="nguyen-t-phuong-space">
                     <small class="text-dark m-0 p-1 fw-bold w-100 small-text text-center bg-warning">NGUYỄN T
                         PHƯƠNG</small>
                     <small class="text-dark small-text fw-bold bg-light rounded p-1">$240</small>
                     <div class="d-flex flex-wrap player-container px-3" id="player-container-24">
-                        
+
                     </div>
                 </div>
-                <div
-                    class="square stand-square d-flex flex-column justify-content-between align-items-center square-23 overflow-hidden" id="kha-van-can-space">
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-23 overflow-hidden"
+                    id="kha-van-can-space">
                     <small class="text-dark m-0 p-1 fw-bold w-100 small-text text-center bg-warning">KHA VẠN CÂN</small>
                     <small class="text-dark small-text fw-bold bg-light rounded p-1">$220</small>
                     <div class="d-flex flex-wrap player-container px-3" id="player-container-23">
-                        
+
                     </div>
                 </div>
-                <div
-                    class="square stand-square d-flex flex-column justify-content-between align-items-center square-22 overflow-hidden" id="chance-2-space">
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-22 overflow-hidden"
+                    id="chance-2-space">
                     <small class="text-dark m-0 p-1 fw-bold w-100 small-text text-center">CƠ HỘI</small>
                     <div class="opportunity h-50 w-100 p-0 m-0"></div>
                     <div class="d-flex flex-wrap player-container px-3" id="player-container-22">
-                        
+
                     </div>
                 </div>
-                <div
-                    class="square stand-square d-flex flex-column justify-content-between align-items-center square-21 overflow-hidden" id="pham-the-hien-space">
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-21 overflow-hidden"
+                    id="pham-the-hien-space">
                     <small class="text-dark m-0 p-1 fw-bold w-100 small-text text-center bg-warning">PHẠM THẾ
                         HIỂN</small>
                     <small class="text-dark small-text fw-bold bg-light rounded p-1">$220</small>
                     <div class="d-flex flex-wrap player-container px-3" id="player-container-21">
-                        
+
                     </div>
                 </div>
                 <div class="square corner-square square-20 p-1" id="car-park">
                     <h5 class="text-dark p-0 m-0">BÃI ĐẬU XE</h5>
                     <small class="text-dark p-0">Mất một lượt đi</small>
                     <div class="d-flex flex-wrap player-container m-0 p-0" id="player-container-20">
-                        
+
                     </div>
                 </div>
             </div>
@@ -507,13 +513,22 @@
                 <button class="btn btn-warning" onclick="kick(1)">Kick</button>
             </div>
             <div id="btn-group" class="d-flex justify-content-between flex-wrap m-2">
-                
+
             </div>
             <div class="d-flex justify-content-between flex-wrap m-2">
                 <button class="w-50 btn-primary" id="ready-button">Sẵn sàng</button>
                 <button class="w-50 btn-danger" id="quit-button">Thoát game</button>
             </div>
-            <div id="content" class="justify-self-end"></div>
+            <div class="d-flex p-2">
+                <div id="content" class="w-50"></div>
+                <div class="w-50 border border-primary p-3 rounded">
+                    <div class="d-flex">
+                        <h1 id="dice-1" class="w-50 text-center">0</h1>
+                        <h1 id="dice-2" class="w-50 text-center">0</h1>
+                    </div>
+                    <button onclick="rollDice()" class="w-100">Lắc xúc xắc</button>    
+                </div>
+            </div>
         </div>
 
     </div>
@@ -521,6 +536,7 @@
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <script src="/js/game.js"></script>
     <!-- <script src="/js/space_info.js"></script> -->
+    
 </body>
 
 </html>

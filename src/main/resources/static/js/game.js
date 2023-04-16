@@ -30,7 +30,7 @@ window.onload = function (){
     /**
      * Khoa
      */
-    
+
     //const estateid = [1,3,6,8,9,11,13,14,16,18,19,21,23,24,26,27,29,31,32,34,37,39];
     const estateid_row1 = [1,3,6,8,9];
     const estateid_row2 = [11,13,14,16,18,19];
@@ -148,7 +148,7 @@ async function syncronize(){
             const returnJson = JSON.parse(this.responseText);
             checkStatus(returnJson.playerList, returnJson.state);
             renderPlayer(returnJson.playerList);
-            renderEvent(returnJson.lastEventMessage);
+            renderEvent(returnJson.event, returnJson.state);
         }
     }
 
@@ -321,7 +321,35 @@ function startGame(){
 }
 
 // truong
-function renderEvent(eventMessage){
-    const eventMessageContainer = document.getElementById("last-event-message");
-    eventMessageContainer.innerText = eventMessage;
+function renderEvent(event, gameState){
+    const gamePlayeMessage = document.getElementById("game-play-message");
+    gamePlayeMessage.innerText = event.gamePlayMessage;
+    
+    const eventMessageContainer = document.getElementById("event-message");
+    const lastMessage = eventMessageContainer.firstChild.innerText;
+
+    if(lastMessage != event.playerInTurnMessage){
+        eventMessageContainer.innerHTML = "<p>" + event.playerInTurnMessage + "</p>" + eventMessageContainer.innerHTML;
+    }
+
+}
+
+// truong
+function rollDice() {
+    const ajax = new XMLHttpRequest();
+    ajax.onload = function () {
+        if(this.status != 200){
+            alert(this.responseText);
+        } else {
+            const returnJson = JSON.parse(this.responseText);
+            const dice1 = document.getElementById("dice-1");
+            const dice2 = document.getElementById("dice-2");
+            dice1.innerText = returnJson.dice1;
+            dice2.innerText = returnJson.dice2;
+        }
+    }
+    const uri = "/tables/" + localStorage.getItem("table_id") + "/" + localStorage.getItem("player-id") + "/roll-dice";
+    ajax.open("GET", uri, false);
+    ajax.setRequestHeader('Content-type', 'application/json');
+    ajax.send();
 }
