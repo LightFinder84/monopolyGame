@@ -521,12 +521,20 @@
             </div>
             <div class="d-flex p-2">
                 <div id="content" class="w-50"></div>
-                <div class="w-50 border border-primary p-3 rounded">
-                    <div class="d-flex">
-                        <h1 id="dice-1" class="w-50 text-center">0</h1>
-                        <h1 id="dice-2" class="w-50 text-center">0</h1>
+                <div class="d-flex flex-column w-50">
+                    <div class="w-100 border border-primary p-3 rounded mb-2">
+                        <div class="d-flex">
+                            <h1 id="dice-1" class="w-50 text-center">0</h1>
+                            <h1 id="dice-2" class="w-50 text-center">0</h1>
+                        </div>
+                        <button onclick="rollDice()" class="w-100">Lắc xúc xắc</button>    
                     </div>
-                    <button onclick="rollDice()" class="w-100">Lắc xúc xắc</button>    
+                    <div class="d-flex flex-wrap p-2 border border-primary rounded">
+                        <button id="go-forward" onclick="go()" class="w-50">Đi</button>
+                        <button id="" onclick="" class="w-50">Mua ô này</button>
+                        <button id="" onclick="" class="w-50">Mua 1 nhà</button>
+                        <button class="w-50">Xong</button>
+                    </div>
                 </div>
             </div>
         </div>

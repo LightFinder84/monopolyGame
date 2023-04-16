@@ -122,6 +122,14 @@ public class Table {
         this.dice = dice;
     }
 
+    public int getPlayerInTurn() {
+        return playerInTurn;
+    }
+
+    public void setPlayerInTurn(int playerInTurn) {
+        this.playerInTurn = playerInTurn;
+    }
+
     public Player addPlayer(Player newPlayer){
         if(playerList.size() == 4){
             throw new GameFullException();
@@ -181,20 +189,26 @@ public class Table {
         event.setGamePlayMessage("Trò chơi đã được bắt đầu.");
         Player player = playerList.get(0);
         String message = "Đã đến lượt chơi của ---> " + player.getName() + " <--- mời lắc xúc xắc!";
-        event.setPlayerInTurnMessage(message); 
+        event.setEventMessage(message); 
     }
 
     public Dice rollDice(int playerId) {
         Player player = playerList.get(playerInTurn);
-
         if(playerId != player.getId()){
             throw new UnExpectedErrorException("Chưa tới lượt của bạn");
         }
-
+        if(state == GameState.NOT_STARTED){
+            throw new UnExpectedErrorException("Trò chơi chưa bắt đầu.");
+        }
         dice.roll();
+        player.setStepToGo(dice.getSum());
+        String message = "---> " + player.getName() + " <--- đã lắc xúc xắc được " + dice.getSum() + " nút, mời bạn đi ạ :))";
+        event.setEventMessage(message);
         return dice;
     }
 
-
+    public Player playerInTurnId(){
+        return playerList.get(playerInTurn);
+    }
 
 }

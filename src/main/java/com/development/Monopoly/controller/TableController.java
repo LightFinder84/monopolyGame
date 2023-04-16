@@ -7,12 +7,9 @@ import com.development.Monopoly.entity.Player;
 import com.development.Monopoly.entity.Table;
 import com.development.Monopoly.exception.GameFullException;
 import com.development.Monopoly.exception.PasswordIncorrectException;
-import com.development.Monopoly.exception.PlayerNotFoundException;
 import com.development.Monopoly.exception.SquareNotFoundException;
-import com.development.Monopoly.exception.UnExpectedErrorAdvice;
 import com.development.Monopoly.exception.UnExpectedErrorException;
 
-import org.hibernate.tool.schema.extract.spi.TableInformation;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -155,9 +152,22 @@ public class TableController {
         table.startGame();
     }
 
+    // player roll the dice
     @GetMapping("/tables/{tableId}/{playerId}/roll-dice")
     public static Dice rollDice(@PathVariable int tableId, @PathVariable int playerId){
         Table table = findTableById(tableId);
         return table.rollDice(playerId);
+    }
+
+    // player go forward
+    @GetMapping("/tables/{tableId}/{playerId}/go")
+    public static void go(@PathVariable int tableId, @PathVariable int playerId){
+        Table table = findTableById(tableId);
+        Player inturnPlayer = table.playerInTurnId();
+        Player player = table.findPlayerById(playerId);
+        if(inturnPlayer != player){
+            throw new UnExpectedErrorException("Chưa tới lượt đi của bạn");
+        }
+        player.go();
     }
 }

@@ -27,4 +27,12 @@ public class Dice {
         this.dice1 = ThreadLocalRandom.current().nextInt(1, 6 + 1);
         this.dice2 = ThreadLocalRandom.current().nextInt(1, 6 + 1);
     }
+
+    public int getSum(){
+        return dice1 + dice2;
+    }
+
+    public boolean duplicateDice(){
+        return dice1 == dice2;
+    }
 }

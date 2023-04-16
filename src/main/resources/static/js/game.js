@@ -149,6 +149,7 @@ async function syncronize(){
             checkStatus(returnJson.playerList, returnJson.state);
             renderPlayer(returnJson.playerList);
             renderEvent(returnJson.event, returnJson.state);
+            setDice(returnJson.dice);
         }
     }
 
@@ -328,8 +329,8 @@ function renderEvent(event, gameState){
     const eventMessageContainer = document.getElementById("event-message");
     const lastMessage = eventMessageContainer.firstChild.innerText;
 
-    if(lastMessage != event.playerInTurnMessage){
-        eventMessageContainer.innerHTML = "<p>" + event.playerInTurnMessage + "</p>" + eventMessageContainer.innerHTML;
+    if(lastMessage != event.eventMessage){
+        eventMessageContainer.innerHTML = "<p>" + event.eventMessage + "</p>" + eventMessageContainer.innerHTML;
     }
 
 }
@@ -349,6 +350,30 @@ function rollDice() {
         }
     }
     const uri = "/tables/" + localStorage.getItem("table_id") + "/" + localStorage.getItem("player-id") + "/roll-dice";
+    ajax.open("GET", uri, false);
+    ajax.setRequestHeader('Content-type', 'application/json');
+    ajax.send();
+}
+
+// truong 
+function setDice(dice){
+    const dice1 = document.getElementById("dice-1");
+    const dice2 = document.getElementById("dice-2");
+    dice1.innerText = dice.dice1;
+    dice2.innerText = dice.dice2;
+}
+
+// truong
+function go(){
+    const ajax = new XMLHttpRequest();
+    ajax.onload = function () {
+        if(this.status != 200){
+            alert(this.responseText);
+        } else {
+            
+        }
+    }
+    const uri = "/tables/" + localStorage.getItem("table_id") + "/" + localStorage.getItem("player-id") + "/go";
     ajax.open("GET", uri, false);
     ajax.setRequestHeader('Content-type', 'application/json');
     ajax.send();
