@@ -269,7 +269,7 @@ public class Table {
     public void nextPlayer(int playerId) {
         Player currentPlayer = playerList.get(playerInTurn);
         if(currentPlayer.getId() != playerId){
-            throw new UnExpectedErrorException("Chưa có tới lượt mà xong gì ba?")
+            throw new UnExpectedErrorException("Chưa có tới lượt mà xong gì ba?");
         }
         if(playerInTurn == playerList.size() -1){
             playerInTurn = 0;
