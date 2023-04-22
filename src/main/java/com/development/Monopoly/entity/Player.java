@@ -23,6 +23,7 @@ public class Player {
     private int stepToGo;
     private int moneyToPay;
     private List<Integer> personToPay;
+    private int rollAble;
 
     // constructor
     public Player(int id, String name, String tokenColor, Long squareId){
@@ -37,7 +38,7 @@ public class Player {
         this.stepToGo = 0;
         this.moneyToPay = 0;
         personToPay = new ArrayList<>();
-
+        rollAble = 0;
     }
 
     public int getMoney() {
@@ -110,6 +111,27 @@ public class Player {
 
     public void setStepToGo(int stepToGo) {
         this.stepToGo = stepToGo;
+    }
+
+    public int getRollAble() {
+        return rollAble;
+    }
+
+    public void setRollAble(int rollAble) {
+        this.rollAble = rollAble;
+    }
+
+    public boolean addMoney(int money){
+        this.money += money;
+        return true;
+    }
+
+    public boolean subMoney(int money){
+        if(this.money < money){
+            return false;
+        }
+        this.money -= money;
+        return true;
     }
 
     public Player quit(Table table) {

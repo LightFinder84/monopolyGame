@@ -104,6 +104,13 @@ public class Table {
         throw new PlayerNotFoundException();
     }
 
+    public Space findStateById(int id){
+        for (Space space : spaces) {
+            if(space.getId() == id) return space;
+        }
+        return null;
+    }
+
     public List<Player> getPlayerList() {
         return playerList;
     }
@@ -209,6 +216,7 @@ public class Table {
         }
 
         playerList.add(newPlayer);
+        newPlayer.setRollAble(1);
         return newPlayer;
     }
 
@@ -249,12 +257,19 @@ public class Table {
 
     public Dice rollDice(int playerId) {
         Player player = playerList.get(playerInTurn);
-        if(playerId != player.getId()){
-            throw new UnExpectedErrorException("Chưa tới lượt của bạn");
-        }
         if(state == GameState.NOT_STARTED){
             throw new UnExpectedErrorException("Trò chơi chưa bắt đầu.");
         }
+        if(playerId != player.getId()){
+            throw new UnExpectedErrorException("Chưa tới lượt của bạn");
+        }
+
+        if(player.getRollAble() == 0){
+            throw new UnExpectedErrorException("Lắc rồi không được lắc nữa nghen.");
+        } else{
+            player.setRollAble(player.getRollAble() - 1);
+        }
+
         dice.roll();
         player.setStepToGo(dice.getSum());
         String message = "---> " + player.getName() + " <--- đã lắc xúc xắc được " + dice.getSum() + " nút, mời bạn đi ạ :))";
@@ -271,14 +286,22 @@ public class Table {
         if(currentPlayer.getId() != playerId){
             throw new UnExpectedErrorException("Chưa có tới lượt mà xong gì ba?");
         }
-        if(playerInTurn == playerList.size() -1){
-            playerInTurn = 0;
-        } else {
-            playerInTurn++;
+
+        if(currentPlayer.getRollAble() > 0){
+            String message =  "---> " + currentPlayer.getName() + " <--- còn "+currentPlayer.getRollAble()+" lượt lắc xúc xắc nữa, mời bạn lắc tiếp.";
+            event.setEventMessage(message);    
+        } else{
+            if(playerInTurn == playerList.size() -1){
+                playerInTurn = 0;
+            } else {
+                playerInTurn++;
+            }
+            Player nextPlayer = playerList.get(playerInTurn);
+            nextPlayer.setRollAble(1);
+            String message =  "---> " + currentPlayer.getName() + " <--- đã đi xong, tới lượt ---> " + nextPlayer.getName() + " <--- đi kìa!!!";
+            event.setEventMessage(message);
         }
-        String nextPlayerName = playerList.get(playerInTurn).getName();
-        String message =  "---> " + currentPlayer.getName() + " <--- đã đi xong, tới lượt ---> " + nextPlayerName + " <--- đi kìa!!!";
-        event.setEventMessage(message);
+
     }
 
 }
