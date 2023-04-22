@@ -266,4 +266,19 @@ public class Table {
         return playerList.get(playerInTurn);
     }
 
+    public void nextPlayer(int playerId) {
+        Player currentPlayer = playerList.get(playerInTurn);
+        if(currentPlayer.getId() != playerId){
+            throw new UnExpectedErrorException("Chưa có tới lượt mà xong gì ba?")
+        }
+        if(playerInTurn == playerList.size() -1){
+            playerInTurn = 0;
+        } else {
+            playerInTurn++;
+        }
+        String nextPlayerName = playerList.get(playerInTurn).getName();
+        String message =  "---> " + currentPlayer.getName() + " <--- đã đi xong, tới lượt ---> " + nextPlayerName + " <--- đi kìa!!!";
+        event.setEventMessage(message);
+    }
+
 }

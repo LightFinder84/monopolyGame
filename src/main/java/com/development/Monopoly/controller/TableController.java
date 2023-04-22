@@ -182,4 +182,12 @@ public class TableController {
         }
         player.buyEstate(table.getSpaces(), table.getEvent());
     }
+
+    // Player finish his turn
+    @GetMapping("/tables/{tableId}/{playerId}/done")
+    public static void finishTurn(@PathVariable int tableId, @PathVariable int playerId){
+        Table table = findTableById(tableId);
+        Player player = table.findPlayerById(playerId);
+        player.finishTurn(table);
+    }
 }

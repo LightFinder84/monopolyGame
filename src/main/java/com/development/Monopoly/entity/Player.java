@@ -156,4 +156,8 @@ public class Player {
         event.setEventMessage(message);
     }
 
+    public void finishTurn(Table table) {
+        table.nextPlayer(this.id);
+    }
+
 }

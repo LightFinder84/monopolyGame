@@ -1,8 +1,11 @@
 window.onload = function () {
 
+    localStorage.clear();
     join_game_button = document.getElementById("join-game-button");
 
     join_game_button.addEventListener("click", joinGame);
+
+
 }
 
 // function replacePlayer() {

@@ -394,3 +394,18 @@ function buyEstate(){
     ajax.setRequestHeader('Content-type', 'application/json');
     ajax.send();
 }
+
+function done(){
+    const ajax = new XMLHttpRequest();
+    ajax.onload = function () {
+        if(this.status != 200){
+            alert(this.responseText);
+        } else {
+            
+        }
+    }
+    const uri = "/tables/" + localStorage.getItem("table_id") + "/" + localStorage.getItem("player-id") + "/done";
+    ajax.open("GET", uri, false);
+    ajax.setRequestHeader('Content-type', 'application/json');
+    ajax.send();
+}
