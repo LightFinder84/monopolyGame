@@ -3,13 +3,15 @@ package com.development.Monopoly.entity.space;
 import java.util.List;
 
 import com.development.Monopoly.entity.Player;
+import com.development.Monopoly.exception.PlayerNotFoundException;
 
 //khoa
 public abstract class Space {
     protected int id; //from 0 to 39
     protected String name;
-    protected List<Player> currentPlayers;
+    protected List<Player> vistors;
 
+    public abstract int calculateRentMoney(int playerId);
     public Space(int id, String name){
         this.id = id;
         this.name = name;
@@ -25,6 +27,14 @@ public abstract class Space {
     }
     public void setName(String name){
         this.name = name;
+    }
+
+    public Player findVisitorById(int playerId)
+    {
+        for (Player player : vistors) {
+            if (player.getId() == playerId) return player;
+        }
+        throw new PlayerNotFoundException();
     }
     // public void spaceType(int id){
     //     int estateid_row1[] = {1,3,6,8,9};
