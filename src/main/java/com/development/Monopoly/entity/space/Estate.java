@@ -9,7 +9,14 @@ public class Estate extends Space{
     private int numberOfBuildings;
     private Player owner;
     private EstateColor color;
+    private int HouseNumber;
 
+    public int getHouseNumber() {
+        return HouseNumber;
+    }
+    public void setHouseNumber(int HouseNumber) {
+        this.HouseNumber = HouseNumber;
+    }
     public EstateColor getColor() {
         return color;
     }
@@ -49,10 +56,21 @@ public class Estate extends Space{
         this.priceForEstate = priceForEstate;
         this.color = color;
     }
-    
+    // public int calculateRentMoney(){
+    //     return 0;
+    // }
 
-    public int calculateRentMoney(){
-        return 0;
+    @Override
+    public int calculateRentMoney(int playerId) {
+        if (playerId == owner.getId()) {
+            return 0;
+        }
+        else{
+            if (this.getHouseNumber() == 1) return 10; // gia 1 can nha
+            else if (this.getHouseNumber() == 2) return 20; // gia 2 can nha
+            else if (this.getHouseNumber() == 3) return 30; // gia 3 can nha
+            else if (this.getHouseNumber() == 4) return 40; // gia 4 can nha
+            else return 50; // gia 5 can nha, hoac co the hieu la 1 khach san
+        }
     }
-
 }

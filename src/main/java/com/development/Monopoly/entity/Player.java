@@ -8,6 +8,7 @@ import org.apache.logging.log4j.message.Message;
 import com.development.Monopoly.Utils.PlayerStatus;
 import com.development.Monopoly.entity.space.Estate;
 import com.development.Monopoly.entity.space.Space;
+import com.development.Monopoly.exception.PlayerNotFoundException;
 import com.development.Monopoly.exception.UnExpectedErrorException;
 
 public class Player {
@@ -21,9 +22,39 @@ public class Player {
     private int money;
     private boolean host;
     private int stepToGo;
-    private int moneyToPay;
-    private List<Integer> personToPay;
     private int rollAble;
+    private List<Integer> listMoneyToPay;
+    private List<Player> listPersonToPay;
+    private int BusStationNumber;
+
+    public Player findPersonToPayById(int playerId)
+    {
+        for (Player player : listPersonToPay) {
+            if (player.getId() == playerId) return player;
+        }
+        throw new PlayerNotFoundException();
+    }
+    public void payMoney(int playerId, int money){
+        Player personToPay = findPersonToPayById(playerId);
+        if (this.getMoney() > money) throw new UnExpectedErrorException("Bạn trả dư tiền rồi, xin hãy nhập lại");
+        else if (this.getMoney() < money) throw new UnExpectedErrorException("Bạn trả thiếu tiền rồi, xin hãy nhập lại");
+        else {
+            if (this.getMoney() < money){
+                throw new UnExpectedErrorException("Không đủ tiền để trả"); // Thieu tien roi
+            }
+            else {
+                personToPay.money += money;
+                this.money -= money;
+            }
+            
+        }
+    }
+    public int getBusStationNumber() {
+        return BusStationNumber;
+    }
+    public void setBusStationNumber(int BusStationNumber) {
+        this.BusStationNumber = BusStationNumber;
+    }
 
     // constructor
     public Player(int id, String name, String tokenColor, Long squareId){
@@ -36,9 +67,9 @@ public class Player {
         this.money = 2000;
         this.host = false;
         this.stepToGo = 0;
-        this.moneyToPay = 0;
-        personToPay = new ArrayList<>();
-        rollAble = 0;
+        this.listMoneyToPay = new ArrayList<>();
+        listPersonToPay = new ArrayList<>();
+
     }
 
     public int getMoney() {
@@ -150,7 +181,7 @@ public class Player {
         if(space instanceof Estate){
             Estate estate = (Estate) space;
             if(estate.getOwner() != null){
-                moneyToPay = estate.calculateRentMoney();
+                money = estate.calculateRentMoney(id); //chua check
             }
         }
 
