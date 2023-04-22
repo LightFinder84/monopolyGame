@@ -42,12 +42,17 @@ public class Estate extends Space{
         this.priceForBuilding = priceForBuilding;
     }
     
-    public Estate(int id, String name, int numberOfBuildings, int priceForEstate, int priceForBuilding){
+    public Estate(int id, String name, EstateColor color, int priceForEstate, int priceForBuilding){
         super(id, name);
-        this.numberOfBuildings = numberOfBuildings;
+        this.numberOfBuildings = 0;
         this.priceForBuilding = priceForBuilding;
         this.priceForEstate = priceForEstate;
+        this.color = color;
     }
-    //set color for estate left
+    
+
+    public int calculateRentMoney(){
+        return 0;
+    }
 
 }

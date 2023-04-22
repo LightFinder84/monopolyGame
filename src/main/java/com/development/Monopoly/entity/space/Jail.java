@@ -17,9 +17,7 @@ public class Jail extends Space{
         this.visitorName = visitorName;
     }
     
-    public Jail(int id, String name, String prisonerName, String visitorName){
+    public Jail(int id, String name){
         super(id, name);
-        this.prisonerName = prisonerName;
-        this.visitorName = visitorName;
     }
 }

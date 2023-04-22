@@ -379,3 +379,18 @@ function go(){
     ajax.setRequestHeader('Content-type', 'application/json');
     ajax.send();
 }
+
+function buyEstate(){
+    const ajax = new XMLHttpRequest();
+    ajax.onload = function () {
+        if(this.status != 200){
+            alert(this.responseText);
+        } else {
+            alert("Mua thành công");
+        }
+    }
+    const uri = "/tables/" + localStorage.getItem("table_id") + "/" + localStorage.getItem("player-id") + "/buy-estate";
+    ajax.open("GET", uri, false);
+    ajax.setRequestHeader('Content-type', 'application/json');
+    ajax.send();
+}

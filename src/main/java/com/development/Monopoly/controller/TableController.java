@@ -168,6 +168,18 @@ public class TableController {
         if(inturnPlayer != player){
             throw new UnExpectedErrorException("Chưa tới lượt đi của bạn");
         }
-        player.go();
+        player.go(table.getSpaces(), table.getEvent());
+    }
+
+    // player by estate
+    @GetMapping("/tables/{tableId}/{playerId}/buy-estate")
+    public static void buyEstate(@PathVariable int tableId, @PathVariable int playerId){
+        Table table = findTableById(tableId);
+        Player inturnPlayer = table.playerInTurnId();
+        Player player = table.findPlayerById(playerId);
+        if(inturnPlayer != player){
+            throw new UnExpectedErrorException("Chưa tới lượt đi của bạn");
+        }
+        player.buyEstate(table.getSpaces(), table.getEvent());
     }
 }

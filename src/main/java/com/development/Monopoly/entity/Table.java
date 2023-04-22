@@ -3,6 +3,7 @@ package com.development.Monopoly.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.development.Monopoly.Utils.EstateColor;
 import com.development.Monopoly.Utils.GameState;
 import com.development.Monopoly.Utils.PlayerStatus;
 import com.development.Monopoly.controller.TableController;
@@ -53,13 +54,45 @@ public class Table {
         spaces = new ArrayList<>();
         
         spaces.add(new Start(0, "Start"));
-        spaces.add(new Estate(1, "Nguyễn Huệ", 0, 60, 50 ));
+        spaces.add(new Estate(1, "Nguyễn Huệ", EstateColor.RED, 60, 50 ));
         spaces.add(new CommunityChest(2, "Khí vận"));
-        spaces.add(new Estate(3, "Lê Lợi", 0, 60, 50));
+        spaces.add(new Estate(3, "Lê Lợi", EstateColor.RED, 60, 50));
         spaces.add(new Tax(4, "Nộp thuế"));
         spaces.add(new BusStation(5, "Bến xe Cần Giuộc"));
-        spaces.add(new Estate(6, "Lương Định Của", 0, 100, 50));
-
+        spaces.add(new Estate(6, "Lương Định Của", EstateColor.GRAY, 100, 50));
+        spaces.add(new Chance(7, "Cơ hội"));
+        spaces.add(new Estate(8, "Võ Thị Sáu", EstateColor.GRAY, 100, 50));
+        spaces.add(new Estate(9, "Hai Bà Trưng", EstateColor.GRAY, 120, 50));
+        spaces.add(new Jail(10, "Nhà tù"));
+        spaces.add(new Estate(11, "Nguyễn tất thành", EstateColor.GREEN, 140, 100));
+        spaces.add(new Company(12, "Công ty điện lực"));
+        spaces.add(new Estate(13, "Nguyễn Trãi", EstateColor.GREEN, 140, 100));
+        spaces.add(new Estate(14, "An Dương Vương", EstateColor.GREEN, 140, 100));
+        spaces.add(new BusStation(15, "Bến xe miền Tây"));
+        spaces.add(new Estate(16, "Hậu Giang", EstateColor.BLACK, 160, 100));
+        spaces.add(new CommunityChest(17, "Khí vận"));
+        spaces.add(new Estate(18, "Hùng Vương", EstateColor.BLACK, 180, 100));
+        spaces.add(new Estate(19, "Huỳnh Tấn Phát", EstateColor.BLACK, 200, 100));
+        spaces.add(new CarPark(20, "Bãi đậu xe"));
+        spaces.add(new Estate(21, "Phạm Thế Hiển", EstateColor.YELLOW, 220, 150));
+        spaces.add(new Chance(22, "Cơ hội"));
+        spaces.add(new Estate(23, "Kha Vạn Cân", EstateColor.YELLOW, 220, 150));
+        spaces.add(new Estate(24, "Nguyễn Tri Phương", EstateColor.YELLOW, 240, 150));
+        spaces.add(new BusStation(25, "Bến xe chợ lớn"));
+        spaces.add(new Estate(26, "Lê Đại Hành", EstateColor.PURPLE, 280, 150));
+        spaces.add(new Estate(27, "Trường Chinh", EstateColor.PURPLE, 280, 150));
+        spaces.add(new Company(28, "Công ty cấp nước"));
+        spaces.add(new Estate(29, "Hoàng Văn Thụ", EstateColor.PURPLE, 280, 150));
+        spaces.add(new GoToJail(30, "Vào tù"));
+        spaces.add(new Estate(31, "Cộng Hòa", EstateColor.LIGHTBLUE, 300, 200));
+        spaces.add(new Estate(32, "Nguyễn Kiệm", EstateColor.LIGHTBLUE, 300, 200));
+        spaces.add(new CommunityChest(33, "Khí Vận"));
+        spaces.add(new Estate(34, "Quang Trung", EstateColor.LIGHTBLUE, 320, 200));
+        spaces.add(new BusStation(35, "Bến xe miền Đông"));
+        spaces.add(new Chance(36, "Cơ hội"));
+        spaces.add(new Estate(37, "Lũy Bán Bích", EstateColor.DARKBLUE, 350, 200));
+        spaces.add(new SpecialTax(38, "Thuế đặc biệt"));
+        spaces.add(new Estate(39, "Tân Kỳ Tân Quý", EstateColor.DARKBLUE, 350, 200));
     };
 
     public Player findPlayerById(int id){
@@ -142,6 +175,14 @@ public class Table {
 
     public void setPlayerInTurn(int playerInTurn) {
         this.playerInTurn = playerInTurn;
+    }
+
+    public List<Space> getSpaces() {
+        return spaces;
+    }
+
+    public void setSpaces(List<Space> spaces) {
+        this.spaces = spaces;
     }
 
     public Player addPlayer(Player newPlayer){

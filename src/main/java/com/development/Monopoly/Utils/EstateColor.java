@@ -3,8 +3,8 @@ package com.development.Monopoly.Utils;
 public enum EstateColor {
     RED,
     GRAY,
-    LIGHTGREEN,
-    DARKGREEN,
+    GREEN,
+    BLACK,
     YELLOW,
     PURPLE,
     LIGHTBLUE,

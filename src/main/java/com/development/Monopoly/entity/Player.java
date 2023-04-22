@@ -1,6 +1,14 @@
 package com.development.Monopoly.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.logging.log4j.message.Message;
+
 import com.development.Monopoly.Utils.PlayerStatus;
+import com.development.Monopoly.entity.space.Estate;
+import com.development.Monopoly.entity.space.Space;
+import com.development.Monopoly.exception.UnExpectedErrorException;
 
 public class Player {
 
@@ -13,6 +21,8 @@ public class Player {
     private int money;
     private boolean host;
     private int stepToGo;
+    private int moneyToPay;
+    private List<Integer> personToPay;
 
     // constructor
     public Player(int id, String name, String tokenColor, Long squareId){
@@ -25,6 +35,9 @@ public class Player {
         this.money = 2000;
         this.host = false;
         this.stepToGo = 0;
+        this.moneyToPay = 0;
+        personToPay = new ArrayList<>();
+
     }
 
     public int getMoney() {
@@ -103,13 +116,44 @@ public class Player {
         return table.kickPlayer(this.id);
     }
 
-    public void go() {
+    public void go(List<Space> spaces, Event event) {
         position += stepToGo;
         if(position > 39){
             position = position - 40;
             money += 200;
         }
         stepToGo = 0;
+
+        Space space = spaces.get(position);
+        if(space instanceof Estate){
+            Estate estate = (Estate) space;
+            if(estate.getOwner() != null){
+                moneyToPay = estate.calculateRentMoney();
+            }
+        }
+
+        String message = "---> " + this.name + " <--- Đã đi đến " + spaces.get(position).getName();
+        event.setEventMessage(message);
+    }
+
+    public void buyEstate(List<Space> spaces, Event event) {
+        Space space = spaces.get(position);
+        Estate estate = null;
+        if(space instanceof Estate == false){
+            throw new UnExpectedErrorException("Chổ bạn đang đứng không thể mua");
+        } else {
+            estate = (Estate) space;
+        }
+        if (estate.getOwner() != null){
+            throw new UnExpectedErrorException("Chổ bạn đang đứng có người mua rồi");
+        }
+        if(money < estate.getPriceForEstate()){
+            throw new UnExpectedErrorException("Không đủ tiền mua");
+        }
+        estate.setOwner(this);
+        money -= estate.getPriceForEstate();
+        String message = "---> " + name + " <--- Đã mua " + estate.getName();
+        event.setEventMessage(message);
     }
 
 }
