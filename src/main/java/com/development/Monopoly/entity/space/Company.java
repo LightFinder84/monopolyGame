@@ -14,6 +14,10 @@ public class Company extends Property{
     public int calculateRentMoney() {
         return 0;
     }
+    @Override
+    public int getSellPrice() {
+        return this.getPriceForProperty()/2;
+    }
 
     public int getRentMoney(Player owner){
         List<Property> ownedProperties = owner.getOwnedProperty();
@@ -24,10 +28,5 @@ public class Company extends Property{
             if(property instanceof Company) countCompany ++;
         } 
         return 50 * (countCompany + countStation); 
-    }
-
-    @Override
-    public int getSellPrice() {
-        return this.getPriceForProperty()/2;
     }
 }

@@ -5,11 +5,14 @@ import java.util.List;
 import com.development.Monopoly.entity.Player;
 
 public class BusStation extends Property{
-
     public BusStation(int id, String name, int price){
         super(id, name, price);
     }
-    
+
+    @Override
+    public int getSellPrice() {
+        return this.getPriceForProperty()/2;
+    }
     @Override
     public int calculateRentMoney() {
         return 0;
@@ -24,10 +27,5 @@ public class BusStation extends Property{
             if(property instanceof Company) countCompany ++;
         } 
         return 50 * (countCompany + countStation); 
-    }
-
-    @Override
-    public int getSellPrice() {
-        return this.getPriceForProperty()/2;
     }
 }
