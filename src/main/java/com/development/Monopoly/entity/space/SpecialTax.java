@@ -5,8 +5,7 @@ public class SpecialTax extends Space{
         super(id, name);
     }
 
-    @Override
-    public int calculateRentMoney(int playerId) {
-        return 200;
+    public int getTaxFee(){
+        return 100;
     }
 }

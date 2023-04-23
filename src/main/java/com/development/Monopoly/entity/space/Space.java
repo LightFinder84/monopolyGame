@@ -11,7 +11,6 @@ public abstract class Space {
     protected String name;
     protected List<Player> vistors;
 
-    public abstract int calculateRentMoney(int playerId);
     public Space(int id, String name){
         this.id = id;
         this.name = name;

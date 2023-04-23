@@ -27,8 +27,11 @@ public class Player {
     private List<Integer> listMoneyToPay;
     private List<Player> listPersonToPay;
     private int BusStationNumber;
-    private List<Space> ownedSpaces;
+    private List<Property> ownedProperty;
 
+    public List<Property> getOwnedProperty() {
+        return ownedProperty;
+    }
     public Player findPersonToPayById(int playerId)
     {
         for (Player player : listPersonToPay) {
@@ -71,7 +74,7 @@ public class Player {
         this.stepToGo = 0;
         this.listMoneyToPay = new ArrayList<>();
         this.listPersonToPay = new ArrayList<>();
-        this.ownedSpaces = new ArrayList<>();
+        this.ownedProperty = new ArrayList<>();
     }
 
     public int getMoney() {
@@ -192,15 +195,32 @@ public class Player {
         
         stepToGo = 0;
         
-        // Space space = spaces.get(currentPosition);
-        // if(space instanceof Estate){
-        //     Estate estate = (Estate) space;
-        //     if(estate.getOwner() != null){
-        //         money = estate.calculateRentMoney(id); //chua check
-        //     }
-        // }
+        Space newSpace = spaces.get(currentPosition);
+        checkNewSpace(newSpace, event);
 
-        String message = "---> " + this.name + " <--- Đã đi đến " + spaces.get(currentPosition).getName();
+    }
+
+    private void checkNewSpace(Space space, Event event){
+        
+        String message = "---> " + this.name + " <--- Đã đi đến " + space.getName() + ".";
+
+        // neu la property
+        if(space instanceof Property){
+            Property property = (Property) space;
+            // neu chua co chu hoac la chu thi khong lam gi them
+            if(property.getOwner() == null || property.getOwner() == this){
+                event.setEventMessage(message);
+                return;
+            }
+            // da bi nguoi khac mua va no la dat xay nha
+            if(property instanceof Estate){
+                Estate estate = (Estate) space;
+                Player owner = estate.getOwner();
+                int moneyToPay = estate.calculateRentMoney();
+                message += " ";
+            }
+        }
+
         event.setEventMessage(message);
     }
 
@@ -220,7 +240,7 @@ public class Player {
         }
         property.setOwner(this);
         money -= property.getPriceForProperty();
-        this.ownedSpaces.add(property);
+        this.ownedProperty.add(property);
         String message = "---> " + name + " <--- Đã mua " + property.getName();
         event.setEventMessage(message);
     }

@@ -7,6 +7,8 @@ public abstract class Property extends Space{
     protected Player owner;
     protected int priceForProperty;
 
+    public abstract int calculateRentMoney();
+
     public int getPriceForProperty() {
         return priceForProperty;
     }
@@ -27,5 +29,7 @@ public abstract class Property extends Space{
         super(id, name);
         this.priceForProperty = priceForProperty;
     }
+
+
     
 }
