@@ -17,7 +17,7 @@ public class Player {
     private String name;
     private String tokenColor;
     private Long currentSquareId;
-    private int position;
+    private int currentPosition;
     private PlayerStatus status;
     private int money;
     private boolean host;
@@ -26,6 +26,7 @@ public class Player {
     private List<Integer> listMoneyToPay;
     private List<Player> listPersonToPay;
     private int BusStationNumber;
+    private List<Space> ownedSpaces;
 
     public void sellHouse(Space space){
         ;
@@ -68,14 +69,14 @@ public class Player {
         this.name = name;
         this.tokenColor = tokenColor;
         this.currentSquareId = squareId;
-        this.position = 0;
+        this.currentPosition = 0;
         this.status = PlayerStatus.NOT_READY;
         this.money = 2000;
         this.host = false;
         this.stepToGo = 0;
         this.listMoneyToPay = new ArrayList<>();
-        listPersonToPay = new ArrayList<>();
-
+        this.listPersonToPay = new ArrayList<>();
+        this.ownedSpaces = new ArrayList<>();
     }
 
     public int getMoney() {
@@ -94,12 +95,12 @@ public class Player {
         this.status = status;
     }
 
-    public int getPosition() {
-        return position;
+    public int getCurrentPosition() {
+        return currentPosition;
     }
 
-    public void setPosition(int position) {
-        this.position = position;
+    public void setCurrentPosition(int currentPosition) {
+        this.currentPosition = currentPosition;
     }
 
     public Long getCurrentSquareId() {
@@ -176,27 +177,40 @@ public class Player {
     }
 
     public void go(List<Space> spaces, Event event) {
-        position += stepToGo;
-        if(position > 39){
-            position = position - 40;
-            money += 200;
-        }
-        stepToGo = 0;
-
-        Space space = spaces.get(position);
+        
+        Space space = spaces.get(currentPosition);
         if(space instanceof Estate){
             Estate estate = (Estate) space;
-            if(estate.getOwner() != null){
-                money = estate.calculateRentMoney(id); //chua check
+            if(estate.getOwner() == this){
+                if(estate.getNumberOfBuildings() == 0) estate.setNumberOfHousesCanBeBuild(1);
+                if(estate.getNumberOfBuildings() > 0 && estate.getNumberOfBuildings() < 3) estate.setNumberOfHousesCanBeBuild( 4 - estate.getNumberOfBuildings());
+                if(estate.getNumberOfBuildings() == 4) estate.setNumberOfHousesCanBeBuild(1);
             }
         }
+        
+        currentPosition += stepToGo;
+        
+        if(currentPosition > 39){
+            currentPosition = currentPosition - 40;
+            money += 200;
+        }
+        
+        stepToGo = 0;
+        
+        // Space space = spaces.get(currentPosition);
+        // if(space instanceof Estate){
+        //     Estate estate = (Estate) space;
+        //     if(estate.getOwner() != null){
+        //         money = estate.calculateRentMoney(id); //chua check
+        //     }
+        // }
 
-        String message = "---> " + this.name + " <--- Đã đi đến " + spaces.get(position).getName();
+        String message = "---> " + this.name + " <--- Đã đi đến " + spaces.get(currentPosition).getName();
         event.setEventMessage(message);
     }
 
     public void buyEstate(List<Space> spaces, Event event) {
-        Space space = spaces.get(position);
+        Space space = spaces.get(currentPosition);
         Estate estate = null;
         if(space instanceof Estate == false){
             throw new UnExpectedErrorException("Chổ bạn đang đứng không thể mua");
@@ -211,12 +225,41 @@ public class Player {
         }
         estate.setOwner(this);
         money -= estate.getPriceForEstate();
+        this.ownedSpaces.add(estate);
         String message = "---> " + name + " <--- Đã mua " + estate.getName();
         event.setEventMessage(message);
     }
 
     public void finishTurn(Table table) {
         table.nextPlayer(this.id);
+    }
+
+    public void buyAHouse(List<Space> spaces, Event event) {
+        Space space = spaces.get(currentPosition);
+        Estate estate = null;
+        if(space instanceof Estate == false){
+            throw new UnExpectedErrorException("Chổ bạn đang đứng không thể xây nhà");
+        } else {
+            estate = (Estate) space;
+        }
+
+        Player owner = estate.getOwner();
+        if(owner == null){
+            throw new UnExpectedErrorException("Ô này bạn chưa mua, mua rồi mới được xây nhà nghen.");
+        }
+
+        if(this != owner){
+            throw new UnExpectedErrorException("Chổ này không phải đất của bạn.");
+        }
+
+        if(this.money < estate.getPriceForBuilding()){
+            throw new UnExpectedErrorException("Bạn không đủ tiền mua ô này.");
+        }
+
+        estate.addABuilding();
+        this.money -= estate.getPriceForBuilding();
+        String message = "---> " + name + " <--- đã mua thêm 1 nhà ở " + estate.getName() + " tăng số nhà lên " + estate.getNumberOfBuildings() + " nhà";
+        event.setEventMessage(message);
     }
 
 }

@@ -2,6 +2,7 @@ package com.development.Monopoly.entity.space;
 
 import com.development.Monopoly.Utils.EstateColor;
 import com.development.Monopoly.entity.Player;
+import com.development.Monopoly.exception.UnExpectedErrorException;
 
 public class Estate extends Space{
     private int priceForEstate;
@@ -9,13 +10,20 @@ public class Estate extends Space{
     private int numberOfBuildings;
     private Player owner;
     private EstateColor color;
-    private int HouseNumber;
+    private int houseNumber;
+    private int numberOfHousesCanBeBuild;
 
-    public int getHouseNumber() {
-        return HouseNumber;
+    public int getNumberOfHousesCanBeBuild() {
+        return numberOfHousesCanBeBuild;
     }
-    public void setHouseNumber(int HouseNumber) {
-        this.HouseNumber = HouseNumber;
+    public void setNumberOfHousesCanBeBuild(int numberOfHousesCanBeBuild) {
+        this.numberOfHousesCanBeBuild = numberOfHousesCanBeBuild;
+    }
+    public int getHouseNumber() {
+        return houseNumber;
+    }
+    public void setHouseNumber(int houseNumber) {
+        this.houseNumber = houseNumber;
     }
     public EstateColor getColor() {
         return color;
@@ -27,6 +35,7 @@ public class Estate extends Space{
         return owner;
     }
     public void setOwner(Player owner) {
+        numberOfHousesCanBeBuild = 1;
         this.owner = owner;
     }
     public int getPriceForEstate() {
@@ -55,10 +64,8 @@ public class Estate extends Space{
         this.priceForBuilding = priceForBuilding;
         this.priceForEstate = priceForEstate;
         this.color = color;
+        this.numberOfHousesCanBeBuild = 0;
     }
-    // public int calculateRentMoney(){
-    //     return 0;
-    // }
 
     @Override
     public int calculateRentMoney(int playerId) {
@@ -71,6 +78,14 @@ public class Estate extends Space{
             else if (this.getHouseNumber() == 3) return 30; // gia 3 can nha
             else if (this.getHouseNumber() == 4) return 40; // gia 4 can nha
             else return 50; // gia 5 can nha, hoac co the hieu la 1 khach san
+        }
+    }
+    public void addABuilding() {
+        if(numberOfHousesCanBeBuild > 0){
+            numberOfBuildings ++;
+            numberOfHousesCanBeBuild--;
+        } else {
+            throw new UnExpectedErrorException("Bạn không thể mua thêm nhà trong lượt này.");
         }
     }
 }
