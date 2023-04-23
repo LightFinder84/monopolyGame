@@ -184,12 +184,8 @@ public class Table {
         this.playerInTurn = playerInTurn;
     }
 
-    public List<Space> getSpaces() {
+    public List<Space> listSpaces() {
         return spaces;
-    }
-
-    public void setSpaces(List<Space> spaces) {
-        this.spaces = spaces;
     }
 
     public Player addPlayer(Player newPlayer){

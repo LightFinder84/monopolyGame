@@ -29,6 +29,7 @@ public abstract class Property extends Space{
     public Property(int id, String name, int priceForProperty) {
         super(id, name);
         this.priceForProperty = priceForProperty;
+        this.owner = null;
     }
 
 
