@@ -17,4 +17,9 @@ public class Company extends Property{
             return 50*owner.getBusStationNumber(); //gia mac dinh la 50
         }
     }
+
+    @Override
+    public int getSellPrice() {
+        return this.getPriceForProperty()/2;
+    }
 }

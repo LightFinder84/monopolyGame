@@ -7,6 +7,8 @@ public abstract class Property extends Space{
     protected Player owner;
     protected int priceForProperty;
 
+    public abstract int getSellPrice();
+
     public int getPriceForProperty() {
         return priceForProperty;
     }

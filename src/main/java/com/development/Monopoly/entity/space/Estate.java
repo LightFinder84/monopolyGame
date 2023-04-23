@@ -67,4 +67,23 @@ public class Estate extends Property{
             throw new UnExpectedErrorException("Bạn không thể mua thêm nhà trong lượt này.");
         }
     }
+    public void deleteABuilding(){
+        if (numberOfHousesCanBeBuild <= 0) throw new UnExpectedErrorException("Không còn nhà để bán");
+        else {
+            numberOfBuildings--;
+            numberOfHousesCanBeBuild++;
+        }
+    }
+    public void deleteAllBuildings(){
+        if (numberOfHousesCanBeBuild <= 0) throw new UnExpectedErrorException("Không còn nhà để bán");
+        else {
+            numberOfBuildings = 0;
+            numberOfHousesCanBeBuild = 1; //Chỉ có thể mua 1 căn nhà vào lần đầu tiên
+        }
+    }
+    @Override
+    public int getSellPrice() {
+        int priceForEstateAndAllBuildings = this.getPriceForBuilding() * this.getNumberOfBuildings()/2 + this.getPriceForProperty()/2;
+        return priceForEstateAndAllBuildings;
+    }
 }
