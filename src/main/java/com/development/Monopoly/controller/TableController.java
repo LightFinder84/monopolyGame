@@ -168,19 +168,20 @@ public class TableController {
         if(inturnPlayer != player){
             throw new UnExpectedErrorException("Chưa tới lượt đi của bạn");
         }
-        player.go(table.getSpaces(), table.getEvent());
+        player.go(table.listSpaces(), table.getEvent());
     }
 
     // player by estate
     @GetMapping("/tables/{tableId}/{playerId}/buy-estate")
-    public static void buyEstate(@PathVariable int tableId, @PathVariable int playerId){
+    public static String buyEstate(@PathVariable int tableId, @PathVariable int playerId){
         Table table = findTableById(tableId);
         Player inturnPlayer = table.playerInTurnId();
         Player player = table.findPlayerById(playerId);
         if(inturnPlayer != player){
             throw new UnExpectedErrorException("Chưa tới lượt đi của bạn");
         }
-        player.buyProperty(table.getSpaces(), table.getEvent());
+        player.buyProperty(table.listSpaces(), table.getEvent());
+        return "hello";
     }
 
     @GetMapping("/tables/{tableId}/{playerId}/buy-a-house")
@@ -191,7 +192,7 @@ public class TableController {
         if(player != currentPlayer){
             throw new UnExpectedErrorException("Chưa tới lượt đi của bạn");
         }
-        player.buyAHouse(table.getSpaces(), table.getEvent());
+        player.buyAHouse(table.listSpaces(), table.getEvent());
     }
 
     // Player finish his turn
@@ -200,5 +201,13 @@ public class TableController {
         Table table = findTableById(tableId);
         Player player = table.findPlayerById(playerId);
         player.finishTurn(table);
+    }
+
+    // Player pay money to other player
+    @GetMapping("/player/pay-money/{tableId}/{playerId}/{receiverId}")
+    public static void payMoney(@PathVariable int tableId, @PathVariable int playerId, @PathVariable int receiverId){
+        Table table = findTableById(tableId);
+        Player player = table.findPlayerById(playerId);
+        // player.payMoney(receiverId);
     }
 }

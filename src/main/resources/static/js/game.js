@@ -172,6 +172,8 @@ function renderPlayer(players){
         const name = player.name;
         const money = player.money;
         const id = player.id;
+
+        // render player token
         if(status == "IN_JAIL"){
             const player_container = document.getElementById("jail-container");
             const player_token = '<div class="player ' + color + '-player"></div>';
@@ -185,12 +187,14 @@ function renderPlayer(players){
                 player_container.innerHTML += player_token;
             } 
         }
+
+        // render player bar
         const playerList = document.getElementById('playerList');
         if (localStorage.getItem("owner") == "true") {
-            const player_bar = '<div class="d-flex align-items-center justify-content-between m-2 p-2 border rounded border-primary"> <div class="player '+ color +'-player"></div><p class="m-0 mx-1">'+name+'</p> <p class="bg-light m-0 px-1 rounded">$'+money+'</p> <small class="small-text bg-light m-0 p-2 rounded">'+status+'</small> <button onclick="kick('+id+')">Kick</button>  </div>';
+            const player_bar = '<div class="d-flex align-items-center justify-content-between m-2 p-2 border rounded border-primary"> <div class="player '+ color +'-player"></div><p class="m-0 mx-1">'+name+'</p> <p class="bg-light m-0 px-1 rounded">$'+money+'</p> <small class="small-text bg-light m-0 p-2 rounded">'+status+'</small> <button onclick="kick('+id+')">Kick</button> <button onclick="payMoney('+id+')" >Trả tiền</button>  </div>';
             playerList.innerHTML += player_bar;
         } else {
-            const player_bar = '<div class="d-flex align-items-center justify-content-between m-2 p-2 border rounded border-primary"> <div class="player '+ color +'-player"></div><p class="m-0 mx-1">'+name+'</p> <p class="bg-light m-0 px-1 rounded">$'+money+'</p> <small class="small-text bg-light m-0 p-2 rounded">'+status+'</small>  </div>';
+            const player_bar = '<div class="d-flex align-items-center justify-content-between m-2 p-2 border rounded border-primary"> <div class="player '+ color +'-player"></div><p class="m-0 mx-1">'+name+'</p> <p class="bg-light m-0 px-1 rounded">$'+money+'</p> <small class="small-text bg-light m-0 p-2 rounded">'+status+'</small> <button onclick="payMoney('+id+')" >Trả tiền</button>  </div>';
             playerList.innerHTML += player_bar;
         }
     });
@@ -420,6 +424,21 @@ function done(){
         }
     }
     const uri = "/tables/" + localStorage.getItem("table_id") + "/" + localStorage.getItem("player-id") + "/done";
+    ajax.open("GET", uri, false);
+    ajax.setRequestHeader('Content-type', 'application/json');
+    ajax.send();
+}
+
+function payMoney(receiverId){
+    const ajax = new XMLHttpRequest();
+    ajax.onload = function () {
+        if(this.status != 200){
+            alert(this.responseText);
+        } else {
+            alert("Trả thành công.");
+        }
+    }
+    const uri = "/player/pay-money/" + localStorage.getItem("player-id") + "/" + receiverId;
     ajax.open("GET", uri, false);
     ajax.setRequestHeader('Content-type', 'application/json');
     ajax.send();

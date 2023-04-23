@@ -3,8 +3,6 @@ package com.development.Monopoly.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.logging.log4j.message.Message;
-
 import com.development.Monopoly.Utils.PlayerStatus;
 import com.development.Monopoly.entity.space.BusStation;
 import com.development.Monopoly.entity.space.Company;
@@ -242,6 +240,10 @@ public class Player {
     }
 
     public void go(List<Space> spaces, Event event) {
+        
+        if(stepToGo == 0){
+            throw new UnExpectedErrorException("Lắc xúc xắc rồi mới đi nha fen.");
+        }
 
         Space space = spaces.get(currentPosition);
         if (space instanceof Estate) {
@@ -287,7 +289,27 @@ public class Player {
                 Estate estate = (Estate) space;
                 Player owner = estate.getOwner();
                 int moneyToPay = estate.calculateRentMoney();
-                message += " ";
+                message += " Thật không may phải trả tiền thuê ($"+moneyToPay+") cho " + owner.getName() + " :vvv.";
+                listMoneyToPay.add(moneyToPay);
+                listPersonToPay.add(owner);
+            }
+            // da bi nguoi khac mua va no la cong ty
+            if(property instanceof Company){
+                Company company = (Company) property;
+                Player owner = company.getOwner();
+                int moneyToPay = company.getRentMoney(owner);
+                message += " Thật không may phải trả tiền thuê ($"+moneyToPay+") cho " + owner.getName() + " :vvv.";
+                listMoneyToPay.add(moneyToPay);
+                listPersonToPay.add(owner);
+            }
+            // da bi nguoi khac mua va no la ben xe
+            if(property instanceof BusStation){
+                BusStation busStation = (BusStation) property;
+                Player owner = busStation.getOwner();
+                int moneyToPay = busStation.getRentMoney(owner);
+                message += " Thật không may phải trả tiền thuê ($"+moneyToPay+") cho " + owner.getName() + " :vvv.";
+                listMoneyToPay.add(moneyToPay);
+                listPersonToPay.add(owner);
             }
         }
 
@@ -297,7 +319,7 @@ public class Player {
     public void buyProperty(List<Space> spaces, Event event) {
         Space space = spaces.get(currentPosition);
         Property property = null;
-        if (space instanceof Property == false) {
+        if((space instanceof Property) == false){
             throw new UnExpectedErrorException("Chổ bạn đang đứng không thể mua");
         } else {
             property = (Property) space;
@@ -310,12 +332,37 @@ public class Player {
         }
         property.setOwner(this);
         money -= property.getPriceForProperty();
-        this.ownedProperty.add(property);
-        String message = "---> " + name + " <--- Đã mua " + property.getName();
+        
+        String message = "";
+
+        // add to owned property
+        if(property instanceof Estate){
+            Estate estate = (Estate) property;
+            estate.setNumberOfHousesCanBeBuild(1);
+            Estate copy = new Estate(estate.getId(), estate.getName(), estate.getColor(), estate.getPriceForProperty(), estate.getPriceForBuilding());
+            ownedProperty.add(copy);
+            message = "---> " + name + " <--- Đã mua " + estate.getName();
+        }
+        if(property instanceof Company){
+            Company company = (Company) property;
+            Company copy = new Company(company.getId(), company.getName(), company.getPriceForProperty());
+            ownedProperty.add(copy);
+            message = "---> " + name + " <--- Đã mua " + company.getName();
+        }
+        if(property instanceof BusStation){
+            BusStation busStation = (BusStation) property;
+            BusStation copy = new BusStation(busStation.getId(), busStation.getName(), busStation.getPriceForProperty());
+            ownedProperty.add(copy);
+            message = "---> " + name + " <--- Đã mua " + busStation.getName();
+        }
+        
         event.setEventMessage(message);
     }
 
     public void finishTurn(Table table) {
+        if(listPersonToPay.size() != 0){
+            throw new UnExpectedErrorException("Trả nợ rồi mới được 'xong' nha fen.");
+        }
         table.nextPlayer(this.id);
     }
 
