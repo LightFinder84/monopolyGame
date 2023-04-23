@@ -1,12 +1,16 @@
 package com.development.Monopoly.entity;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 import com.development.Monopoly.Utils.EstateColor;
 import com.development.Monopoly.Utils.GameState;
 import com.development.Monopoly.Utils.PlayerStatus;
 import com.development.Monopoly.controller.TableController;
+import com.development.Monopoly.entity.card.ChanceCard;
+import com.development.Monopoly.entity.card.CommunityChestCard;
 import com.development.Monopoly.entity.space.*;
 import com.development.Monopoly.exception.DuplicateColorException;
 import com.development.Monopoly.exception.DuplicateNameException;
@@ -37,6 +41,10 @@ public class Table {
     private Dice dice;
 
     private List<Space> spaces;
+
+    private Queue<ChanceCard> chances;
+
+    private Queue<CommunityChestCard> chests;
 
     // constructor
     private Table(int id, String name, String password){
@@ -93,6 +101,26 @@ public class Table {
         spaces.add(new Estate(37, "Lũy Bán Bích", EstateColor.DARKBLUE, 350, 200));
         spaces.add(new SpecialTax(38, "Thuế đặc biệt"));
         spaces.add(new Estate(39, "Tân Kỳ Tân Quý", EstateColor.DARKBLUE, 350, 200));
+    
+        chances = new LinkedList<>();
+        chances.add(new ChanceCard(0, "NGHỈ HƯU", "Đi qua ô bắt đầu, lãnh lương 200"));
+        chances.add(new ChanceCard(1, "ĐI ĐỂ TRỞ VỀ", "Bạn được quyền tự do ra tù (có thể giữ lại)"));
+        chances.add(new ChanceCard(2, "PHI LÔI THẦN THUẬT", "Lắc 2 xúc xắc và di chuyển bằng tích của 2 xúc xắc"));
+        chances.add(new ChanceCard(3, "RÚT THĂM TRÚNG THƯỞNG", "Rút thêm 1 lá khí vận hoặc cơ hội nữa"));
+        chances.add(new ChanceCard(4, "PHIẾU GIẢM GIÁ", "Giảm 50% cho một lần trả tiền bất kỳ (có thế giữ lại)"));
+        chances.add(new ChanceCard(5, "KHÔNG CHÙN BƯỚC", "Bạn được lắc thêm 1 lần nữa"));
+        chances.add(new ChanceCard(6, "LƯU LẠC", "Đến ô Nguyễn Tri Phương lãnh 50"));
+        chances.add(new ChanceCard(7, "EM BÉ", "Thu mỗi người 50 vì là em bé cute"));
+
+        chests = new LinkedList<>();
+        chests.add(new CommunityChestCard(0, "TÀU CAO TỐC", "Cứ trả 50 đồng sẽ được tiến 1 ô"));
+        chests.add(new CommunityChestCard(1, "ĐÁNH THUẾ", "Chọn 1 người và đánh thuế họ 20%"));
+        chests.add(new CommunityChestCard(2, "ĐỪNG THẤY HOA NỞ MÀ NGỠ XUÂN VỀ", "Bất động sản của bạn bị đóng băng cho đến khi bạn đi qua ô bắt đầu"));
+        chests.add(new CommunityChestCard(3, "TRẢ TIỀN SỬA NHÀ", "Trả 50/nhà và 125/khách sạn bạn sở hữu"));
+        chests.add(new CommunityChestCard(4, "CƯỚP CẠN", "Ngẫu nhiên chọn một tờ tiền từ một người chơi bất kỳ"));
+        chests.add(new CommunityChestCard(5, "MONG ƯỚC KỶ NIỆM XƯA", "Lắc xúc xắc và đi lùi lại bằng số lắc được"));
+        chests.add(new CommunityChestCard(6, "TÂN GIA", "Đặt thêm 1 nhà ở ô đất bất kỳ do mình sở hữu (Không được đặt khách sạn)"));
+        chests.add(new CommunityChestCard(7, "VỀ QUÊ CẮM CÂU", "Đến ô bến xe gần nhất. Trả gấp đôi tiền thuê`"));
     };
 
     public Player findPlayerById(int id){
