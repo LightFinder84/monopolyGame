@@ -202,4 +202,12 @@ public class TableController {
         Player player = table.findPlayerById(playerId);
         player.finishTurn(table);
     }
+
+    // Player pay money to other player
+    @GetMapping("/player/pay-money/{tableId}/{playerId}/{receiverId}")
+    public static void payMoney(@PathVariable int tableId, @PathVariable int playerId, @PathVariable int receiverId){
+        Table table = findTableById(tableId);
+        Player player = table.findPlayerById(playerId);
+        // player.payMoney(receiverId);
+    }
 }

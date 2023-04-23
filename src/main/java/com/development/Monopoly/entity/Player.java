@@ -3,7 +3,6 @@ package com.development.Monopoly.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.development.Monopoly.Utils.EstateColor;
 import com.development.Monopoly.Utils.PlayerStatus;
 import com.development.Monopoly.entity.space.BusStation;
 import com.development.Monopoly.entity.space.Company;
@@ -238,6 +237,10 @@ public class Player {
 
     public void go(List<Space> spaces, Event event) {
         
+        if(stepToGo == 0){
+            throw new UnExpectedErrorException("Lắc xúc xắc rồi mới đi nha fen.");
+        }
+
         Space space = spaces.get(currentPosition);
         if(space instanceof Estate){
             Estate estate = (Estate) space;
@@ -350,6 +353,9 @@ public class Player {
     }
 
     public void finishTurn(Table table) {
+        if(listPersonToPay.size() != 0){
+            throw new UnExpectedErrorException("Trả nợ rồi mới được 'xong' nha fen.");
+        }
         table.nextPlayer(this.id);
     }
 
