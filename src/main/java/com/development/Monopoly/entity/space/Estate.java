@@ -1,7 +1,6 @@
 package com.development.Monopoly.entity.space;
 
 import com.development.Monopoly.Utils.EstateColor;
-import com.development.Monopoly.entity.Player;
 import com.development.Monopoly.exception.UnExpectedErrorException;
 
 public class Estate extends Property{
@@ -10,7 +9,6 @@ public class Estate extends Property{
     private int numberOfBuildings;
     
     private EstateColor color;
-    private int houseNumber;
     private int numberOfHousesCanBeBuild;
 
     public int getNumberOfHousesCanBeBuild() {
@@ -19,11 +17,11 @@ public class Estate extends Property{
     public void setNumberOfHousesCanBeBuild(int numberOfHousesCanBeBuild) {
         this.numberOfHousesCanBeBuild = numberOfHousesCanBeBuild;
     }
-    public int getHouseNumber() {
-        return houseNumber;
+    public int getNumberOfBuildings() {
+        return numberOfBuildings;
     }
-    public void setHouseNumber(int houseNumber) {
-        this.houseNumber = houseNumber;
+    public void setNumberOfBuildings(int numberOfBuildings) {
+        this.numberOfBuildings = numberOfBuildings;
     }
     public EstateColor getColor() {
         return color;
@@ -32,17 +30,10 @@ public class Estate extends Property{
         this.color = color;
     }
     
-    public int getNumberOfBuildings() {
-
-        return numberOfBuildings;
-    }
     public int getPriceForBuilding() {
         return priceForBuilding;
     }
     
-    public void setNumberOfBuildings(int numberOfBuildings) {
-        this.numberOfBuildings = numberOfBuildings;
-    }
     public void setPriceForBuilding(int priceForBuilding) {
         this.priceForBuilding = priceForBuilding;
     }
@@ -61,10 +52,10 @@ public class Estate extends Property{
             return 0;
         }
         else{
-            if (this.getHouseNumber() == 1) return 10; // gia 1 can nha
-            else if (this.getHouseNumber() == 2) return 20; // gia 2 can nha
-            else if (this.getHouseNumber() == 3) return 30; // gia 3 can nha
-            else if (this.getHouseNumber() == 4) return 40; // gia 4 can nha
+            if (this.getNumberOfBuildings() == 1) return 10; // gia 1 can nha
+            else if (this.getNumberOfBuildings() == 2) return 20; // gia 2 can nha
+            else if (this.getNumberOfBuildings() == 3) return 30; // gia 3 can nha
+            else if (this.getNumberOfBuildings() == 4) return 40; // gia 4 can nha
             else return 50; // gia 5 can nha, hoac co the hieu la 1 khach san
         }
     }

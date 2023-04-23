@@ -29,12 +29,6 @@ public class Player {
     private int BusStationNumber;
     private List<Space> ownedSpaces;
 
-    public void sellHouse(Space space){
-        ;
-     }
-     public void sellEstate(Space space){
-        ;
-     }
     public Player findPersonToPayById(int playerId)
     {
         for (Player player : listPersonToPay) {
