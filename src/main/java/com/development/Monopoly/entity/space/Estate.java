@@ -4,11 +4,11 @@ import com.development.Monopoly.Utils.EstateColor;
 import com.development.Monopoly.entity.Player;
 import com.development.Monopoly.exception.UnExpectedErrorException;
 
-public class Estate extends Space{
-    private int priceForEstate;
+public class Estate extends Property{
+    
     private int priceForBuilding;
     private int numberOfBuildings;
-    private Player owner;
+    
     private EstateColor color;
     private int houseNumber;
     private int numberOfHousesCanBeBuild;
@@ -31,16 +31,7 @@ public class Estate extends Space{
     public void setColor(EstateColor color) {
         this.color = color;
     }
-    public Player getOwner() {
-        return owner;
-    }
-    public void setOwner(Player owner) {
-        numberOfHousesCanBeBuild = 1;
-        this.owner = owner;
-    }
-    public int getPriceForEstate() {
-        return priceForEstate;
-    }
+    
     public int getNumberOfBuildings() {
 
         return numberOfBuildings;
@@ -48,9 +39,7 @@ public class Estate extends Space{
     public int getPriceForBuilding() {
         return priceForBuilding;
     }
-    public void setPriceForEstate(int priceForEstate) {
-        this.priceForEstate = priceForEstate;
-    }
+    
     public void setNumberOfBuildings(int numberOfBuildings) {
         this.numberOfBuildings = numberOfBuildings;
     }
@@ -59,10 +48,9 @@ public class Estate extends Space{
     }
     
     public Estate(int id, String name, EstateColor color, int priceForEstate, int priceForBuilding){
-        super(id, name);
+        super(id, name, priceForEstate);
         this.numberOfBuildings = 0;
         this.priceForBuilding = priceForBuilding;
-        this.priceForEstate = priceForEstate;
         this.color = color;
         this.numberOfHousesCanBeBuild = 0;
     }

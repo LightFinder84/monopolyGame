@@ -180,7 +180,7 @@ public class TableController {
         if(inturnPlayer != player){
             throw new UnExpectedErrorException("Chưa tới lượt đi của bạn");
         }
-        player.buyEstate(table.getSpaces(), table.getEvent());
+        player.buyProperty(table.getSpaces(), table.getEvent());
     }
 
     @GetMapping("/tables/{tableId}/{playerId}/buy-a-house")

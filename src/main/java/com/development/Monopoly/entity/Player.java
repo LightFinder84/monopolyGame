@@ -7,6 +7,7 @@ import org.apache.logging.log4j.message.Message;
 
 import com.development.Monopoly.Utils.PlayerStatus;
 import com.development.Monopoly.entity.space.Estate;
+import com.development.Monopoly.entity.space.Property;
 import com.development.Monopoly.entity.space.Space;
 import com.development.Monopoly.exception.PlayerNotFoundException;
 import com.development.Monopoly.exception.UnExpectedErrorException;
@@ -187,7 +188,7 @@ public class Player {
                 if(estate.getNumberOfBuildings() == 4) estate.setNumberOfHousesCanBeBuild(1);
             }
         }
-        
+
         currentPosition += stepToGo;
         
         if(currentPosition > 39){
@@ -209,24 +210,24 @@ public class Player {
         event.setEventMessage(message);
     }
 
-    public void buyEstate(List<Space> spaces, Event event) {
+    public void buyProperty(List<Space> spaces, Event event) {
         Space space = spaces.get(currentPosition);
-        Estate estate = null;
-        if(space instanceof Estate == false){
+        Property property = null;
+        if(space instanceof Property == false){
             throw new UnExpectedErrorException("Chổ bạn đang đứng không thể mua");
         } else {
-            estate = (Estate) space;
+            property = (Property) space;
         }
-        if (estate.getOwner() != null){
+        if (property.getOwner() != null){
             throw new UnExpectedErrorException("Chổ bạn đang đứng có người mua rồi");
         }
-        if(money < estate.getPriceForEstate()){
+        if(money < property.getPriceForProperty()){
             throw new UnExpectedErrorException("Không đủ tiền mua");
         }
-        estate.setOwner(this);
-        money -= estate.getPriceForEstate();
-        this.ownedSpaces.add(estate);
-        String message = "---> " + name + " <--- Đã mua " + estate.getName();
+        property.setOwner(this);
+        money -= property.getPriceForProperty();
+        this.ownedSpaces.add(property);
+        String message = "---> " + name + " <--- Đã mua " + property.getName();
         event.setEventMessage(message);
     }
 
