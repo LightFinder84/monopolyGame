@@ -167,7 +167,7 @@ function renderPlayer(players){
     // console.log("rendering players");
     players.forEach(player => {
         const color = player.tokenColor;
-        const position = player.position;
+        const currentPosition = player.currentPosition;
         const status = player.status;
         const name = player.name;
         const money = player.money;
@@ -179,7 +179,7 @@ function renderPlayer(players){
                 player_container.innerHTML += player_token;
             }
         } else {
-            const player_container = document.getElementById("player-container-" + position);
+            const player_container = document.getElementById("player-container-" + currentPosition);
             const player_token = '<div class="player ' + color + '-player"></div>';
             if(player_container.innerHTML.includes(player_token) == false){
                 player_container.innerHTML += player_token;
@@ -390,6 +390,21 @@ function buyEstate(){
         }
     }
     const uri = "/tables/" + localStorage.getItem("table_id") + "/" + localStorage.getItem("player-id") + "/buy-estate";
+    ajax.open("GET", uri, false);
+    ajax.setRequestHeader('Content-type', 'application/json');
+    ajax.send();
+}
+
+function buyAHouse(){
+    const ajax = new XMLHttpRequest();
+    ajax.onload = function () {
+        if(this.status != 200){
+            alert(this.responseText);
+        } else {
+            alert("Mua thành công");
+        }
+    }
+    const uri = "/tables/" + localStorage.getItem("table_id") + "/" + localStorage.getItem("player-id") + "/buy-a-house";
     ajax.open("GET", uri, false);
     ajax.setRequestHeader('Content-type', 'application/json');
     ajax.send();

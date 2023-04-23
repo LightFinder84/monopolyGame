@@ -183,6 +183,17 @@ public class TableController {
         player.buyEstate(table.getSpaces(), table.getEvent());
     }
 
+    @GetMapping("/tables/{tableId}/{playerId}/buy-a-house")
+    public static void buyAHouse(@PathVariable int tableId, @PathVariable int playerId){
+        Table table = findTableById(tableId);
+        Player player = table.findPlayerById(playerId);
+        Player currentPlayer = table.playerInTurnId();
+        if(player != currentPlayer){
+            throw new UnExpectedErrorException("Chưa tới lượt đi của bạn");
+        }
+        player.buyAHouse(table.getSpaces(), table.getEvent());
+    }
+
     // Player finish his turn
     @GetMapping("/tables/{tableId}/{playerId}/done")
     public static void finishTurn(@PathVariable int tableId, @PathVariable int playerId){
