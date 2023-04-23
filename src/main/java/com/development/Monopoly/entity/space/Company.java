@@ -25,4 +25,9 @@ public class Company extends Property{
         } 
         return 50 * (countCompany + countStation); 
     }
+
+    @Override
+    public int getSellPrice() {
+        return this.getPriceForProperty()/2;
+    }
 }

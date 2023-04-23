@@ -8,6 +8,7 @@ public abstract class Property extends Space{
     protected int priceForProperty;
 
     public abstract int calculateRentMoney();
+    public abstract int getSellPrice();
 
     public int getPriceForProperty() {
         return priceForProperty;

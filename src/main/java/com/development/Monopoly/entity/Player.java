@@ -6,6 +6,8 @@ import java.util.List;
 import org.apache.logging.log4j.message.Message;
 
 import com.development.Monopoly.Utils.PlayerStatus;
+import com.development.Monopoly.entity.space.BusStation;
+import com.development.Monopoly.entity.space.Company;
 import com.development.Monopoly.entity.space.Estate;
 import com.development.Monopoly.entity.space.Property;
 import com.development.Monopoly.entity.space.Space;
@@ -32,6 +34,66 @@ public class Player {
     public List<Property> getOwnedProperty() {
         return ownedProperty;
     }
+    //khoa, sellHouse
+    public void sellHouse(Space space, Event event){
+        Estate e = null;
+        if (space instanceof Estate){
+            e = (Estate) space;
+        }
+        else { 
+            throw new UnExpectedErrorException("Chỗ này không bán được");
+        }
+
+        if (this.id != e.getId()) throw new UnExpectedErrorException("Bạn không sở miếng đất này");
+        else {
+            e.deleteABuilding();
+            this.money += e.getPriceForBuilding() / 2;
+        }
+        String messageString = "Người ---> " +  this.name + " <--- vừa bán 1 căn nhà tại miếng đất " + e.getName() + " và còn lại " + e.getNumberOfBuildings() + " căn nhà";
+        event.setEventMessage(messageString);
+    }
+    //khoa, sellProperty
+    public void sellProperty(Space space, Event event){
+        Property property = null;
+        if (space instanceof Property){
+            property = (Property) space;
+        }
+        else { 
+            throw new UnExpectedErrorException("Chỗ này không bán được");
+        }
+
+        if (this.id != property.getId()) throw new UnExpectedErrorException("Bạn không sở hữu tài sản này");
+        
+        else {
+            //Sell Estate
+            if (property instanceof Estate) {
+                Estate estate = (Estate) property;
+                estate.deleteAllBuildings();
+                this.money += estate.getPriceForBuilding() * estate.getNumberOfBuildings() / 2;
+                this.money += estate.getPriceForProperty() / 2;
+                String messageString = "Người ---> " +  this.name + " <--- vừa bán " + estate.getName();
+                event.setEventMessage(messageString);
+                estate.setOwner(null);
+            }
+            //Sell BusStation
+            else if (property instanceof BusStation) {
+                BusStation busStation = (BusStation) property;
+                this.money += busStation.getPriceForProperty() / 2;
+                String messageString = "Người ---> " +  this.name + " <--- vừa bán " + busStation.getName();
+                event.setEventMessage(messageString);
+                busStation.setOwner(null);
+            }
+            //Sell Company
+            else {
+                Company company = (Company) property;
+                this.money += company.getPriceForProperty() / 2;
+                String messageString = "Người ---> " +  this.name + " <--- vừa bán " + company.getName();
+                event.setEventMessage(messageString);
+                company.setOwner(null);
+            }
+        }
+    }
+    //khoa
     public Player findPersonToPayById(int playerId)
     {
         for (Player player : listPersonToPay) {
@@ -39,6 +101,7 @@ public class Player {
         }
         throw new PlayerNotFoundException();
     }
+    //khoa
     public void payMoney(int playerId, int money){
         Player personToPay = findPersonToPayById(playerId);
         if (this.getMoney() > money) throw new UnExpectedErrorException("Bạn trả dư tiền rồi, xin hãy nhập lại");
