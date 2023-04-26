@@ -58,7 +58,7 @@ public class Player {
             throw new UnExpectedErrorException("Bạn phải bán tất cả những tài sản nếu có");
         }
         for (Player player : listPersonToPay) {
-            this.payMoney(player.getId());
+            this.payMoney(player.getId(), event);
         }
         setStatus(PlayerStatus.LOOSED);
         event.setEventMessage("Người chơi --->" + this.getName() + "<--- đã đầu hàng");
