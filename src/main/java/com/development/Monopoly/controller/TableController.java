@@ -208,6 +208,6 @@ public class TableController {
     public static void payMoney(@PathVariable int tableId, @PathVariable int playerId, @PathVariable int receiverId){
         Table table = findTableById(tableId);
         Player player = table.findPlayerById(playerId);
-        // player.payMoney(receiverId);
+        player.payMoney(receiverId);
     }
 }

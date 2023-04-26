@@ -100,10 +100,12 @@ public class Player {
         throw new PlayerNotFoundException();
     }
     //khoa
-    public void payMoney(int playerId, int money){
+    public void payMoney(int playerId){
         Player personToPay = findPersonToPayById(playerId);
-        if (this.getMoney() > money) throw new UnExpectedErrorException("Bạn trả dư tiền rồi, xin hãy nhập lại");
-        else if (this.getMoney() < money) throw new UnExpectedErrorException("Bạn trả thiếu tiền rồi, xin hãy nhập lại");
+        if (this.getMoney() > money) 
+            throw new UnExpectedErrorException("Bạn trả dư tiền rồi, xin hãy nhập lại");
+        else if (this.getMoney() < money) 
+            throw new UnExpectedErrorException("Bạn trả thiếu tiền rồi, xin hãy nhập lại");
         else {
             if (this.getMoney() < money){
                 throw new UnExpectedErrorException("Không đủ tiền để trả"); // Thieu tien roi

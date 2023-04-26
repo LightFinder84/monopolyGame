@@ -438,7 +438,7 @@ function payMoney(receiverId){
             alert("Trả thành công.");
         }
     }
-    const uri = "/player/pay-money/" + localStorage.getItem("player-id") + "/" + receiverId;
+    const uri = "/player/pay-money/" + localStorage.getItem("table_id") + "/" + localStorage.getItem("player-id") + "/" + receiverId;
     ajax.open("GET", uri, false);
     ajax.setRequestHeader('Content-type', 'application/json');
     ajax.send();
