@@ -65,6 +65,11 @@ public class Estate extends Property {
         else
             return 50; // gia 5 can nha, hoac co the hieu la 1 khach san
     }
+    @Override
+    public int getSellPrice() {
+        int priceForEstateAndAllBuildings = this.getPriceForBuilding() * this.getNumberOfBuildings()/2 + this.getPriceForProperty()/2;
+        return priceForEstateAndAllBuildings;
+    }
 
     public void addABuilding() {
         if (numberOfHousesCanBeBuild > 0) {
@@ -88,9 +93,5 @@ public class Estate extends Property {
             numberOfHousesCanBeBuild = 1; //Chỉ có thể mua 1 căn nhà vào lần đầu tiên
         }
     }
-    @Override
-    public int getSellPrice() {
-        int priceForEstateAndAllBuildings = this.getPriceForBuilding() * this.getNumberOfBuildings()/2 + this.getPriceForProperty()/2;
-        return priceForEstateAndAllBuildings;
-    }
+    
 }
