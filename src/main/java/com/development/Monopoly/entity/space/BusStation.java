@@ -28,4 +28,12 @@ public class BusStation extends Property{
         } 
         return 50 * (countCompany + countStation); 
     }
+
+    @Override
+    public String getInfo() {
+        String ownerName = (this.owner != null) ? this.owner.getName() : "Chưa có";
+        String nameRow = "<div class=\"row\"><div class=\"col\">Tên:</div><div class=\"col\">"+ this.name +"</div></div>";
+        String ownerRow = "<div class=\"row\"><div class=\"col\">Chủ:</div><div class=\"col\">"+ ownerName +"</div></div>";
+        return nameRow + ownerRow;
+    }
 }

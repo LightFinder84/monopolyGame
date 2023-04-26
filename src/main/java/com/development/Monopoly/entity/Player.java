@@ -101,11 +101,11 @@ public class Player {
             if (player.getId() == playerId)
                 return player;
         }
-        throw new PlayerNotFoundException();
+        throw new UnExpectedErrorException("Bạn không thiếu tiền người này.");
     }
 
     // khoa
-    public void payMoney(int playerId){
+    public void payMoney(int playerId, Event event){
         Player personToPay = findPersonToPayById(playerId);
         int index = listPersonToPay.indexOf(personToPay);
         int moneyToPay = listMoneyToPay.get(index);
@@ -114,8 +114,9 @@ public class Player {
             this.money -= moneyToPay;
             listPersonToPay.remove(index);
             listMoneyToPay.remove(index);
+            event.setEventMessage( "---> " + this.name + " <--- đã trả $" + moneyToPay + " cho ---> " + personToPay.getName());
         }
-        else throw new UnExpectedErrorException("Bạn không đủ tiền");
+        else throw new UnExpectedErrorException("Bạn không đủ tiền, hãy bán tài sản để trả tiền.");
     }
 
     public int getBusStationNumber() {

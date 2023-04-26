@@ -5,6 +5,10 @@ import com.development.Monopoly.Utils.PlayerStatus;
 import com.development.Monopoly.entity.Dice;
 import com.development.Monopoly.entity.Player;
 import com.development.Monopoly.entity.Table;
+import com.development.Monopoly.entity.space.BusStation;
+import com.development.Monopoly.entity.space.Company;
+import com.development.Monopoly.entity.space.Estate;
+import com.development.Monopoly.entity.space.Space;
 import com.development.Monopoly.exception.GameFullException;
 import com.development.Monopoly.exception.PasswordIncorrectException;
 import com.development.Monopoly.exception.SquareNotFoundException;
@@ -208,6 +212,15 @@ public class TableController {
     public static void payMoney(@PathVariable int tableId, @PathVariable int playerId, @PathVariable int receiverId){
         Table table = findTableById(tableId);
         Player player = table.findPlayerById(playerId);
-        player.payMoney(receiverId);
+        player.payMoney(receiverId, table.getEvent());
+    }
+
+
+    // get info of a space
+    @GetMapping("/space/{tableId}/{spaceId}")
+    public String getSpace(@PathVariable int tableId, @PathVariable int spaceId){
+        Table table = findTableById(tableId);
+        Space space = table.getSpace(spaceId);
+        return space.getInfo();
     }
 }

@@ -35,15 +35,7 @@ public abstract class Space {
         }
         throw new PlayerNotFoundException();
     }
-    // public void spaceType(int id){
-    //     int estateid_row1[] = {1,3,6,8,9};
-    //     int  estateid_row2[] = {11,13,14,16,18,19};
-    //     int  estateid_row3[] = {21,23,24,26,27,29};
-    //     int  estateid_row4[] = {31,32,34,37,39};
-    //     int  bus_station_id[] = {5, 15, 25, 35};
-    //     int  company_id[] = {12};
-    //     int chance_id[] = {7, 22, 36};
-    //     int community_chance_id[] ={2, 17, 33};
-    // }
+    public abstract String getInfo();
+
 }
 //Company, chance space, community chest space, jail, go to jail, tax, special tax, car park, estate, bus station
