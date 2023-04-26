@@ -216,6 +216,10 @@ public class Table {
         return spaces;
     }
 
+    public Space getSpace(int index){
+        return spaces.get(index);
+    }
+
     public Player addPlayer(Player newPlayer){
         if(playerList.size() == 4){
             throw new GameFullException();

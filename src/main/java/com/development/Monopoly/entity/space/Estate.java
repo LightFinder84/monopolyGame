@@ -199,4 +199,13 @@ public class Estate extends Property {
         }
     }
     
+    @Override
+    public String getInfo() {
+        String ownerName = (this.owner != null) ? this.owner.getName() : "Chưa có";
+        String nameRow = "<div class=\"row\"><div class=\"col\">Tên:</div><div class=\"col\">"+ this.name +"</div></div>";
+        String ownerRow = "<div class=\"row\"><div class=\"col\">Chủ:</div><div class=\"col\">"+ ownerName +"</div></div>";
+        String houseRow = "<div class=\"row\"><div class=\"col\">Số nhà đã xây:</div><div class=\"col\">"+ this.numberOfBuildings +"</div></div>";
+        return nameRow + ownerRow + houseRow;
+    }
+    
 }
