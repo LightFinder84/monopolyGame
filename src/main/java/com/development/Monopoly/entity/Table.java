@@ -335,5 +335,32 @@ public class Table {
         }
 
     }
-
+    
+    public void checkWinner(Event event) {
+        //int countReady = 0;
+        int countLoosed = 0;
+        for (Player player : playerList) {
+            //if (player.getStatus() == PlayerStatus.READY) countReady++;
+            if (player.getStatus() == PlayerStatus.LOOSED) countLoosed++;
+        }
+        if (countLoosed == playerList.size() - 1) {
+            event.setEventMessage("Người chơi --->" + this.getName() + "<--- đã thắng. Xin chúc mừng");
+            return;
+        }
+        for (Player player : playerList) {
+            int countProperty = 0;
+            for (Property property : player.getOwnedProperty()) {
+                if(property instanceof BusStation || property instanceof Company) countProperty++;
+            }
+            if (countProperty == 6) {
+                event.setEventMessage("Người chơi --->" + this.getName() + "<--- đã thắng vì đã sở hữu 4 bến xe và 2 công ty. Xin chúc mừng");
+                return;
+            }
+            int count = player.hasFullEstateOfColor(EstateColor.RED) + player.hasFullEstateOfColor(EstateColor.GREEN) + player.hasFullEstateOfColor(EstateColor.BLACK) + player.hasFullEstateOfColor(EstateColor.YELLOW) + player.hasFullEstateOfColor(EstateColor.PURPLE) + player.hasFullEstateOfColor(EstateColor.LIGHTBLUE) + player.hasFullEstateOfColor(EstateColor.DARKBLUE);
+            if (count == 4) {
+                event.setEventMessage("Người chơi --->" + this.getName() + "<--- đã thắng vì sở hữu tất cả các ô đất của 4 loại màu. Xin chúc mừng");
+                return;
+            }
+        }
+    }
 }
