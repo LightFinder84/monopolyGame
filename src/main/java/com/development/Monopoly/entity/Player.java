@@ -3,12 +3,16 @@ package com.development.Monopoly.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.development.Monopoly.Utils.EstateColor;
 import com.development.Monopoly.Utils.PlayerStatus;
 import com.development.Monopoly.entity.space.BusStation;
 import com.development.Monopoly.entity.space.Company;
 import com.development.Monopoly.entity.space.Estate;
+import com.development.Monopoly.entity.space.GoToJail;
 import com.development.Monopoly.entity.space.Property;
 import com.development.Monopoly.entity.space.Space;
+import com.development.Monopoly.entity.space.SpecialTax;
+import com.development.Monopoly.entity.space.Tax;
 import com.development.Monopoly.exception.PlayerNotFoundException;
 import com.development.Monopoly.exception.UnExpectedErrorException;
 
@@ -32,7 +36,33 @@ public class Player {
     public List<Property> getOwnedProperty() {
         return ownedProperty;
     }
-
+    public void goToJail() {
+        setStatus(PlayerStatus.INJAIL);
+        this.setCurrentPosition(10);
+    }
+    public int hasFullEstateOfColor(EstateColor color){
+        int countColorForEstate = 0;
+        for (Property property : ownedProperty) {
+            Estate estate = null;
+            if (property instanceof Estate) {
+                estate = (Estate) property;
+                if (estate.getColor() == color) countColorForEstate++;
+            }
+        }
+        if ((color == EstateColor.RED || color == EstateColor.DARKBLUE) && countColorForEstate == 2) return 1;
+        else if (countColorForEstate == 3) return 1;
+        else return 0;
+    }
+    public void surrender(Event event) {
+        if (this.getOwnedProperty().size() > 0) {
+            throw new UnExpectedErrorException("Bạn phải bán tất cả những tài sản nếu có");
+        }
+        for (Player player : listPersonToPay) {
+            this.payMoney(player.getId());
+        }
+        setStatus(PlayerStatus.LOOSED);
+        event.setEventMessage("Người chơi --->" + this.getName() + "<--- đã đầu hàng");
+    }
     // khoa, sellHouse
     public void sellHouse(Space space, Event event) {
         Estate e = null;
@@ -312,7 +342,21 @@ public class Player {
                 listPersonToPay.add(owner);
             }
         }
+        
+        //khoa, trả tiền thuế
+        if (space instanceof Tax) {
+            this.money -= this.money/10;
+            message += "Người chơi " + this.getName() + " đã bị trừ 10% số tiền hiện có";
+        }
+        if (space instanceof SpecialTax) {
+            this.money -= 100;
+            message += "Người chơi " + this.getName() + " đã bị trừ 100$";
+        }
 
+        if (space instanceof GoToJail) {
+            message += "Mời bạn đi vào tù";
+            this.goToJail();
+        }
         event.setEventMessage(message);
     }
 
