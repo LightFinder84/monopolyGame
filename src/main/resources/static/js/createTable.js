@@ -1,4 +1,4 @@
-    window.onload = function(){
+window.onload = function(){
     var createButton = document.getElementById("create-button");
     createButton.addEventListener("click", createTable);
 }
@@ -28,7 +28,7 @@ function createTable() {
             alert("Tạo bàn chơi thành công.");
             window.location.href = "/game.html";
         } else {
-            alert("Error");
+            alert(this.responseText);
         }
     }
     ajax.open("POST", "/create-table", false);

@@ -3,11 +3,9 @@ package com.development.Monopoly.controller;
 import com.development.Monopoly.Utils.GameState;
 import com.development.Monopoly.Utils.PlayerStatus;
 import com.development.Monopoly.entity.Dice;
+import com.development.Monopoly.entity.Event;
 import com.development.Monopoly.entity.Player;
 import com.development.Monopoly.entity.Table;
-import com.development.Monopoly.entity.space.BusStation;
-import com.development.Monopoly.entity.space.Company;
-import com.development.Monopoly.entity.space.Estate;
 import com.development.Monopoly.entity.space.Space;
 import com.development.Monopoly.exception.GameFullException;
 import com.development.Monopoly.exception.PasswordIncorrectException;
@@ -222,5 +220,18 @@ public class TableController {
         Table table = findTableById(tableId);
         Space space = table.getSpace(spaceId);
         return space.getInfo();
+    }
+
+    @GetMapping("/sell/house/{tableId}/{playerId}/{spaceId}")
+    public void sellAHouse(@PathVariable int tableId, @PathVariable int playerId, @PathVariable int spaceId){
+        Table table = findTableById(tableId);
+        Player player =  table.findPlayerById(playerId);
+        Player playerInTurn = table.PlayerOnTurn();
+        if(player.getId() != playerInTurn.getId()){
+            throw new UnExpectedErrorException("Chưa tới lượt đi của bạn.");
+        }
+        Space space = table.findSpaceById(spaceId);
+        Event e = table.getEvent();
+        player.sellHouse(space, e); 
     }
 }

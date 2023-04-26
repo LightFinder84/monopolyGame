@@ -288,8 +288,8 @@ function renderEvent(event, gameState){
     const eventMessageContainer = document.getElementById("event-message");
     const lastMessage = eventMessageContainer.firstChild.innerText;
 
-    if(lastMessage != event.eventMessage){
-        eventMessageContainer.innerHTML = "<p>" + event.eventMessage + "</p>" + eventMessageContainer.innerHTML;
+    if(lastMessage !== event.eventMessage){
+        eventMessageContainer.innerHTML = "<p>" + event.eventMessage + "</p>";
     }
 
 }
@@ -393,6 +393,21 @@ function payMoney(receiverId){
         }
     }
     const uri = "/player/pay-money/" + localStorage.getItem("table_id") + "/" + localStorage.getItem("player-id") + "/" + receiverId;
+    ajax.open("GET", uri, false);
+    ajax.setRequestHeader('Content-type', 'application/json');
+    ajax.send();
+}
+
+function sellABuilding(spaceId){
+    const ajax = new XMLHttpRequest();
+    ajax.onload = function () {
+        if(this.status != 200){
+            alert(this.responseText);
+        } else {
+            alert("Bán thành công.");
+        }
+    }
+    const uri = "/sell/house/" + localStorage.getItem("table_id") + "/" + localStorage.getItem("player-id") + "/" + spaceId;
     ajax.open("GET", uri, false);
     ajax.setRequestHeader('Content-type', 'application/json');
     ajax.send();

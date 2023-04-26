@@ -132,7 +132,7 @@ public class Table {
         throw new PlayerNotFoundException();
     }
 
-    public Space findStateById(int id){
+    public Space findSpaceById(int id){
         for (Space space : spaces) {
             if(space.getId() == id) return space;
         }
@@ -204,8 +204,12 @@ public class Table {
         this.dice = dice;
     }
 
-    public int getPlayerInTurn() {
+    public int getPlayerInTurn(){
         return playerInTurn;
+    }
+
+    public Player PlayerOnTurn() {
+        return playerList.get(playerInTurn);
     }
 
     public void setPlayerInTurn(int playerInTurn) {

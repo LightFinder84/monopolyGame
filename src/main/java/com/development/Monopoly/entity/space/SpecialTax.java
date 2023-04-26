@@ -11,7 +11,7 @@ public class SpecialTax extends Space{
 
     @Override
     public String getInfo() {
-        String nameRow = "<div class=\"row\"><div class=\"col\">Tên:</div><div class=\"col\">"+ this.name +"</div></div>";
+        String nameRow = "<div class=\"w-100 d-flex justify-content-center\"><p class=\"\">"+ this.name +"</p></div>";
         String infoRow = "<div class=\"row\"><div class=\"col\">Trả $100</div>";
         return nameRow + infoRow;
     }

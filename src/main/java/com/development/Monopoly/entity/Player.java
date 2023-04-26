@@ -39,17 +39,20 @@ public class Player {
         if (space instanceof Estate) {
             e = (Estate) space;
         } else {
-            throw new UnExpectedErrorException("Chỗ này không bán được");
+            throw new UnExpectedErrorException("Chỗ này không có nhà để bán được");
         }
 
-        if (this.id != e.getId())
+        if(e.getOwner() == null){
             throw new UnExpectedErrorException("Bạn không sở miếng đất này");
+        }
+        if (this.id != e.getOwner().getId())
+            throw new UnExpectedErrorException("Bạn không sở hữu miếng đất này");
         else {
             e.deleteABuilding();
             this.money += e.getPriceForBuilding() / 2;
         }
-        String messageString = "Người ---> " + this.name + " <--- vừa bán 1 căn nhà tại miếng đất " + e.getName()
-                + " và còn lại " + e.getNumberOfBuildings() + " căn nhà";
+        String messageString = " ---> " + this.name + " <--- vừa bán 1 căn nhà tại miếng đất " + e.getName()
+                + " và còn lại " + e.getNumberOfBuildings() + " căn nhà.";
         event.setEventMessage(messageString);
     }
 

@@ -7,7 +7,7 @@ public class Start extends Space{
 
     @Override
     public String getInfo() {
-        String nameRow = "<div class=\"row\"><div class=\"col\">Tên:</div><div class=\"col\">"+ this.name +"</div></div>";
+        String nameRow = "<div class=\"w-100 d-flex justify-content-center\"><p class=\"\">"+ this.name +"</p></div>";
         String infoRow = "<div class=\"row\"><div class=\"col\">Đi qua được lãnh $200</div>";
         return nameRow + infoRow;
     }

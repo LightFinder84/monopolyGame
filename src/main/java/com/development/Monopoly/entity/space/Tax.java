@@ -11,7 +11,7 @@ public class Tax extends Space{
 
     @Override
     public String getInfo() {
-        String nameRow = "<div class=\"row\"><div class=\"col\">Tên:</div><div class=\"col\">"+ this.name +"</div></div>";
+        String nameRow = "<div class=\"w-100 d-flex justify-content-center\"><p class=\"\">"+ this.name +"</p></div>";
         String infoRow = "<div class=\"row\"><div class=\"col\">Đóng thuế 10% số tiền hiện hiện có</div>";
         return nameRow + infoRow;
     }

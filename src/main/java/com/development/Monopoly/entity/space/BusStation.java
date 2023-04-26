@@ -32,7 +32,7 @@ public class BusStation extends Property{
     @Override
     public String getInfo() {
         String ownerName = (this.owner != null) ? this.owner.getName() : "Chưa có";
-        String nameRow = "<div class=\"row\"><div class=\"col\">Tên:</div><div class=\"col\">"+ this.name +"</div></div>";
+        String nameRow = "<div class=\"w-100 d-flex justify-content-center\"><p class=\"\">"+ this.name +"</p></div>";
         String ownerRow = "<div class=\"row\"><div class=\"col\">Chủ:</div><div class=\"col\">"+ ownerName +"</div></div>";
         return nameRow + ownerRow;
     }

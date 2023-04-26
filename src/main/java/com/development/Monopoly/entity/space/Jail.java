@@ -15,19 +15,13 @@ public class Jail extends Space{
 
     @Override
     public String getInfo() {
-        String nameRow = "<div class=\"row\"><div class=\"col\">Tên:</div><div class=\"col\">"+ this.name +"</div></div>";
+        String nameRow = "<div class=\"w-100 d-flex justify-content-center\"><p class=\"\">"+ this.name +"</p></div>";
         String inprisions = "";
         for (Player prisoner : prisonerList) {
             inprisions += prisoner.getName() + " - ";
         }
         String inPrisonRow = "<div class=\"row\"><div class=\"col\">Tên:</div><div class=\"col\">"+ inprisions +"</div></div>";
-
-        String visitorsName = "";
-        for (Player visitor : vistors) {
-            visitorsName += visitor.getName() + " - ";
-        }
-        String visitorRow = "<div class=\"row\"><div class=\"col\">Tên:</div><div class=\"col\">"+ visitorsName +"</div></div>";
         
-        return nameRow + inPrisonRow + visitorRow;
+        return nameRow + inPrisonRow;
     }
 }

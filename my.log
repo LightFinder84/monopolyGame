@@ -192,3 +192,687 @@
 2023-04-26T13:56:16.616+07:00  INFO 30950 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-04-26T13:56:16.620+07:00  INFO 30950 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-04-26T13:56:16.625+07:00  INFO 30950 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-26T13:57:43.238+07:00  INFO 32655 --- [main] c.d.Monopoly.MonopoyApplication          : Starting MonopoyApplication using Java 17.0.6 with PID 32655 (/home/truong/Documents/web_projects/monopolyGame/target/classes started by truong in /home/truong/Documents/web_projects/monopolyGame)
+2023-04-26T13:57:43.248+07:00  INFO 32655 --- [main] c.d.Monopoly.MonopoyApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-04-26T13:57:44.677+07:00  INFO 32655 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-26T13:57:44.775+07:00  INFO 32655 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 0 JPA repository interfaces.
+2023-04-26T13:57:45.889+07:00  INFO 32655 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-26T13:57:45.912+07:00  INFO 32655 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-26T13:57:45.921+07:00  INFO 32655 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-26T13:57:46.298+07:00  INFO 32655 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-26T13:57:46.304+07:00  INFO 32655 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2911 ms
+2023-04-26T13:57:46.660+07:00  INFO 32655 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-26T13:57:47.094+07:00  INFO 32655 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:61f9d27a-6cfd-4161-ac3d-b0b39116a133 user=SA
+2023-04-26T13:57:47.099+07:00  INFO 32655 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-26T13:57:47.264+07:00  INFO 32655 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-26T13:57:47.395+07:00  INFO 32655 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-26T13:57:48.097+07:00  INFO 32655 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-26T13:57:48.541+07:00  INFO 32655 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-26T13:57:48.562+07:00  INFO 32655 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T13:57:48.742+07:00  WARN 32655 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-26T13:57:49.075+07:00  INFO 32655 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-04-26T13:57:49.504+07:00  INFO 32655 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-26T13:57:49.534+07:00  INFO 32655 --- [main] c.d.Monopoly.MonopoyApplication          : Started MonopoyApplication in 7.17 seconds (process running for 7.984)
+2023-04-26T13:57:56.328+07:00  INFO 32655 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-26T13:57:56.329+07:00  INFO 32655 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-26T13:57:56.333+07:00  INFO 32655 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-04-26T14:13:15.226+07:00  INFO 32655 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T14:13:15.236+07:00  INFO 32655 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-26T14:13:15.241+07:00  INFO 32655 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-26T14:13:17.271+07:00  INFO 37157 --- [main] c.d.Monopoly.MonopoyApplication          : Starting MonopoyApplication using Java 17.0.6 with PID 37157 (/home/truong/Documents/web_projects/monopolyGame/target/classes started by truong in /home/truong/Documents/web_projects/monopolyGame)
+2023-04-26T14:13:17.278+07:00  INFO 37157 --- [main] c.d.Monopoly.MonopoyApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-04-26T14:13:18.472+07:00  INFO 37157 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-26T14:13:18.541+07:00  INFO 37157 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 0 JPA repository interfaces.
+2023-04-26T14:13:19.318+07:00  INFO 37157 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-26T14:13:19.350+07:00  INFO 37157 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-26T14:13:19.352+07:00  INFO 37157 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-26T14:13:19.564+07:00  INFO 37157 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-26T14:13:19.565+07:00  INFO 37157 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2152 ms
+2023-04-26T14:13:19.844+07:00  INFO 37157 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-26T14:13:20.206+07:00  INFO 37157 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:2911817a-dc4f-4b57-ba03-715373c73a05 user=SA
+2023-04-26T14:13:20.212+07:00  INFO 37157 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-26T14:13:20.344+07:00  INFO 37157 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-26T14:13:20.433+07:00  INFO 37157 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-26T14:13:20.840+07:00  INFO 37157 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-26T14:13:21.332+07:00  INFO 37157 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-26T14:13:21.353+07:00  INFO 37157 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T14:13:21.548+07:00  WARN 37157 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-26T14:13:22.033+07:00  INFO 37157 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-04-26T14:13:22.473+07:00  INFO 37157 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-26T14:13:22.498+07:00  INFO 37157 --- [main] c.d.Monopoly.MonopoyApplication          : Started MonopoyApplication in 6.186 seconds (process running for 6.85)
+2023-04-26T14:13:35.024+07:00  INFO 37157 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-26T14:13:35.025+07:00  INFO 37157 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-26T14:13:35.028+07:00  INFO 37157 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-04-26T14:16:35.960+07:00  INFO 37157 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T14:16:35.964+07:00  INFO 37157 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-26T14:16:35.969+07:00  INFO 37157 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-26T14:16:38.217+07:00  INFO 38450 --- [main] c.d.Monopoly.MonopoyApplication          : Starting MonopoyApplication using Java 17.0.6 with PID 38450 (/home/truong/Documents/web_projects/monopolyGame/target/classes started by truong in /home/truong/Documents/web_projects/monopolyGame)
+2023-04-26T14:16:38.224+07:00  INFO 38450 --- [main] c.d.Monopoly.MonopoyApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-04-26T14:16:39.846+07:00  INFO 38450 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-26T14:16:39.913+07:00  INFO 38450 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 0 JPA repository interfaces.
+2023-04-26T14:16:40.857+07:00  INFO 38450 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-26T14:16:40.876+07:00  INFO 38450 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-26T14:16:40.877+07:00  INFO 38450 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-26T14:16:41.095+07:00  INFO 38450 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-26T14:16:41.096+07:00  INFO 38450 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2715 ms
+2023-04-26T14:16:41.438+07:00  INFO 38450 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-26T14:16:41.835+07:00  INFO 38450 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:15e6302a-95b4-4644-9f54-d90dfbfd1d99 user=SA
+2023-04-26T14:16:41.841+07:00  INFO 38450 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-26T14:16:41.947+07:00  INFO 38450 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-26T14:16:42.055+07:00  INFO 38450 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-26T14:16:42.499+07:00  INFO 38450 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-26T14:16:42.862+07:00  INFO 38450 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-26T14:16:42.884+07:00  INFO 38450 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T14:16:43.018+07:00  WARN 38450 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-26T14:16:43.322+07:00  INFO 38450 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-04-26T14:16:43.718+07:00  INFO 38450 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-26T14:16:43.739+07:00  INFO 38450 --- [main] c.d.Monopoly.MonopoyApplication          : Started MonopoyApplication in 6.606 seconds (process running for 7.332)
+2023-04-26T14:16:49.973+07:00  INFO 38450 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-26T14:16:49.974+07:00  INFO 38450 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-26T14:16:49.977+07:00  INFO 38450 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-04-26T14:22:09.551+07:00 ERROR 38450 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IndexOutOfBoundsException: Index 137 out of bounds for length 40] with root cause
+
+java.lang.IndexOutOfBoundsException: Index 137 out of bounds for length 40
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Unknown Source) ~[na:na]
+	at java.base/java.util.Objects.checkIndex(Unknown Source) ~[na:na]
+	at java.base/java.util.ArrayList.get(Unknown Source) ~[na:na]
+	at com.development.Monopoly.entity.Table.getSpace(Table.java:220) ~[classes/:na]
+	at com.development.Monopoly.controller.TableController.getSpace(TableController.java:223) ~[classes/:na]
+	at jdk.internal.reflect.GeneratedMethodAccessor34.invoke(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:537) ~[tomcat-embed-core-10.1.7.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:631) ~[tomcat-embed-core-10.1.7.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2023-04-26T14:22:22.579+07:00 ERROR 38450 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IndexOutOfBoundsException: Index 137 out of bounds for length 40] with root cause
+
+java.lang.IndexOutOfBoundsException: Index 137 out of bounds for length 40
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Unknown Source) ~[na:na]
+	at java.base/java.util.Objects.checkIndex(Unknown Source) ~[na:na]
+	at java.base/java.util.ArrayList.get(Unknown Source) ~[na:na]
+	at com.development.Monopoly.entity.Table.getSpace(Table.java:220) ~[classes/:na]
+	at com.development.Monopoly.controller.TableController.getSpace(TableController.java:223) ~[classes/:na]
+	at jdk.internal.reflect.GeneratedMethodAccessor34.invoke(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:537) ~[tomcat-embed-core-10.1.7.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:631) ~[tomcat-embed-core-10.1.7.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2023-04-26T14:24:12.264+07:00 ERROR 38450 --- [http-nio-8080-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because "this.vistors" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because "this.vistors" is null
+	at com.development.Monopoly.entity.space.Jail.getInfo(Jail.java:26) ~[classes/:na]
+	at com.development.Monopoly.controller.TableController.getSpace(TableController.java:224) ~[classes/:na]
+	at jdk.internal.reflect.GeneratedMethodAccessor34.invoke(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:537) ~[tomcat-embed-core-10.1.7.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.0.7.jar:6.0.7]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:631) ~[tomcat-embed-core-10.1.7.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.7.jar:6.0.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.7.jar:10.1.7]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2023-04-26T14:27:14.749+07:00  INFO 38450 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T14:27:14.754+07:00  INFO 38450 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-26T14:27:14.769+07:00  INFO 38450 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-26T14:27:16.948+07:00  INFO 41519 --- [main] c.d.Monopoly.MonopoyApplication          : Starting MonopoyApplication using Java 17.0.6 with PID 41519 (/home/truong/Documents/web_projects/monopolyGame/target/classes started by truong in /home/truong/Documents/web_projects/monopolyGame)
+2023-04-26T14:27:16.955+07:00  INFO 41519 --- [main] c.d.Monopoly.MonopoyApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-04-26T14:27:18.339+07:00  INFO 41519 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-26T14:27:18.415+07:00  INFO 41519 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 0 JPA repository interfaces.
+2023-04-26T14:27:19.607+07:00  INFO 41519 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-26T14:27:19.626+07:00  INFO 41519 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-26T14:27:19.630+07:00  INFO 41519 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-26T14:27:19.901+07:00  INFO 41519 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-26T14:27:19.903+07:00  INFO 41519 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2801 ms
+2023-04-26T14:27:20.134+07:00  INFO 41519 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-26T14:27:20.564+07:00  INFO 41519 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:8d092953-675a-4ec5-8444-f9b853366f59 user=SA
+2023-04-26T14:27:20.572+07:00  INFO 41519 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-26T14:27:20.708+07:00  INFO 41519 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-26T14:27:20.867+07:00  INFO 41519 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-26T14:27:21.539+07:00  INFO 41519 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-26T14:27:22.077+07:00  INFO 41519 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-26T14:27:22.095+07:00  INFO 41519 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T14:27:22.225+07:00  WARN 41519 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-26T14:27:22.608+07:00  INFO 41519 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-04-26T14:27:23.211+07:00  INFO 41519 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-26T14:27:23.235+07:00  INFO 41519 --- [main] c.d.Monopoly.MonopoyApplication          : Started MonopoyApplication in 7.392 seconds (process running for 8.08)
+2023-04-26T14:27:28.596+07:00  INFO 41519 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-26T14:27:28.598+07:00  INFO 41519 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-26T14:27:28.603+07:00  INFO 41519 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-04-26T14:57:39.614+07:00  INFO 41519 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T14:57:39.617+07:00  INFO 41519 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-26T14:57:39.625+07:00  INFO 41519 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-26T14:57:42.123+07:00  INFO 49574 --- [main] c.d.Monopoly.MonopoyApplication          : Starting MonopoyApplication using Java 17.0.6 with PID 49574 (/home/truong/Documents/web_projects/monopolyGame/target/classes started by truong in /home/truong/Documents/web_projects/monopolyGame)
+2023-04-26T14:57:42.129+07:00  INFO 49574 --- [main] c.d.Monopoly.MonopoyApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-04-26T14:57:43.288+07:00  INFO 49574 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-26T14:57:43.357+07:00  INFO 49574 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 0 JPA repository interfaces.
+2023-04-26T14:57:44.299+07:00  INFO 49574 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-26T14:57:44.327+07:00  INFO 49574 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-26T14:57:44.330+07:00  INFO 49574 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-26T14:57:44.548+07:00  INFO 49574 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-26T14:57:44.549+07:00  INFO 49574 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2290 ms
+2023-04-26T14:57:44.831+07:00  INFO 49574 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-26T14:57:45.150+07:00  INFO 49574 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:0a0fc348-c73e-4511-b8bd-4c81368942d5 user=SA
+2023-04-26T14:57:45.153+07:00  INFO 49574 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-26T14:57:45.286+07:00  INFO 49574 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-26T14:57:45.386+07:00  INFO 49574 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-26T14:57:45.807+07:00  INFO 49574 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-26T14:57:46.199+07:00  INFO 49574 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-26T14:57:46.217+07:00  INFO 49574 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T14:57:46.441+07:00  WARN 49574 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-26T14:57:46.832+07:00  INFO 49574 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-04-26T14:57:47.275+07:00  INFO 49574 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-26T14:57:47.295+07:00  INFO 49574 --- [main] c.d.Monopoly.MonopoyApplication          : Started MonopoyApplication in 6.108 seconds (process running for 7.25)
+2023-04-26T14:58:01.682+07:00  INFO 49574 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-26T14:58:01.683+07:00  INFO 49574 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-26T14:58:01.687+07:00  INFO 49574 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-04-26T14:58:01.981+07:00  WARN 49574 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Index 0 out of bounds for length 0]
+2023-04-26T14:58:11.652+07:00  WARN 49574 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Index 0 out of bounds for length 0]
+2023-04-26T14:58:37.204+07:00  WARN 49574 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Index 0 out of bounds for length 0]
+2023-04-26T14:59:00.788+07:00  WARN 49574 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Index 0 out of bounds for length 0]
+2023-04-26T14:59:09.081+07:00  INFO 49574 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T14:59:09.088+07:00  INFO 49574 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-26T14:59:09.095+07:00  INFO 49574 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-26T14:59:10.878+07:00  INFO 50233 --- [main] c.d.Monopoly.MonopoyApplication          : Starting MonopoyApplication using Java 17.0.6 with PID 50233 (/home/truong/Documents/web_projects/monopolyGame/target/classes started by truong in /home/truong/Documents/web_projects/monopolyGame)
+2023-04-26T14:59:10.883+07:00  INFO 50233 --- [main] c.d.Monopoly.MonopoyApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-04-26T14:59:12.289+07:00  INFO 50233 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-26T14:59:12.351+07:00  INFO 50233 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 0 JPA repository interfaces.
+2023-04-26T14:59:13.266+07:00  INFO 50233 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-26T14:59:13.291+07:00  INFO 50233 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-26T14:59:13.292+07:00  INFO 50233 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-26T14:59:13.479+07:00  INFO 50233 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-26T14:59:13.480+07:00  INFO 50233 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2455 ms
+2023-04-26T14:59:13.755+07:00  INFO 50233 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-26T14:59:14.103+07:00  INFO 50233 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:ecd8501a-c499-479d-8fbb-e9c212b1a8e6 user=SA
+2023-04-26T14:59:14.109+07:00  INFO 50233 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-26T14:59:14.289+07:00  INFO 50233 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-26T14:59:14.402+07:00  INFO 50233 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-26T14:59:14.887+07:00  INFO 50233 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-26T14:59:15.311+07:00  INFO 50233 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-26T14:59:15.342+07:00  INFO 50233 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T14:59:15.450+07:00  WARN 50233 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-26T14:59:15.751+07:00  INFO 50233 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-04-26T14:59:16.128+07:00  INFO 50233 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-26T14:59:16.159+07:00  INFO 50233 --- [main] c.d.Monopoly.MonopoyApplication          : Started MonopoyApplication in 6.046 seconds (process running for 6.731)
+2023-04-26T14:59:21.892+07:00  INFO 50233 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-26T14:59:21.895+07:00  INFO 50233 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-26T14:59:21.903+07:00  INFO 50233 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2023-04-26T14:59:26.998+07:00  WARN 50233 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Index 0 out of bounds for length 0]
+2023-04-26T15:01:52.849+07:00  INFO 50233 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T15:01:52.855+07:00  INFO 50233 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-26T15:01:52.863+07:00  INFO 50233 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-26T15:01:55.052+07:00  INFO 51139 --- [main] c.d.Monopoly.MonopoyApplication          : Starting MonopoyApplication using Java 17.0.6 with PID 51139 (/home/truong/Documents/web_projects/monopolyGame/target/classes started by truong in /home/truong/Documents/web_projects/monopolyGame)
+2023-04-26T15:01:55.060+07:00  INFO 51139 --- [main] c.d.Monopoly.MonopoyApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-04-26T15:01:56.478+07:00  INFO 51139 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-26T15:01:56.605+07:00  INFO 51139 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79 ms. Found 0 JPA repository interfaces.
+2023-04-26T15:01:57.781+07:00  INFO 51139 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-26T15:01:57.814+07:00  INFO 51139 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-26T15:01:57.817+07:00  INFO 51139 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-26T15:01:58.069+07:00  INFO 51139 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-26T15:01:58.070+07:00  INFO 51139 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2879 ms
+2023-04-26T15:01:58.342+07:00  INFO 51139 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-26T15:01:58.725+07:00  INFO 51139 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:fda4030a-48b3-4be8-b69b-7343d47a6d7a user=SA
+2023-04-26T15:01:58.732+07:00  INFO 51139 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-26T15:01:58.834+07:00  INFO 51139 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-26T15:01:58.990+07:00  INFO 51139 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-26T15:01:59.510+07:00  INFO 51139 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-26T15:01:59.990+07:00  INFO 51139 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-26T15:02:00.007+07:00  INFO 51139 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T15:02:00.107+07:00  WARN 51139 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-26T15:02:00.361+07:00  INFO 51139 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-04-26T15:02:00.752+07:00  INFO 51139 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-26T15:02:00.773+07:00  INFO 51139 --- [main] c.d.Monopoly.MonopoyApplication          : Started MonopoyApplication in 6.753 seconds (process running for 7.507)
+2023-04-26T15:02:05.015+07:00  INFO 51139 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-26T15:02:05.017+07:00  INFO 51139 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-26T15:02:05.022+07:00  INFO 51139 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2023-04-26T15:02:09.321+07:00  WARN 51139 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Index 0 out of bounds for length 0]
+2023-04-26T15:03:09.904+07:00  INFO 51139 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T15:03:09.908+07:00  INFO 51139 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-26T15:03:09.916+07:00  INFO 51139 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-26T15:03:12.358+07:00  INFO 51625 --- [main] c.d.Monopoly.MonopoyApplication          : Starting MonopoyApplication using Java 17.0.6 with PID 51625 (/home/truong/Documents/web_projects/monopolyGame/target/classes started by truong in /home/truong/Documents/web_projects/monopolyGame)
+2023-04-26T15:03:12.366+07:00  INFO 51625 --- [main] c.d.Monopoly.MonopoyApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-04-26T15:03:13.642+07:00  INFO 51625 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-26T15:03:13.696+07:00  INFO 51625 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 0 JPA repository interfaces.
+2023-04-26T15:03:14.634+07:00  INFO 51625 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-26T15:03:14.671+07:00  INFO 51625 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-26T15:03:14.672+07:00  INFO 51625 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-26T15:03:14.849+07:00  INFO 51625 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-26T15:03:14.850+07:00  INFO 51625 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2357 ms
+2023-04-26T15:03:15.096+07:00  INFO 51625 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-26T15:03:15.442+07:00  INFO 51625 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:a60b2deb-fae1-4980-b691-d75300d075c4 user=SA
+2023-04-26T15:03:15.446+07:00  INFO 51625 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-26T15:03:15.563+07:00  INFO 51625 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-26T15:03:15.661+07:00  INFO 51625 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-26T15:03:16.128+07:00  INFO 51625 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-26T15:03:16.552+07:00  INFO 51625 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-26T15:03:16.576+07:00  INFO 51625 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T15:03:16.735+07:00  WARN 51625 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-26T15:03:17.072+07:00  INFO 51625 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-04-26T15:03:17.367+07:00  INFO 51625 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-26T15:03:17.398+07:00  INFO 51625 --- [main] c.d.Monopoly.MonopoyApplication          : Started MonopoyApplication in 6.191 seconds (process running for 7.062)
+2023-04-26T15:03:22.128+07:00  INFO 51625 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-26T15:03:22.129+07:00  INFO 51625 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-26T15:03:22.133+07:00  INFO 51625 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-04-26T15:12:41.897+07:00  INFO 51625 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T15:12:41.900+07:00  INFO 51625 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-26T15:12:41.904+07:00  INFO 51625 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-26T15:12:44.347+07:00  INFO 54240 --- [main] c.d.Monopoly.MonopoyApplication          : Starting MonopoyApplication using Java 17.0.6 with PID 54240 (/home/truong/Documents/web_projects/monopolyGame/target/classes started by truong in /home/truong/Documents/web_projects/monopolyGame)
+2023-04-26T15:12:44.354+07:00  INFO 54240 --- [main] c.d.Monopoly.MonopoyApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-04-26T15:12:45.769+07:00  INFO 54240 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-26T15:12:45.822+07:00  INFO 54240 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 0 JPA repository interfaces.
+2023-04-26T15:12:46.972+07:00  INFO 54240 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-26T15:12:47.020+07:00  INFO 54240 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-26T15:12:47.023+07:00  INFO 54240 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-26T15:12:47.245+07:00  INFO 54240 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-26T15:12:47.247+07:00  INFO 54240 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2742 ms
+2023-04-26T15:12:47.548+07:00  INFO 54240 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-26T15:12:47.894+07:00  INFO 54240 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:06c54d9b-187d-4950-b2ab-4dacfdb81e0b user=SA
+2023-04-26T15:12:47.899+07:00  INFO 54240 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-26T15:12:48.054+07:00  INFO 54240 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-26T15:12:48.135+07:00  INFO 54240 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-26T15:12:48.631+07:00  INFO 54240 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-26T15:12:49.096+07:00  INFO 54240 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-26T15:12:49.121+07:00  INFO 54240 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T15:12:49.238+07:00  WARN 54240 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-26T15:12:49.578+07:00  INFO 54240 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-04-26T15:12:49.980+07:00  INFO 54240 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-26T15:12:50.008+07:00  INFO 54240 --- [main] c.d.Monopoly.MonopoyApplication          : Started MonopoyApplication in 6.673 seconds (process running for 7.677)
+2023-04-26T15:13:49.287+07:00  INFO 54240 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-26T15:13:49.288+07:00  INFO 54240 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-26T15:13:49.293+07:00  INFO 54240 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-04-26T15:13:49.453+07:00  WARN 54240 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public static com.development.Monopoly.entity.Table com.development.Monopoly.controller.TableController.newTable(java.lang.String,java.lang.String)]
+2023-04-26T15:13:55.598+07:00  WARN 54240 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public static com.development.Monopoly.entity.Table com.development.Monopoly.controller.TableController.newTable(java.lang.String,java.lang.String)]
+2023-04-26T15:15:54.238+07:00  WARN 54240 --- [http-nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public static com.development.Monopoly.entity.Table com.development.Monopoly.controller.TableController.newTable(java.lang.String,java.lang.String)]
+2023-04-26T15:16:01.779+07:00  WARN 54240 --- [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public static com.development.Monopoly.entity.Table com.development.Monopoly.controller.TableController.newTable(java.lang.String,java.lang.String)]
+2023-04-26T15:16:04.721+07:00  WARN 54240 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public static com.development.Monopoly.entity.Table com.development.Monopoly.controller.TableController.newTable(java.lang.String,java.lang.String)]
+2023-04-26T16:18:04.406+07:00  INFO 54240 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T16:18:04.409+07:00  INFO 54240 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-26T16:18:04.419+07:00  INFO 54240 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-26T16:18:06.944+07:00  INFO 72075 --- [main] c.d.Monopoly.MonopoyApplication          : Starting MonopoyApplication using Java 17.0.6 with PID 72075 (/home/truong/Documents/web_projects/monopolyGame/target/classes started by truong in /home/truong/Documents/web_projects/monopolyGame)
+2023-04-26T16:18:06.964+07:00  INFO 72075 --- [main] c.d.Monopoly.MonopoyApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-04-26T16:18:08.708+07:00  INFO 72075 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-26T16:18:08.767+07:00  INFO 72075 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 0 JPA repository interfaces.
+2023-04-26T16:18:09.971+07:00  INFO 72075 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-26T16:18:10.004+07:00  INFO 72075 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-26T16:18:10.005+07:00  INFO 72075 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-26T16:18:10.169+07:00  INFO 72075 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-26T16:18:10.170+07:00  INFO 72075 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3014 ms
+2023-04-26T16:18:10.439+07:00  INFO 72075 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-26T16:18:10.809+07:00  INFO 72075 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:31880f7f-d9e0-4401-8eff-2e890972435c user=SA
+2023-04-26T16:18:10.815+07:00  INFO 72075 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-26T16:18:10.921+07:00  INFO 72075 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-26T16:18:11.023+07:00  INFO 72075 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-26T16:18:11.490+07:00  INFO 72075 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-26T16:18:11.836+07:00  INFO 72075 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-26T16:18:11.867+07:00  INFO 72075 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T16:18:12.038+07:00  WARN 72075 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-26T16:18:12.689+07:00  INFO 72075 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-04-26T16:18:13.363+07:00  INFO 72075 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-26T16:18:13.389+07:00  INFO 72075 --- [main] c.d.Monopoly.MonopoyApplication          : Started MonopoyApplication in 7.657 seconds (process running for 8.512)
+2023-04-26T16:18:15.538+07:00  INFO 72075 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-26T16:18:15.539+07:00  INFO 72075 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-26T16:18:15.545+07:00  INFO 72075 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2023-04-26T16:18:20.714+07:00  WARN 72075 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public static com.development.Monopoly.entity.Table com.development.Monopoly.controller.TableController.newTable(java.lang.String,java.lang.String)]
+2023-04-26T16:18:43.990+07:00  WARN 72075 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public static com.development.Monopoly.entity.Table com.development.Monopoly.controller.TableController.newTable(java.lang.String,java.lang.String)]
+2023-04-26T16:19:35.355+07:00  WARN 72075 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public static com.development.Monopoly.entity.Table com.development.Monopoly.controller.TableController.newTable(java.lang.String,java.lang.String)]
+2023-04-26T16:58:45.864+07:00  WARN 72075 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Index 0 out of bounds for length 0]
+2023-04-26T16:59:02.177+07:00  WARN 72075 --- [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Index 0 out of bounds for length 0]
+2023-04-26T16:59:10.702+07:00  WARN 72075 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Index 0 out of bounds for length 0]
+2023-04-26T16:59:46.357+07:00  INFO 72075 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T16:59:46.360+07:00  INFO 72075 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-26T16:59:46.366+07:00  INFO 72075 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-26T16:59:48.333+07:00  INFO 84185 --- [main] c.d.Monopoly.MonopoyApplication          : Starting MonopoyApplication using Java 17.0.6 with PID 84185 (/home/truong/Documents/web_projects/monopolyGame/target/classes started by truong in /home/truong/Documents/web_projects/monopolyGame)
+2023-04-26T16:59:48.357+07:00  INFO 84185 --- [main] c.d.Monopoly.MonopoyApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-04-26T16:59:49.582+07:00  INFO 84185 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-26T16:59:49.638+07:00  INFO 84185 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 0 JPA repository interfaces.
+2023-04-26T16:59:50.860+07:00  INFO 84185 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-26T16:59:50.892+07:00  INFO 84185 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-26T16:59:50.895+07:00  INFO 84185 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-26T16:59:51.244+07:00  INFO 84185 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-26T16:59:51.245+07:00  INFO 84185 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2745 ms
+2023-04-26T16:59:52.050+07:00  INFO 84185 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-26T16:59:52.559+07:00  INFO 84185 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:0e8fcdef-00ae-44cd-8668-6cbf320bff1b user=SA
+2023-04-26T16:59:52.564+07:00  INFO 84185 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-26T16:59:52.702+07:00  INFO 84185 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-26T16:59:52.875+07:00  INFO 84185 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-26T16:59:53.463+07:00  INFO 84185 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-26T16:59:53.961+07:00  INFO 84185 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-26T16:59:53.980+07:00  INFO 84185 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T16:59:54.140+07:00  WARN 84185 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-26T16:59:54.436+07:00  INFO 84185 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-04-26T16:59:54.895+07:00  INFO 84185 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-26T16:59:54.917+07:00  INFO 84185 --- [main] c.d.Monopoly.MonopoyApplication          : Started MonopoyApplication in 7.523 seconds (process running for 8.145)
+2023-04-26T17:00:22.790+07:00  INFO 84185 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T17:00:22.798+07:00  INFO 84185 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-26T17:00:22.810+07:00  INFO 84185 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-26T17:00:24.768+07:00  INFO 84500 --- [main] c.d.Monopoly.MonopoyApplication          : Starting MonopoyApplication using Java 17.0.6 with PID 84500 (/home/truong/Documents/web_projects/monopolyGame/target/classes started by truong in /home/truong/Documents/web_projects/monopolyGame)
+2023-04-26T17:00:24.773+07:00  INFO 84500 --- [main] c.d.Monopoly.MonopoyApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-04-26T17:00:26.124+07:00  INFO 84500 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-26T17:00:26.202+07:00  INFO 84500 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 0 JPA repository interfaces.
+2023-04-26T17:00:27.360+07:00  INFO 84500 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-26T17:00:27.378+07:00  INFO 84500 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-26T17:00:27.379+07:00  INFO 84500 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-26T17:00:27.662+07:00  INFO 84500 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-26T17:00:27.665+07:00  INFO 84500 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2775 ms
+2023-04-26T17:00:27.995+07:00  INFO 84500 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-26T17:00:28.427+07:00  INFO 84500 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:da0ecd9d-47c3-4a77-bd3b-3f6ed5d0f69c user=SA
+2023-04-26T17:00:28.436+07:00  INFO 84500 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-26T17:00:28.523+07:00  INFO 84500 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-26T17:00:28.599+07:00  INFO 84500 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-26T17:00:29.023+07:00  INFO 84500 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-26T17:00:29.412+07:00  INFO 84500 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-26T17:00:29.443+07:00  INFO 84500 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T17:00:29.539+07:00  WARN 84500 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-26T17:00:29.790+07:00  INFO 84500 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-04-26T17:00:30.089+07:00  INFO 84500 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-26T17:00:30.124+07:00  INFO 84500 --- [main] c.d.Monopoly.MonopoyApplication          : Started MonopoyApplication in 6.294 seconds (process running for 6.961)
+2023-04-26T17:00:35.021+07:00  INFO 84500 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-26T17:00:35.023+07:00  INFO 84500 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-26T17:00:35.039+07:00  INFO 84500 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2023-04-26T17:00:35.345+07:00  WARN 84500 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Index 0 out of bounds for length 0]
+2023-04-26T17:00:41.438+07:00  WARN 84500 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Index 0 out of bounds for length 0]
+2023-04-26T17:03:16.561+07:00  INFO 84500 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T17:03:16.566+07:00  INFO 84500 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-26T17:03:16.578+07:00  INFO 84500 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-26T20:27:42.494+07:00  INFO 5233 --- [main] c.d.Monopoly.MonopoyApplication          : Starting MonopoyApplication using Java 17.0.6 with PID 5233 (/home/truong/Documents/web_projects/monopolyGame/target/classes started by truong in /home/truong/Documents/web_projects/monopolyGame)
+2023-04-26T20:27:42.503+07:00  INFO 5233 --- [main] c.d.Monopoly.MonopoyApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-04-26T20:27:43.981+07:00  INFO 5233 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-26T20:27:44.044+07:00  INFO 5233 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 0 JPA repository interfaces.
+2023-04-26T20:27:45.039+07:00  INFO 5233 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-26T20:27:45.065+07:00  INFO 5233 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-26T20:27:45.066+07:00  INFO 5233 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-26T20:27:45.308+07:00  INFO 5233 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-26T20:27:45.309+07:00  INFO 5233 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2626 ms
+2023-04-26T20:27:45.614+07:00  INFO 5233 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-26T20:27:45.918+07:00  INFO 5233 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:3f5e2076-a22f-4be8-8a8d-b0b66866ceee user=SA
+2023-04-26T20:27:45.922+07:00  INFO 5233 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-26T20:27:46.061+07:00  INFO 5233 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-26T20:27:46.186+07:00  INFO 5233 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-26T20:27:46.760+07:00  INFO 5233 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-26T20:27:47.197+07:00  INFO 5233 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-26T20:27:47.220+07:00  INFO 5233 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T20:27:47.358+07:00  WARN 5233 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-26T20:27:47.615+07:00  INFO 5233 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-04-26T20:27:47.963+07:00  INFO 5233 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-26T20:27:47.989+07:00  INFO 5233 --- [main] c.d.Monopoly.MonopoyApplication          : Started MonopoyApplication in 6.27 seconds (process running for 6.878)
+2023-04-26T20:27:52.978+07:00  INFO 5233 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-26T20:27:52.979+07:00  INFO 5233 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-26T20:27:52.983+07:00  INFO 5233 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-04-26T20:27:57.591+07:00  WARN 5233 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Index 0 out of bounds for length 0]
+2023-04-26T20:29:04.203+07:00  INFO 5233 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T20:29:04.210+07:00  INFO 5233 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-26T20:29:04.228+07:00  INFO 5233 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-26T20:29:06.470+07:00  INFO 5867 --- [main] c.d.Monopoly.MonopoyApplication          : Starting MonopoyApplication using Java 17.0.6 with PID 5867 (/home/truong/Documents/web_projects/monopolyGame/target/classes started by truong in /home/truong/Documents/web_projects/monopolyGame)
+2023-04-26T20:29:06.491+07:00  INFO 5867 --- [main] c.d.Monopoly.MonopoyApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-04-26T20:29:07.924+07:00  INFO 5867 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-26T20:29:07.994+07:00  INFO 5867 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 0 JPA repository interfaces.
+2023-04-26T20:29:09.272+07:00  INFO 5867 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-26T20:29:09.304+07:00  INFO 5867 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-26T20:29:09.306+07:00  INFO 5867 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-26T20:29:09.557+07:00  INFO 5867 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-26T20:29:09.560+07:00  INFO 5867 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2904 ms
+2023-04-26T20:29:09.823+07:00  INFO 5867 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-26T20:29:10.166+07:00  INFO 5867 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:a297a652-3485-47b9-8810-03920cf2eb1d user=SA
+2023-04-26T20:29:10.170+07:00  INFO 5867 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-26T20:29:10.339+07:00  INFO 5867 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-26T20:29:10.442+07:00  INFO 5867 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-26T20:29:10.980+07:00  INFO 5867 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-26T20:29:11.443+07:00  INFO 5867 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-26T20:29:11.463+07:00  INFO 5867 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T20:29:11.613+07:00  WARN 5867 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-26T20:29:11.978+07:00  INFO 5867 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-04-26T20:29:12.427+07:00  INFO 5867 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-26T20:29:12.465+07:00  INFO 5867 --- [main] c.d.Monopoly.MonopoyApplication          : Started MonopoyApplication in 6.957 seconds (process running for 7.807)
+2023-04-26T20:29:30.885+07:00  INFO 5867 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-26T20:29:30.886+07:00  INFO 5867 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-26T20:29:30.892+07:00  INFO 5867 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2023-04-26T20:36:51.197+07:00  WARN 5867 --- [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2023-04-26T20:37:04.179+07:00  WARN 5867 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public static com.development.Monopoly.entity.Table com.development.Monopoly.controller.TableController.newTable(java.lang.String,java.lang.String)]
+2023-04-26T20:37:49.142+07:00  WARN 5867 --- [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public static com.development.Monopoly.entity.Table com.development.Monopoly.controller.TableController.newTable(java.lang.String,java.lang.String)]
+2023-04-26T20:38:00.097+07:00  INFO 5867 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T20:38:00.102+07:00  INFO 5867 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-26T20:38:00.107+07:00  INFO 5867 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-26T20:38:02.749+07:00  INFO 9248 --- [main] c.d.Monopoly.MonopoyApplication          : Starting MonopoyApplication using Java 17.0.6 with PID 9248 (/home/truong/Documents/web_projects/monopolyGame/target/classes started by truong in /home/truong/Documents/web_projects/monopolyGame)
+2023-04-26T20:38:02.781+07:00  INFO 9248 --- [main] c.d.Monopoly.MonopoyApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-04-26T20:38:04.398+07:00  INFO 9248 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-26T20:38:04.461+07:00  INFO 9248 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 0 JPA repository interfaces.
+2023-04-26T20:38:05.437+07:00  INFO 9248 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-26T20:38:05.476+07:00  INFO 9248 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-26T20:38:05.481+07:00  INFO 9248 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-26T20:38:05.700+07:00  INFO 9248 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-26T20:38:05.702+07:00  INFO 9248 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2680 ms
+2023-04-26T20:38:05.947+07:00  INFO 9248 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-26T20:38:06.287+07:00  INFO 9248 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:487bf505-7527-44fd-a6d9-fba1f3b689c6 user=SA
+2023-04-26T20:38:06.293+07:00  INFO 9248 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-26T20:38:06.464+07:00  INFO 9248 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-26T20:38:06.568+07:00  INFO 9248 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-26T20:38:07.088+07:00  INFO 9248 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-26T20:38:07.515+07:00  INFO 9248 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-26T20:38:07.553+07:00  INFO 9248 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T20:38:07.728+07:00  WARN 9248 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-26T20:38:07.981+07:00  INFO 9248 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-04-26T20:38:08.409+07:00  INFO 9248 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-26T20:38:08.457+07:00  INFO 9248 --- [main] c.d.Monopoly.MonopoyApplication          : Started MonopoyApplication in 7.123 seconds (process running for 7.935)
+2023-04-26T20:38:16.151+07:00  INFO 9248 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-26T20:38:16.152+07:00  INFO 9248 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-26T20:38:16.156+07:00  INFO 9248 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-04-26T20:38:16.301+07:00  WARN 9248 --- [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public static com.development.Monopoly.entity.Table com.development.Monopoly.controller.TableController.newTable(java.lang.String,java.lang.String)]
+2023-04-26T20:40:41.906+07:00  INFO 9248 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T20:40:41.910+07:00  INFO 9248 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-26T20:40:41.915+07:00  INFO 9248 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-26T20:40:44.190+07:00  INFO 10157 --- [main] c.d.Monopoly.MonopoyApplication          : Starting MonopoyApplication using Java 17.0.6 with PID 10157 (/home/truong/Documents/web_projects/monopolyGame/target/classes started by truong in /home/truong/Documents/web_projects/monopolyGame)
+2023-04-26T20:40:44.201+07:00  INFO 10157 --- [main] c.d.Monopoly.MonopoyApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-04-26T20:40:45.470+07:00  INFO 10157 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-26T20:40:45.533+07:00  INFO 10157 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 0 JPA repository interfaces.
+2023-04-26T20:40:46.403+07:00  INFO 10157 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-26T20:40:46.423+07:00  INFO 10157 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-26T20:40:46.425+07:00  INFO 10157 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-26T20:40:46.647+07:00  INFO 10157 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-26T20:40:46.649+07:00  INFO 10157 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2271 ms
+2023-04-26T20:40:46.927+07:00  INFO 10157 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-26T20:40:47.269+07:00  INFO 10157 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:d10d590a-5bfb-4133-850d-5dd91a5bf1ab user=SA
+2023-04-26T20:40:47.275+07:00  INFO 10157 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-26T20:40:47.423+07:00  INFO 10157 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-26T20:40:47.535+07:00  INFO 10157 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-26T20:40:48.029+07:00  INFO 10157 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-26T20:40:48.502+07:00  INFO 10157 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-26T20:40:48.535+07:00  INFO 10157 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T20:40:48.700+07:00  WARN 10157 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-26T20:40:48.947+07:00  INFO 10157 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-04-26T20:40:49.276+07:00  INFO 10157 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-26T20:40:49.296+07:00  INFO 10157 --- [main] c.d.Monopoly.MonopoyApplication          : Started MonopoyApplication in 6.195 seconds (process running for 6.984)
+2023-04-26T20:40:54.022+07:00  INFO 10157 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-26T20:40:54.023+07:00  INFO 10157 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-26T20:40:54.027+07:00  INFO 10157 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-04-26T20:53:34.595+07:00  INFO 10157 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T20:53:34.615+07:00  INFO 10157 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-26T20:53:34.623+07:00  INFO 10157 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-26T20:53:36.516+07:00  INFO 13567 --- [main] c.d.Monopoly.MonopoyApplication          : Starting MonopoyApplication using Java 17.0.6 with PID 13567 (/home/truong/Documents/web_projects/monopolyGame/target/classes started by truong in /home/truong/Documents/web_projects/monopolyGame)
+2023-04-26T20:53:36.521+07:00  INFO 13567 --- [main] c.d.Monopoly.MonopoyApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-04-26T20:53:37.774+07:00  INFO 13567 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-26T20:53:37.863+07:00  INFO 13567 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 0 JPA repository interfaces.
+2023-04-26T20:53:38.946+07:00  INFO 13567 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-26T20:53:38.971+07:00  INFO 13567 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-26T20:53:38.973+07:00  INFO 13567 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-26T20:53:39.214+07:00  INFO 13567 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-26T20:53:39.215+07:00  INFO 13567 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2524 ms
+2023-04-26T20:53:39.489+07:00  INFO 13567 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-26T20:53:39.825+07:00  INFO 13567 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:4182c68e-2f73-43fb-945c-295da32d0f36 user=SA
+2023-04-26T20:53:39.829+07:00  INFO 13567 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-26T20:53:39.948+07:00  INFO 13567 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-26T20:53:40.060+07:00  INFO 13567 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-26T20:53:40.548+07:00  INFO 13567 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-26T20:53:41.131+07:00  INFO 13567 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-26T20:53:41.168+07:00  INFO 13567 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T20:53:41.324+07:00  WARN 13567 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-26T20:53:41.644+07:00  INFO 13567 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-04-26T20:53:42.055+07:00  INFO 13567 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-26T20:53:42.092+07:00  INFO 13567 --- [main] c.d.Monopoly.MonopoyApplication          : Started MonopoyApplication in 6.38 seconds (process running for 7.023)
+2023-04-26T20:53:50.850+07:00  INFO 13567 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-26T20:53:50.851+07:00  INFO 13567 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-26T20:53:50.854+07:00  INFO 13567 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-04-26T20:53:55.043+07:00  WARN 13567 --- [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Index 0 out of bounds for length 0]
+2023-04-26T20:54:31.414+07:00  INFO 13567 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T20:54:31.419+07:00  INFO 13567 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-26T20:54:31.426+07:00  INFO 13567 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-26T20:54:33.915+07:00  INFO 13993 --- [main] c.d.Monopoly.MonopoyApplication          : Starting MonopoyApplication using Java 17.0.6 with PID 13993 (/home/truong/Documents/web_projects/monopolyGame/target/classes started by truong in /home/truong/Documents/web_projects/monopolyGame)
+2023-04-26T20:54:33.919+07:00  INFO 13993 --- [main] c.d.Monopoly.MonopoyApplication          : No active profile set, falling back to 1 default profile: "default"
+2023-04-26T20:54:35.424+07:00  INFO 13993 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-26T20:54:35.512+07:00  INFO 13993 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 0 JPA repository interfaces.
+2023-04-26T20:54:36.683+07:00  INFO 13993 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-26T20:54:36.701+07:00  INFO 13993 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-26T20:54:36.702+07:00  INFO 13993 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.7]
+2023-04-26T20:54:36.917+07:00  INFO 13993 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-26T20:54:36.919+07:00  INFO 13993 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2806 ms
+2023-04-26T20:54:37.260+07:00  INFO 13993 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-26T20:54:37.727+07:00  INFO 13993 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:71826ad0-4f23-4707-8d72-fd7ee9e4fd75 user=SA
+2023-04-26T20:54:37.731+07:00  INFO 13993 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-26T20:54:37.835+07:00  INFO 13993 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-26T20:54:37.939+07:00  INFO 13993 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-26T20:54:38.692+07:00  INFO 13993 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-26T20:54:39.165+07:00  INFO 13993 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-26T20:54:39.195+07:00  INFO 13993 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T20:54:39.324+07:00  WARN 13993 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-26T20:54:39.812+07:00  INFO 13993 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-04-26T20:54:40.283+07:00  INFO 13993 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-26T20:54:40.316+07:00  INFO 13993 --- [main] c.d.Monopoly.MonopoyApplication          : Started MonopoyApplication in 7.512 seconds (process running for 8.454)
+2023-04-26T20:55:14.051+07:00  INFO 13993 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-26T20:55:14.052+07:00  INFO 13993 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-26T20:55:14.055+07:00  INFO 13993 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-04-26T21:01:17.496+07:00  WARN 13993 --- [http-nio-8080-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; For input string: "undefined"]
+2023-04-26T21:14:12.261+07:00  INFO 13993 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-26T21:14:12.264+07:00  INFO 13993 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-26T21:14:12.268+07:00  INFO 13993 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
