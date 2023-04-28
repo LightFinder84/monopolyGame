@@ -78,13 +78,13 @@
 
             <!-- first row -->
             <div class="row1 d-flex">
-                <div class="square corner-square d-flex flex-column justify-content-between square-0" id="start-space">
+                <div class="square corner-square d-flex flex-column justify-content-between square-0" id="start-space" onclick="getSpace(0)">
                     <h3 class="text-dark">START</h3>
                     <div class="d-flex flex-wrap player-container" id="player-container-0">
 
                     </div>
                 </div>
-                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-1 overflow-hidden"
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-1 overflow-hidden" onclick="getSpace(1)"
                     id="nguyen-hue-space">
                     <small class="text-white m-0 p-1 fw-bold w-100 small-text text-center bg-danger rounded">NGUYỄN
                         HUỆ</small>
@@ -93,7 +93,7 @@
 
                     </div>
                 </div>
-                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-2 community-space"
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-2 community-space" onclick="getSpace(2)"
                     id="community-chest-space-1">
                     <small class="text-white m-0 p-0 fw-bold w-100 mt-1 small-text text-center">KHÍ VẬN</small>
                     <div class="community-chest h-50 p-0 m-0 w-100"></div>
@@ -101,7 +101,7 @@
 
                     </div>
                 </div>
-                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-3 overflow-hidden"
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-3 overflow-hidden" onclick="getSpace(3)"
                     id="le-loi-space">
                     <small class="text-white m-0 p-1 fw-bold w-100 small-text text-center bg-danger">LÊ LỢI</small>
                     <small class="text-dark small-text fw-bold bg-light rounded p-1">$60</small>
@@ -109,7 +109,7 @@
 
                     </div>
                 </div>
-                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-4"
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-4" onclick="getSpace(4)"
                     id="tax-space">
                     <small class="text-dark m-0 p-0 fw-bold w-100 mt-1 small-text text-center">NỘP THUẾ </small>
                     <small class="text-dark small-text fw-bold bg-light rounded p-1 text-center">10%</small>
@@ -117,7 +117,7 @@
 
                     </div>
                 </div>
-                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-5"
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-5" onclick="getSpace(5)"
                     id="can-giuoc-bus-station">
                     <small class="text-dark m-0 p-0 fw-bold w-100 mt-1 small-text text-center">BẾN XE CẦN GIUỘC</small>
                     <small class="text-dark small-text fw-bold bg-light rounded p-1">$200</small>
@@ -125,7 +125,7 @@
 
                     </div>
                 </div>
-                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-6 overflow-hidden"
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-6 overflow-hidden" onclick="getSpace(6)"
                     id="luong-dinh-cua-space">
                     <small class="text-white m-0 p-0 pt-1 fw-bold w-100 small-text text-center bg-secondary">LƯƠNG ĐỊNH
                         CỦA</small>
@@ -134,7 +134,7 @@
 
                     </div>
                 </div>
-                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-7 p-0"
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-7 p-0" onclick="getSpace(7)"
                     id="chance-1-space">
                     <small class="text-dark m-0 p-0 fw-bold w-100 mt-1 small-text text-center">CƠ HỘI</small>
                     <div class="opportunity h-50 w-100 p-0 m-0"></div>
@@ -142,7 +142,7 @@
 
                     </div>
                 </div>
-                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-8 p-0 overflow-hidden"
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-8 p-0 overflow-hidden" onclick="getSpace(8)"
                     id="vo-thi-sau-space">
                     <small class="text-white m-0 p-1 fw-bold w-100  small-text text-center bg-secondary">VÕ THỊ
                         SÁU</small>
@@ -152,7 +152,7 @@
                     </div>
                 </div>
 
-                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-9 overflow-hidden"
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-9 overflow-hidden" onclick="getSpace(9)"
                     id="hai-ba-trung-space">
                     <small class="text-white m-0 p-1 fw-bold w-100 small-text text-center bg-secondary">HAI BÀ
                         TRƯNG</small>
@@ -161,7 +161,7 @@
 
                     </div>
                 </div>
-                <div class="square corner-square square-10 position-relative square-10" id="jail-space">
+                <div class="square corner-square square-10 position-relative square-10" id="jail-space" onclick="getSpace(10)"> 
                     <small class="fw-bold text-dark">NHÀ TÙ</small>
                     <div class="position-absolute jail w-50 h-50 p-2 m-0">
                         <div class="d-flex flex-wrap player-container px-1" id="jail-container">
@@ -178,7 +178,7 @@
 
             <!-- row 2-10 -->
             <div class="rown d-flex justify-content-between" id="tan-ky-tan-space">
-                <div class="square lie-square square-39 overflow-hidden">
+                <div class="square lie-square square-39 overflow-hidden" onclick="getSpace(39)">
                     <div class="d-flex justify-content-between flex-column p-0">
                         <small class="fw-bold text-white small-text p-1 text-center bg-dark-blue mb-1">TÂN KỲ TÂN
                             QUÝ</small>
@@ -190,7 +190,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="square lie-square square-11 overflow-hidden" id="nguyen-tat-thanh-space">
+                <div class="square lie-square square-11 overflow-hidden" id="nguyen-tat-thanh-space" onclick="getSpace(11)">
                     <div class="d-flex flex-column justify-content-between p-0">
                         <small class="fw-bold text-white small-text p-1 text-center bg-success mb-1">NGUYỄN TẤT
                             THÀNH</small>
@@ -204,7 +204,7 @@
                 </div>
             </div>
             <div class="rown d-flex justify-content-between" id="special-tax-space">
-                <div class="square lie-square square-38">
+                <div class="square lie-square square-38" onclick="getSpace(38)">
                     <div class="d-flex justify-content-between flex-column p-0">
                         <small class="fw-bold text-dark small-text p-1 text-center mb-1">THUẾ ĐẶC BIỆT</small>
                         <div class="d-flex justify-content-between px-1">
@@ -215,7 +215,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="square lie-square square-12 p-0" id="electricity-company-space">
+                <div class="square lie-square square-12 p-0" id="electricity-company-space" onclick="getSpace(12)">
                     <div class="d-flex flex-column justify-content-between p-0">
                         <small class="fw-bold text-dark small-text p-1 text-center mb-1">CÔNG TY ĐIỆN LỰC</small>
                         <div class="d-flex justify-content-between px-1">
@@ -240,7 +240,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="square lie-square square-13 overflow-hidden" id="nguyen-trai-space">
+                <div class="square lie-square square-13 overflow-hidden" id="nguyen-trai-space" onclick="getSpace(13)">
                     <div class="d-flex flex-column justify-content-between p-0">
                         <small class="fw-bold text-white small-text p-1 text-center bg-success mb-1">NGUYỄN TRÃI</small>
                         <div class="d-flex justify-content-between px-1">
@@ -253,7 +253,7 @@
                 </div>
             </div>
             <div class="rown d-flex justify-content-between">
-                <div class="square lie-square square-36" id="chance-3-space">
+                <div class="square lie-square square-36" id="chance-3-space" onclick="getSpace(36)">
                     <div class="d-flex justify-content-between flex-column p-0">
                         <small class="fw-bold text-dark small-text p-1 text-center mb-0">CƠ HỘI </small>
                         <div class="d-flex justify-content-between px-3 align-items-center">
@@ -264,7 +264,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="square lie-square square-14 overflow-hidden" id="an-duong-vuong-space">
+                <div class="square lie-square square-14 overflow-hidden" id="an-duong-vuong-space" onclick="getSpace(14)">
                     <div class="d-flex justify-content-between flex-column p-0">
                         <small class="fw-bold text-white small-text p-1 text-center bg-success mb-1">AN DƯƠNG
                             VƯƠNG</small>
@@ -278,7 +278,7 @@
                 </div>
             </div>
             <div class="rown d-flex justify-content-between" id="easter-bus-station">
-                <div class="square lie-square square-35">
+                <div class="square lie-square square-35" onclick="getSpace(35)">
                     <div class="d-flex justify-content-between flex-column p-0">
                         <small class="fw-bold text-dark small-text p-1 text-center mb-1">BẾN XE MIỀN ĐÔNG </small>
                         <div class="d-flex justify-content-between px-1">
@@ -289,7 +289,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="square lie-square square-15 overflow-hidden" id="western-bus-station">
+                <div class="square lie-square square-15 overflow-hidden" id="western-bus-station" onclick="getSpace(15)">
                     <div class="d-flex flex-column justify-content-between p-0">
                         <small class="fw-bold text-dark small-text p-1 text-center mb-1">BẾN XE MIỀN TÂY</small>
                         <div class="d-flex justify-content-between px-1">
@@ -302,7 +302,7 @@
                 </div>
             </div>
             <div class="rown d-flex justify-content-between" id="quan-trung-space">
-                <div class="square lie-square square-34 overflow-hidden">
+                <div class="square lie-square square-34 overflow-hidden" onclick="getSpace(34)">
                     <div class="d-flex justify-content-between flex-column p-0">
                         <small class="fw-bold text-white small-text p-1 text-center bg-primary mb-1">QUANG TRUNG
                         </small>
@@ -314,7 +314,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="square lie-square square-16 overflow-hidden" id="hau-giang-space">
+                <div class="square lie-square square-16 overflow-hidden" id="hau-giang-space" onclick="getSpace(16)">
                     <div class="d-flex justify-content-between flex-column p-0">
                         <small class="fw-bold text-white small-text p-1 text-center bg-dark mb-1">HẬU GIANG</small>
                         <div class="d-flex justify-content-between px-1">
@@ -327,7 +327,7 @@
                 </div>
             </div>
             <div class="rown d-flex justify-content-between">
-                <div class="square community-space lie-square square-33" id="community-chest-space-3">
+                <div class="square community-space lie-square square-33" id="community-chest-space-3" onclick="getSpace(33)">
                     <div class="d-flex justify-content-between flex-column p-0">
                         <small class="fw-bold text-dark small-text p-1 text-center mb-1">KHÍ VẬN</small>
                         <div class="d-flex justify-content-between px-1">
@@ -338,7 +338,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="square community-space lie-square square-17 overflow-hidden" id="community-chest-space-2">
+                <div class="square community-space lie-square square-17 overflow-hidden" id="community-chest-space-2" onclick="getSpace(17)">
                     <div class="d-flex justify-content-between flex-column p-0">
                         <small class="fw-bold text-dark small-text p-1 text-center mb-1">KHÍ VẬN</small>
                         <div class="d-flex justify-content-between px-1">
@@ -351,7 +351,7 @@
                 </div>
             </div>
             <div class="rown d-flex justify-content-between">
-                <div class="square lie-square square-32 overflow-hidden" id="nguyen-kiem-space">
+                <div class="square lie-square square-32 overflow-hidden" id="nguyen-kiem-space" onclick="getSpace(32)">
                     <div class="d-flex justify-content-between flex-column p-0">
                         <small class="fw-bold text-white small-text p-1 text-center bg-primary mb-1">NGUYỄN KIỆM
                         </small>
@@ -363,7 +363,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="square lie-square square-18 overflow-hidden" id="hung-vuong-space">
+                <div class="square lie-square square-18 overflow-hidden" id="hung-vuong-space" onclick="getSpace(18)">
                     <div class="d-flex justify-content-between flex-column p-0">
                         <small class="fw-bold text-white small-text p-1 text-center bg-dark mb-1">HÙNG VƯƠNG</small>
                         <div class="d-flex justify-content-between px-1">
@@ -376,7 +376,7 @@
                 </div>
             </div>
             <div class="rown d-flex justify-content-between">
-                <div class="square lie-square square-31 overflow-hidden" id="cong-hoa-space">
+                <div class="square lie-square square-31 overflow-hidden" id="cong-hoa-space" onclick="getSpace(31)">
                     <div class="d-flex justify-content-between flex-column p-0">
                         <small class="fw-bold text-white small-text p-1 text-center bg-primary mb-1">CỘNG HÒA</small>
                         <div class="d-flex justify-content-between px-1">
@@ -387,7 +387,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="square lie-square square-19 overflow-hidden" id="huynh-tan-phat-space">
+                <div class="square lie-square square-19 overflow-hidden" id="huynh-tan-phat-space" onclick="getSpace(19)">
                     <div class="d-flex justify-content-between flex-column p-0">
                         <small class="fw-bold text-white small-text p-1 text-center bg-dark mb-1">HUỲNH TẤN PHÁT</small>
                         <div class="d-flex justify-content-between px-1">
@@ -402,13 +402,13 @@
 
             <!-- last row -->
             <div class="row1 d-flex">
-                <div class="square corner-square square-30" id="go-to-jail-space">
+                <div class="square corner-square square-30" id="go-to-jail-space" onclick="getSpace(30)">
                     <h4>VÀO TÙ</h4>
                     <div class="d-flex flex-wrap player-container px-3" id="player-container-30">
 
                     </div>
                 </div>
-                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-29 overflow-hidden"
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-29 overflow-hidden" onclick="getSpace(29)"
                     id="hoang-van-thu-space">
                     <small class="text-dark m-0 p-1 fw-bold w-100 small-text text-center bg-violet">HOÀNG VĂN
                         THỤ</small>
@@ -417,7 +417,7 @@
 
                     </div>
                 </div>
-                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-28 overflow-hidden"
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-28 overflow-hidden" onclick="getSpace(28)"
                     id="water-supply-company">
                     <small class="text-dark m-0 p-1 fw-bold w-100 small-text text-center">CTY CẤP NƯỚC</small>
                     <small class="text-dark small-text fw-bold bg-light rounded p-1">$200</small>
@@ -425,7 +425,7 @@
 
                     </div>
                 </div>
-                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-27 overflow-hidden"
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-27 overflow-hidden" onclick="getSpace(27)"
                     id="truong-chinh-space">
                     <small class="text-dark m-0 p-1 fw-bold w-100 small-text text-center bg-violet">TRƯỜNG CHINH</small>
                     <small class="text-dark small-text fw-bold bg-light rounded p-1">$280</small>
@@ -433,7 +433,7 @@
 
                     </div>
                 </div>
-                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-26 overflow-hidden"
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-26 overflow-hidden" onclick="getSpace(26)"
                     id="le-dai-hanh-space">
                     <small class="text-dark m-0 p-1 fw-bold w-100 small-text text-center bg-violet">LÊ ĐẠI HÀNH</small>
                     <small class="text-dark small-text fw-bold bg-light rounded p-1">$280</small>
@@ -441,7 +441,7 @@
 
                     </div>
                 </div>
-                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-25 overflow-hidden"
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-25 overflow-hidden" onclick="getSpace(25)"
                     id="cho-lon-bus-station-space">
                     <small class="text-dark m-0 p-1 fw-bold w-100 small-text text-center">BẾN XE CHỢ LỚN</small>
                     <small class="text-dark small-text fw-bold bg-light rounded p-1">$220</small>
@@ -449,7 +449,7 @@
 
                     </div>
                 </div>
-                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-24 overflow-hidden"
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-24 overflow-hidden" onclick="getSpace(24)"
                     id="nguyen-t-phuong-space">
                     <small class="text-dark m-0 p-1 fw-bold w-100 small-text text-center bg-warning">NGUYỄN T
                         PHƯƠNG</small>
@@ -458,7 +458,7 @@
 
                     </div>
                 </div>
-                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-23 overflow-hidden"
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-23 overflow-hidden" onclick="getSpace(23)"
                     id="kha-van-can-space">
                     <small class="text-dark m-0 p-1 fw-bold w-100 small-text text-center bg-warning">KHA VẠN CÂN</small>
                     <small class="text-dark small-text fw-bold bg-light rounded p-1">$220</small>
@@ -466,7 +466,7 @@
 
                     </div>
                 </div>
-                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-22 overflow-hidden"
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-22 overflow-hidden" onclick="getSpace(22)"
                     id="chance-2-space">
                     <small class="text-dark m-0 p-1 fw-bold w-100 small-text text-center">CƠ HỘI</small>
                     <div class="opportunity h-50 w-100 p-0 m-0"></div>
@@ -474,7 +474,7 @@
 
                     </div>
                 </div>
-                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-21 overflow-hidden"
+                <div class="square stand-square d-flex flex-column justify-content-between align-items-center square-21 overflow-hidden" onclick="getSpace(21)"
                     id="pham-the-hien-space">
                     <small class="text-dark m-0 p-1 fw-bold w-100 small-text text-center bg-warning">PHẠM THẾ
                         HIỂN</small>
@@ -521,6 +521,7 @@
             <div class="d-flex justify-content-between flex-wrap m-2">
                 <button class="w-50 btn-primary" id="ready-button">Sẵn sàng</button>
                 <button class="w-50 btn-danger" id="quit-button">Thoát game</button>
+                <button class="w-50 btn-danger" onclick="surrender()">Chịu thua</button>
             </div>
 
             <div class="d-flex p-2">

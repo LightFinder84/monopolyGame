@@ -5,7 +5,10 @@ import java.util.List;
 
 import com.development.Monopoly.Utils.EstateColor;
 import com.development.Monopoly.Utils.PlayerStatus;
+import com.development.Monopoly.entity.card.ChanceCard;
 import com.development.Monopoly.entity.space.BusStation;
+import com.development.Monopoly.entity.space.Chance;
+import com.development.Monopoly.entity.space.CommunityChest;
 import com.development.Monopoly.entity.space.Company;
 import com.development.Monopoly.entity.space.Estate;
 import com.development.Monopoly.entity.space.GoToJail;
@@ -13,7 +16,6 @@ import com.development.Monopoly.entity.space.Property;
 import com.development.Monopoly.entity.space.Space;
 import com.development.Monopoly.entity.space.SpecialTax;
 import com.development.Monopoly.entity.space.Tax;
-import com.development.Monopoly.exception.PlayerNotFoundException;
 import com.development.Monopoly.exception.UnExpectedErrorException;
 
 public class Player {
@@ -32,6 +34,8 @@ public class Player {
     private List<Player> listPersonToPay;
     private int BusStationNumber;
     private List<Property> ownedProperty;
+    private int communityCardToDraw;
+    private int chanceCardToDraw;
 
     public List<Property> getOwnedProperty() {
         return ownedProperty;
@@ -54,6 +58,10 @@ public class Player {
         else return 0;
     }
     public void surrender(Event event) {
+        if(listPersonToPay.size() == 0){
+            throw new UnExpectedErrorException("Bạn không thiếu nợ ai, còn hơi sớm để chịu thua đó. Chơi tiép đi!!");
+        }
+
         if (this.getOwnedProperty().size() > 0) {
             throw new UnExpectedErrorException("Bạn phải bán tất cả những tài sản nếu có");
         }
@@ -61,7 +69,7 @@ public class Player {
             this.payMoney(player.getId(), event);
         }
         setStatus(PlayerStatus.LOOSED);
-        event.setEventMessage("Người chơi --->" + this.getName() + "<--- đã đầu hàng");
+        event.setEventMessage("Người chơi --->" + this.getName() + "<--- đã chịu thua.");
     }
     // khoa, sellHouse
     public void sellHouse(Space space, Event event) {
@@ -95,17 +103,17 @@ public class Player {
             throw new UnExpectedErrorException("Chỗ này không bán được");
         }
 
-        if (this.id != property.getId())
+        if (this.id != property.getOwner().getId())
             throw new UnExpectedErrorException("Bạn không sở hữu tài sản này");
 
         else {
             // Sell Estate
             if (property instanceof Estate) {
                 Estate estate = (Estate) property;
-                estate.deleteAllBuildings();
                 this.money += estate.getPriceForBuilding() * estate.getNumberOfBuildings() / 2;
                 this.money += estate.getPriceForProperty() / 2;
-                String messageString = "Người ---> " + this.name + " <--- vừa bán " + estate.getName();
+                estate.deleteAllBuildings();
+                String messageString = "---> " + this.name + " <--- vừa bán " + estate.getName();
                 event.setEventMessage(messageString);
                 estate.setOwner(null);
             }
@@ -113,7 +121,7 @@ public class Player {
             else if (property instanceof BusStation) {
                 BusStation busStation = (BusStation) property;
                 this.money += busStation.getPriceForProperty() / 2;
-                String messageString = "Người ---> " + this.name + " <--- vừa bán " + busStation.getName();
+                String messageString = "---> " + this.name + " <--- vừa bán " + busStation.getName();
                 event.setEventMessage(messageString);
                 busStation.setOwner(null);
             }
@@ -121,7 +129,7 @@ public class Player {
             else {
                 Company company = (Company) property;
                 this.money += company.getPriceForProperty() / 2;
-                String messageString = "Người ---> " + this.name + " <--- vừa bán " + company.getName();
+                String messageString = "---> " + this.name + " <--- vừa bán " + company.getName();
                 event.setEventMessage(messageString);
                 company.setOwner(null);
             }
@@ -174,6 +182,8 @@ public class Player {
         this.listMoneyToPay = new ArrayList<>();
         this.listPersonToPay = new ArrayList<>();
         this.ownedProperty = new ArrayList<>();
+        communityCardToDraw = 0;
+        chanceCardToDraw = 0;
     }
 
     public int getMoney() {
@@ -357,10 +367,23 @@ public class Player {
             message += "Người chơi " + this.getName() + " đã bị trừ 100$";
         }
 
+        // neu la o vao tu
         if (space instanceof GoToJail) {
             message += "Mời bạn đi vào tù";
             this.goToJail();
         }
+
+        // neu la o khi van
+        if (space instanceof CommunityChest){
+            message += "Mời bạn rút 1 thẻ khí vận.";
+            communityCardToDraw = 1;
+        }
+        // neu la o co hoi
+        if(space instanceof Chance){
+            message += "Mời bạn rút 1 thẻ cơ hội.";
+            chanceCardToDraw = 1;
+        }
+
         event.setEventMessage(message);
     }
 
@@ -411,6 +434,17 @@ public class Player {
         if(listPersonToPay.size() != 0){
             throw new UnExpectedErrorException("Trả nợ rồi mới được 'xong' nha fen.");
         }
+        if(chanceCardToDraw != 0){
+            throw new UnExpectedErrorException("Phải rút thẻ cơ hội cái đã.");
+        }
+        if(communityCardToDraw != 0){
+            throw new UnExpectedErrorException("Phải rút thẻ khí vận cái đã.");
+        }
+
+        if(this.status == PlayerStatus.INJAIL) this.status = PlayerStatus.INJAIL_1;
+        if(this.status == PlayerStatus.INJAIL_1) this.status = PlayerStatus.INJAIL_2;
+        if(this.status == PlayerStatus.INJAIL_2) this.status = PlayerStatus.INJAIL_3;
+        if(this.status == PlayerStatus.INJAIL_3) this.status = PlayerStatus.INJAIL_4;
         table.nextPlayer(this.id);
     }
 
@@ -441,6 +475,10 @@ public class Player {
         String message = "---> " + name + " <--- đã mua thêm 1 nhà ở " + estate.getName() + " tăng số nhà lên "
                 + estate.getNumberOfBuildings() + " nhà";
         event.setEventMessage(message);
+    }
+    public void drawChance(Event event, ChanceCard card) {
+        chanceCardToDraw -= 1;
+        String message = name + " Đã rút được thẻ " + card.getName() + ": " + card.getMessageString();
     }
 
 }

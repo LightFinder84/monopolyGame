@@ -42,9 +42,9 @@ public class Table {
 
     private List<Space> spaces;
 
-    private Queue<ChanceCard> chances;
+    private Queue<ChanceCard> listChances;
 
-    private Queue<CommunityChestCard> chests;
+    private Queue<CommunityChestCard> listChests;
 
     // constructor
     private Table(int id, String name, String password){
@@ -102,25 +102,25 @@ public class Table {
         spaces.add(new SpecialTax(38, "Thuế đặc biệt"));
         spaces.add(new Estate(39, "Tân Kỳ Tân Quý", EstateColor.DARKBLUE, 350, 200));
     
-        chances = new LinkedList<>();
-        chances.add(new ChanceCard(0, "NGHỈ HƯU", "Đi qua ô bắt đầu, lãnh lương 200"));
-        chances.add(new ChanceCard(1, "ĐI ĐỂ TRỞ VỀ", "Bạn được quyền tự do ra tù (có thể giữ lại)"));
-        chances.add(new ChanceCard(2, "PHI LÔI THẦN THUẬT", "Lắc 2 xúc xắc và di chuyển bằng tích của 2 xúc xắc"));
-        chances.add(new ChanceCard(3, "RÚT THĂM TRÚNG THƯỞNG", "Rút thêm 1 lá khí vận hoặc cơ hội nữa"));
-        chances.add(new ChanceCard(4, "PHIẾU GIẢM GIÁ", "Giảm 50% cho một lần trả tiền bất kỳ (có thế giữ lại)"));
-        chances.add(new ChanceCard(5, "KHÔNG CHÙN BƯỚC", "Bạn được lắc thêm 1 lần nữa"));
-        chances.add(new ChanceCard(6, "LƯU LẠC", "Đến ô Nguyễn Tri Phương lãnh 50"));
-        chances.add(new ChanceCard(7, "EM BÉ", "Thu mỗi người 50 vì là em bé cute"));
+        listChances = new LinkedList<>();
+        listChances.add(new ChanceCard(0, "NGHỈ HƯU", "Đi qua ô bắt đầu, lãnh lương 200"));
+        listChances.add(new ChanceCard(1, "ĐI ĐỂ TRỞ VỀ", "Bạn được quyền tự do ra tù (có thể giữ lại)"));
+        listChances.add(new ChanceCard(2, "PHI LÔI THẦN THUẬT", "Lắc 2 xúc xắc và di chuyển bằng tích của 2 xúc xắc"));
+        listChances.add(new ChanceCard(3, "RÚT THĂM TRÚNG THƯỞNG", "Rút thêm 1 lá khí vận hoặc cơ hội nữa"));
+        listChances.add(new ChanceCard(4, "PHIẾU GIẢM GIÁ", "Giảm 50% cho một lần trả tiền bất kỳ (có thế giữ lại)"));
+        listChances.add(new ChanceCard(5, "KHÔNG CHÙN BƯỚC", "Bạn được lắc thêm 1 lần nữa"));
+        listChances.add(new ChanceCard(6, "LƯU LẠC", "Đến ô Nguyễn Tri Phương lãnh 50"));
+        listChances.add(new ChanceCard(7, "EM BÉ", "Thu mỗi người 50 vì là em bé cute"));
 
-        chests = new LinkedList<>();
-        chests.add(new CommunityChestCard(0, "TÀU CAO TỐC", "Cứ trả 50 đồng sẽ được tiến 1 ô"));
-        chests.add(new CommunityChestCard(1, "ĐÁNH THUẾ", "Chọn 1 người và đánh thuế họ 20%"));
-        chests.add(new CommunityChestCard(2, "ĐỪNG THẤY HOA NỞ MÀ NGỠ XUÂN VỀ", "Bất động sản của bạn bị đóng băng cho đến khi bạn đi qua ô bắt đầu"));
-        chests.add(new CommunityChestCard(3, "TRẢ TIỀN SỬA NHÀ", "Trả 50/nhà và 125/khách sạn bạn sở hữu"));
-        chests.add(new CommunityChestCard(4, "CƯỚP CẠN", "Ngẫu nhiên chọn một tờ tiền từ một người chơi bất kỳ"));
-        chests.add(new CommunityChestCard(5, "MONG ƯỚC KỶ NIỆM XƯA", "Lắc xúc xắc và đi lùi lại bằng số lắc được"));
-        chests.add(new CommunityChestCard(6, "TÂN GIA", "Đặt thêm 1 nhà ở ô đất bất kỳ do mình sở hữu (Không được đặt khách sạn)"));
-        chests.add(new CommunityChestCard(7, "VỀ QUÊ CẮM CÂU", "Đến ô bến xe gần nhất. Trả gấp đôi tiền thuê`"));
+        listChests = new LinkedList<>();
+        listChests.add(new CommunityChestCard(0, "TÀU CAO TỐC", "Cứ trả 50 đồng sẽ được tiến 1 ô"));
+        listChests.add(new CommunityChestCard(1, "ĐÁNH THUẾ", "Chọn 1 người và đánh thuế họ 20%"));
+        listChests.add(new CommunityChestCard(2, "ĐỪNG THẤY HOA NỞ MÀ NGỠ XUÂN VỀ", "Bất động sản của bạn bị đóng băng cho đến khi bạn đi qua ô bắt đầu"));
+        listChests.add(new CommunityChestCard(3, "TRẢ TIỀN SỬA NHÀ", "Trả 50/nhà và 125/khách sạn bạn sở hữu"));
+        listChests.add(new CommunityChestCard(4, "CƯỚP CẠN", "Ngẫu nhiên chọn một tờ tiền từ một người chơi bất kỳ"));
+        listChests.add(new CommunityChestCard(5, "MONG ƯỚC KỶ NIỆM XƯA", "Lắc xúc xắc và đi lùi lại bằng số lắc được"));
+        listChests.add(new CommunityChestCard(6, "TÂN GIA", "Đặt thêm 1 nhà ở ô đất bất kỳ do mình sở hữu (Không được đặt khách sạn)"));
+        listChests.add(new CommunityChestCard(7, "VỀ QUÊ CẮM CÂU", "Đến ô bến xe gần nhất. Trả gấp đôi tiền thuê`"));
     };
 
     public Player findPlayerById(int id){
@@ -130,6 +130,22 @@ public class Table {
             }
         }
         throw new PlayerNotFoundException();
+    }
+
+    public ChanceCard drawChanceCard(){
+        return listChances.remove();
+    }
+
+    public void returnChanceCard(ChanceCard card){
+        listChances.add(card);
+    }
+
+    public CommunityChestCard drawChestCard(){
+        return listChests.remove();
+    }
+
+    public void returnChestCard(CommunityChestCard card){
+        listChests.add(card);
     }
 
     public Space findSpaceById(int id){
@@ -315,22 +331,44 @@ public class Table {
 
     public void nextPlayer(int playerId) {
         Player currentPlayer = playerList.get(playerInTurn);
+        String message = "---> " + currentPlayer.getName() + " <--- đã đi xong.";
         if(currentPlayer.getId() != playerId){
             throw new UnExpectedErrorException("Chưa có tới lượt mà xong gì ba?");
         }
 
         if(currentPlayer.getRollAble() > 0){
-            String message =  "---> " + currentPlayer.getName() + " <--- còn "+currentPlayer.getRollAble()+" lượt lắc xúc xắc nữa, mời bạn lắc tiếp.";
+            message +=  " Nhưng còn "+currentPlayer.getRollAble()+" lượt lắc xúc xắc nữa, mời bạn lắc tiếp.";
             event.setEventMessage(message);    
         } else{
-            if(playerInTurn == playerList.size() -1){
-                playerInTurn = 0;
-            } else {
-                playerInTurn++;
-            }
+            // chuyen sang nguoi choi ke tiep
+            playerInTurn = (playerInTurn + 1) % playerList.size();
             Player nextPlayer = playerList.get(playerInTurn);
+            
+            while (nextPlayer.getStatus() != PlayerStatus.READY) {
+                // neu nguoi ke tiep da chiu thua
+                if(nextPlayer.getStatus() == PlayerStatus.LOOSED) {
+                    playerInTurn = (playerInTurn + 1) % playerList.size();
+                    nextPlayer = playerList.get(playerInTurn);
+                }
+                // neu nguoi ke tiep dang trong ben xe
+                if(nextPlayer.getStatus() == PlayerStatus.PARKING){
+                    message += " Đến lượt " + nextPlayer.getName() + " nhưng bị mất một lượt.";
+                    playerInTurn = (playerInTurn + 1) % playerList.size();
+                    nextPlayer.setStatus(PlayerStatus.READY);
+                    nextPlayer = playerList.get(playerInTurn);
+                }
+                // neu nguoi ke tiep dang trong tu 
+                if(nextPlayer.getStatus() == PlayerStatus.INJAIL_1 
+                   || nextPlayer.getStatus() == PlayerStatus.INJAIL_2
+                   || nextPlayer.getStatus() == PlayerStatus.INJAIL_3
+                   || nextPlayer.getStatus() == PlayerStatus.INJAIL_4
+                   || nextPlayer.getStatus() == PlayerStatus.INJAIL)
+                {
+                    break;
+                }
+            }
             nextPlayer.setRollAble(1);
-            String message =  "---> " + currentPlayer.getName() + " <--- đã đi xong, tới lượt ---> " + nextPlayer.getName() + " <--- đi kìa!!!";
+            message +=  " Tới lượt ---> " + nextPlayer.getName() + " <--- đi kìa!!!";
             event.setEventMessage(message);
         }
 
@@ -362,5 +400,9 @@ public class Table {
                 return;
             }
         }
+    }
+
+    public boolean isPlayerInTurn(int playerId) {
+        return playerList.get(this.playerInTurn).getId() == playerId;
     }
 }

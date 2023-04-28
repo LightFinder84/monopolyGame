@@ -6,6 +6,7 @@ import com.development.Monopoly.entity.Dice;
 import com.development.Monopoly.entity.Event;
 import com.development.Monopoly.entity.Player;
 import com.development.Monopoly.entity.Table;
+import com.development.Monopoly.entity.card.ChanceCard;
 import com.development.Monopoly.entity.space.Space;
 import com.development.Monopoly.exception.GameFullException;
 import com.development.Monopoly.exception.PasswordIncorrectException;
@@ -165,11 +166,10 @@ public class TableController {
     @GetMapping("/tables/{tableId}/{playerId}/go")
     public static void go(@PathVariable int tableId, @PathVariable int playerId){
         Table table = findTableById(tableId);
-        Player inturnPlayer = table.playerInTurnId();
-        Player player = table.findPlayerById(playerId);
-        if(inturnPlayer != player){
-            throw new UnExpectedErrorException("Chưa tới lượt đi của bạn");
+        if(!table.isPlayerInTurn(playerId)){
+            throw new UnExpectedErrorException("Chưa tới lượt đi của bạn.");
         }
+        Player player = table.findPlayerById(playerId);
         player.go(table.listSpaces(), table.getEvent());
     }
 
@@ -177,11 +177,10 @@ public class TableController {
     @GetMapping("/tables/{tableId}/{playerId}/buy-estate")
     public static String buyEstate(@PathVariable int tableId, @PathVariable int playerId){
         Table table = findTableById(tableId);
-        Player inturnPlayer = table.playerInTurnId();
-        Player player = table.findPlayerById(playerId);
-        if(inturnPlayer != player){
-            throw new UnExpectedErrorException("Chưa tới lượt đi của bạn");
+        if(!table.isPlayerInTurn(playerId)){
+            throw new UnExpectedErrorException("Chưa tới lượt đi của bạn.");
         }
+        Player player = table.findPlayerById(playerId);
         player.buyProperty(table.listSpaces(), table.getEvent());
         return "hello";
     }
@@ -189,11 +188,10 @@ public class TableController {
     @GetMapping("/tables/{tableId}/{playerId}/buy-a-house")
     public static void buyAHouse(@PathVariable int tableId, @PathVariable int playerId){
         Table table = findTableById(tableId);
-        Player player = table.findPlayerById(playerId);
-        Player currentPlayer = table.playerInTurnId();
-        if(player != currentPlayer){
-            throw new UnExpectedErrorException("Chưa tới lượt đi của bạn");
+        if(!table.isPlayerInTurn(playerId)){
+            throw new UnExpectedErrorException("Chưa tới lượt đi của bạn.");
         }
+        Player player = table.findPlayerById(playerId);
         player.buyAHouse(table.listSpaces(), table.getEvent());
     }
 
@@ -225,13 +223,43 @@ public class TableController {
     @GetMapping("/sell/house/{tableId}/{playerId}/{spaceId}")
     public void sellAHouse(@PathVariable int tableId, @PathVariable int playerId, @PathVariable int spaceId){
         Table table = findTableById(tableId);
-        Player player =  table.findPlayerById(playerId);
-        Player playerInTurn = table.PlayerOnTurn();
-        if(player.getId() != playerInTurn.getId()){
+        if(!table.isPlayerInTurn(playerId)){
             throw new UnExpectedErrorException("Chưa tới lượt đi của bạn.");
         }
+        Player player =  table.findPlayerById(playerId);
         Space space = table.findSpaceById(spaceId);
         Event e = table.getEvent();
         player.sellHouse(space, e); 
+    }
+
+    @GetMapping("/sell/property/{tableId}/{playerId}/{spaceId}")
+    public void sellProperty(@PathVariable int tableId, @PathVariable int playerId, @PathVariable int spaceId){
+        Table table = findTableById(tableId);
+        if(!table.isPlayerInTurn(playerId)){
+            throw new UnExpectedErrorException("Chưa tới lượt đi của bạn.");
+        }
+        Player player = table.findPlayerById(playerId);
+        player.sellProperty(table.findSpaceById(spaceId), table.getEvent());
+    }
+
+    @GetMapping("/surrender/{tableId}/{playerId}")
+    public void surrender(@PathVariable int tableId, @PathVariable int playerId){
+        Table table = findTableById(tableId);
+        if(!table.isPlayerInTurn(playerId)){
+            throw new UnExpectedErrorException("Chưa tới lượt đi của bạn.");
+        }
+        Player player = table.findPlayerById(playerId);
+        player.surrender(table.getEvent());
+    }
+
+    @GetMapping("/draw/chance/{tableId}/{playerId}")
+    public void drawChance(@PathVariable int tableId, @PathVariable int playerId){
+        Table table = findTableById(tableId);
+        if(!table.isPlayerInTurn(playerId)){
+            throw new UnExpectedErrorException("Chưa tới lượt đi của bạn.");
+        }
+        Player player = table.findPlayerById(playerId);
+        ChanceCard card = table.drawChanceCard();
+        player.drawChance(table.getEvent(), card);
     }
 }

@@ -412,3 +412,18 @@ function sellABuilding(spaceId){
     ajax.setRequestHeader('Content-type', 'application/json');
     ajax.send();
 }
+
+function surrender(){
+    const ajax = new XMLHttpRequest();
+    ajax.onload = function () {
+        if(this.status != 200){
+            alert(this.responseText);
+        } else {
+            alert("Đã xác nhận chịu thua.");
+        }
+    }
+    const uri = "/surrender/" + localStorage.getItem("table_id") + "/" + localStorage.getItem("player-id");
+    ajax.open("GET", uri, false);
+    ajax.setRequestHeader('Content-type', 'application/json');
+    ajax.send();
+}

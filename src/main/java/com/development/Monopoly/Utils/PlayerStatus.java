@@ -6,5 +6,5 @@ public enum PlayerStatus {
     WAITING,
     PLAYING,
     INJAIL,
-    LOOSED
+    LOOSED, PARKING, INJAIL_1, INJAIL_2, INJAIL_3, INJAIL_4
 }
