@@ -44,6 +44,8 @@ public class Player {
         setStatus(PlayerStatus.INJAIL);
         this.setCurrentPosition(10);
     }
+
+
     public int hasFullEstateOfColor(EstateColor color){
         int countColorForEstate = 0;
         for (Property property : ownedProperty) {
@@ -57,6 +59,8 @@ public class Player {
         else if (countColorForEstate == 3) return 1;
         else return 0;
     }
+
+    
     public void surrender(Event event) {
         if(listPersonToPay.size() == 0){
             throw new UnExpectedErrorException("Bạn không thiếu nợ ai, còn hơi sớm để chịu thua đó. Chơi tiép đi!!");
@@ -476,9 +480,16 @@ public class Player {
                 + estate.getNumberOfBuildings() + " nhà";
         event.setEventMessage(message);
     }
+
     public void drawChance(Event event, ChanceCard card) {
         chanceCardToDraw -= 1;
         String message = name + " Đã rút được thẻ " + card.getName() + ": " + card.getMessageString();
+        event.setEventMessage(message);
+    }
+    public void drawChest(Event event, ChanceCard card) {
+        chanceCardToDraw -= 1;
+        String message = name + " Đã rút được thẻ " + card.getName() + ": " + card.getMessageString();
+        event.setEventMessage(message);
     }
 
 }

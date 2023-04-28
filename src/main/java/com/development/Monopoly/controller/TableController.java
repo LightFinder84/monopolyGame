@@ -262,4 +262,15 @@ public class TableController {
         ChanceCard card = table.drawChanceCard();
         player.drawChance(table.getEvent(), card);
     }
+
+    @GetMapping("/draw/chest/{tableId}/{playerId}")
+    public void drawChest(@PathVariable int tableId, @PathVariable int playerId){
+        Table table = findTableById(tableId);
+        if(!table.isPlayerInTurn(playerId)){
+            throw new UnExpectedErrorException("Chưa tới lượt đi của bạn.");
+        }
+        Player player = table.findPlayerById(playerId);
+        ChanceCard card = table.drawChanceCard();
+        player.drawChest(table.getEvent(), card);
+    }
 }

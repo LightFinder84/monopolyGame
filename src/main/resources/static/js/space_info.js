@@ -58,7 +58,7 @@ function getSpace(spaceid){
                 content.innerHTML += '<div class="w-100 d-flex justify-content-center"><div class="btn btn-info" onclick="drawChanceCard()">Rút</div></div>';
             }
             if(chestIds.includes(spaceid)){
-                content.innerHTML += '<div class="w-100 d-flex justify-content-center"><div class="btn btn-info" onclick="takeChest()">Rút</div></div>';
+                content.innerHTML += '<div class="w-100 d-flex justify-content-center"><div class="btn btn-info" onclick="drawChestCard()">Rút</div></div>';
             }
         }
     }
@@ -93,6 +93,21 @@ function drawChanceCard(){
         }
     }
     const uri = "/draw/chance/" + localStorage.getItem("table_id") + "/" + localStorage.getItem("player-id");
+    ajax.open("GET", uri, false);
+    ajax.setRequestHeader('Content-type', 'application/json');
+    ajax.send();
+}
+
+function drawChestCard(){
+    const ajax = new XMLHttpRequest();
+    ajax.onload = function () {
+        if(this.status != 200){
+            alert(this.responseText);
+        } else {
+            
+        }
+    }
+    const uri = "/draw/chest/" + localStorage.getItem("table_id") + "/" + localStorage.getItem("player-id");
     ajax.open("GET", uri, false);
     ajax.setRequestHeader('Content-type', 'application/json');
     ajax.send();
